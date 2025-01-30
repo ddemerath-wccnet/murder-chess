@@ -1,0 +1,1 @@
+Hello, my name is Chris. I've been working as an Appian developer for the past 4 years. Looking to expand my sofrtware development background with a degree. I like to play video games when I have time but, mainly I end up play Magic: The Gathering.
