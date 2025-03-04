@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //Keybinds
+    [Header("Keybinds")] //Keybinds
     public KeyCode key_Up = KeyCode.W;
     public KeyCode key_Left = KeyCode.A;
     public KeyCode key_Down = KeyCode.S;
@@ -10,10 +10,17 @@ public class Player : MonoBehaviour
 
     public KeyCode key_Movement = KeyCode.Space;
 
+    public KeyCode key_Ability1 = KeyCode.Alpha1;
+    public KeyCode key_Ability2 = KeyCode.Alpha2;
+    public KeyCode key_Ability3 = KeyCode.Alpha3;
+    public KeyCode key_Ability4 = KeyCode.Alpha4;
+    public KeyCode key_Ability5 = KeyCode.Alpha5;
+
+    [Header("Player Properties")]
     /* Player Properties
      * Private Base are their actual values, 
     while the public get/set version uses the multipliers 
-    so cards and other things can easily modify them */ 
+    so cards and other things can easily modify them */
     [SerializeField]
     private float base_MaxPlayerHealth = 10;
     public float MaxPlayerHealth
@@ -35,6 +42,24 @@ public class Player : MonoBehaviour
         get { return base_PlayerSpeed * GlobalVars.multiplier_PlayerSpeed; }
         set { base_PlayerSpeed = value / GlobalVars.multiplier_PlayerSpeed; }
     }
+    [SerializeField]
+    private float base_PlayerDamage = 1;
+    public float PlayerDamage
+    {   //Uses multipliers to correctly calculate var
+        get { return base_PlayerDamage * GlobalVars.multiplier_PlayerDamage; }
+        set { base_PlayerDamage = value / GlobalVars.multiplier_PlayerDamage; }
+    }
+
+    public float maxIFrames = 1;
+    float iFrames = 0;
+    public bool isDangerous;
+
+    [Header("Abilities")]
+    public BaseAbility Ability1 = null;
+    public BaseAbility Ability2 = null;
+    public BaseAbility Ability3 = null;
+    public BaseAbility Ability4 = null;
+    public BaseAbility Ability5 = null;
 
     private void Awake()
     {
@@ -50,6 +75,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (iFrames > 0) iFrames -= GlobalVars.DeltaTimePlayer;
+
         //Define move dir based on user input
         Vector3 moveDir = new Vector3();
         if (Input.GetKey(key_Up)) moveDir += Vector3.up;
@@ -59,11 +86,80 @@ public class Player : MonoBehaviour
 
         //Executes Movement
         transform.position += GlobalVars.DeltaTimePlayer * PlayerSpeed * moveDir;
+
+        // Visualizer
+        if (isDangerous) 
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        if (iFrames > 0)
+        {
+            GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color - new Color(0, 0, 0, 0.5f);
+        }
+
+        // Ability Activation
+        if (Input.GetKeyDown(key_Ability1) && Ability1 != null) Ability1.CallActivate();
+        if (Input.GetKeyDown(key_Ability2) && Ability2 != null) Ability2.CallActivate();
+        if (Input.GetKeyDown(key_Ability3) && Ability3 != null) Ability3.CallActivate();
+        if (Input.GetKeyDown(key_Ability4) && Ability4 != null) Ability4.CallActivate();
+        if (Input.GetKeyDown(key_Ability5) && Ability5 != null) Ability5.CallActivate();
     }
 
     /// <summary> Damages Player for '<c>damage</c>' damage </summary>
     public void DamagePlayer(float damage)
     {
-        PlayerHealth = PlayerHealth - damage;
+        if (iFrames > 0)
+        {
+
+        }
+        else
+        {
+            PlayerHealth = Mathf.Clamp(PlayerHealth - damage, -0.01f, float.MaxValue);
+            iFrames = maxIFrames;
+        }
+    }
+
+    /*
+     A piece Colliding with player, do damage calculations!
+     */
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        BasePiece collisionPiece;
+
+        if (collision.TryGetComponent<BasePiece>(out collisionPiece))
+        {
+            HitPiece(collisionPiece);
+        }
+    }
+
+    private void HitPiece(BasePiece collisionPiece, float playerDmgMulti = 1, float pieceDmgMulti = 1)
+    {
+        if (collisionPiece.isDangerous == false && this.isDangerous == false)
+        {
+            playerDmgMulti *= 0.5f;
+            pieceDmgMulti *= 0.5f;
+        }
+        else if (collisionPiece.isDangerous == false && this.isDangerous == true)
+        {
+            playerDmgMulti *= 0;
+            pieceDmgMulti *= 1;
+        }
+        else if (collisionPiece.isDangerous == true && this.isDangerous == false)
+        {
+            playerDmgMulti *= 1;
+            pieceDmgMulti *= 0;
+        }
+        else if (collisionPiece.isDangerous == true && this.isDangerous == true)
+        {
+            playerDmgMulti *= 0.75f;
+            pieceDmgMulti *= 0.75f;
+        }
+
+        if (playerDmgMulti > 0) DamagePlayer(collisionPiece.HurtPlayerFor() * playerDmgMulti);
+        if (pieceDmgMulti > 0) collisionPiece.DamagePiece(PlayerDamage * pieceDmgMulti);
     }
 }

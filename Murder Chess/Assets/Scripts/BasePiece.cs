@@ -29,6 +29,13 @@ public abstract class BasePiece : MonoBehaviour
         set { base_PieceSpeed = value / GlobalVars.multiplier_PieceSpeed; }
     }
     [SerializeField]
+    private float base_PieceDamage;
+    public float PieceDamage
+    {   //Uses multipliers to correctly calculate var
+        get { return base_PieceDamage * GlobalVars.multiplier_PieceDamage; }
+        set { base_PieceDamage = value / GlobalVars.multiplier_PieceDamage; }
+    }
+    [SerializeField]
     private float base_MaxPieceCycleTimer = 5;
     public float MaxPieceCycleTimer
     {   //Uses multipliers to correctly calculate var
@@ -40,6 +47,10 @@ public abstract class BasePiece : MonoBehaviour
 
     public string cycleState = null;
 
+    public float maxIFrames = 1;
+    float iFrames = 0;
+    public bool isDangerous;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
@@ -50,7 +61,17 @@ public abstract class BasePiece : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        if (iFrames > 0) iFrames -= GlobalVars.DeltaTimePiece;
+
         // State Machine
+
+        // Death
+        if (PieceHealth <= 0)
+        {
+            cycleState = "Death";
+            if (Death()) GameObject.Destroy(gameObject);
+        }
+
         if (cycleState == "Select Target")
         {
             PieceCycleTimer = MaxPieceCycleTimer;
@@ -93,6 +114,7 @@ public abstract class BasePiece : MonoBehaviour
             }
         }
 
+        // Should I Attack? Logic
         if (cycleState == "Should Attack")
         {
             if (ShouldAttack())
@@ -105,26 +127,28 @@ public abstract class BasePiece : MonoBehaviour
             }
         }
 
+        // Attacking State
         if (cycleState == "Attack")
         {
-            bool isDangerous;
             if (Attack(out isDangerous))
             {
                 cycleState = "Select Target";
+                isDangerous = false;
+            }
+        }
 
-                GetComponent<SpriteRenderer>().color = Color.white;
-            }
-            else
-            {
-                if (isDangerous) // isDangerous Visualizer
-                {
-                    GetComponent<SpriteRenderer>().color = Color.red;
-                }
-                else
-                {
-                    GetComponent<SpriteRenderer>().color = Color.white;
-                }
-            }
+
+        if (isDangerous) // isDangerous Visualizer
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        if (iFrames > 0)
+        {
+            GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color - new Color(0, 0, 0, 0.5f);
         }
     }
 
@@ -143,7 +167,10 @@ public abstract class BasePiece : MonoBehaviour
 
     /// <summary> Called once a frame while done moving and cycle timer still has time left. </summary>
     /// <returns> Return False to continue to <c>MoveDone()</c>, return true to go to <c>ShouldAttack()</c> method. </returns>
-    public abstract bool MoveDone();
+    public virtual bool MoveDone() //Default Implementation
+    {
+        return false; // wait for next step
+    }
 
     /// <summary> Determines Whether piece moves to Attack state </summary>
     /// <returns> Return False to go back to movement, return true to go to attacking </returns>
@@ -155,8 +182,30 @@ public abstract class BasePiece : MonoBehaviour
     public abstract bool Attack(out bool isDangerous);
 
     /// <summary> Damages Piece for '<c>damage</c>' damage </summary>
-    public void DamagePiece(float damage)
+    public virtual void DamagePiece(float damage) //Default Implementation
     {
-        PieceHealth = PieceHealth - damage;
+        if (iFrames > 0)
+        {
+
+        }
+        else
+        {
+            PieceHealth = Mathf.Clamp(PieceHealth - damage, -0.01f, float.MaxValue);
+            iFrames = maxIFrames;
+        }
+    }
+
+    /// <summary> Called when piece will damage player </summary>
+    /// <returns> Return amount of damage to do </returns>
+    public virtual float HurtPlayerFor() //Default Implementation
+    {
+        return PieceDamage;
+    }
+
+    /// <summary> Called once per frame while at 0hp </summary>
+    /// <returns> Return true to delete piece </returns>
+    public virtual bool Death() //Default Implementation
+    {
+        return true;
     }
 }

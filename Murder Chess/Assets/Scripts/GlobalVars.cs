@@ -32,10 +32,12 @@ public static class GlobalVars
     public static float multiplier_PieceDamage = 1;
     public static float multiplier_PieceCycleTimer = 1;
 
+    public static float multiplier_AbilityCooldown = 1; //More is better, x2 would be 'cooldown/2'
+
     /// <summary> Sets all variables back to default. </summary>
     public static void ResetClass()
     {
-        player = GameObject.Find("player");
+        player = GameObject.FindWithTag("Player");
 
         timeScale_Player = 1;
         timeScale_Piece = 1;
@@ -43,5 +45,10 @@ public static class GlobalVars
         multiplier_PlayerHealth = 1;
         multiplier_PlayerSpeed = 1;
         multiplier_PlayerDamage = 1;
+
+        multiplier_PieceHealth = 1;
+        multiplier_PieceSpeed = 1;
+        multiplier_PieceDamage = 1;
+        multiplier_PieceCycleTimer = 1;
     }
 }

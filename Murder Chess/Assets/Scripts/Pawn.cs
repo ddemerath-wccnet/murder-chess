@@ -13,13 +13,14 @@ public class Pawn : BasePiece
     // Update is called once per frame
     protected override void Update()
     {
+        if (duplicateTimer > 0) duplicateTimer -= GlobalVars.DeltaTimePiece;
         base.Update();
     }
 
     public override Vector3 SelectTarget()
     {
-        //Add randomness to movetimer
-        PieceCycleTimer += Random.Range(-0.15f, 0.15f);
+        //Add randomness to movetimer (so pieces dont sync up and look bad)
+        PieceCycleTimer += Random.Range(-0.25f, 0.25f);
 
         //select player as target
         return GlobalVars.player.transform.position;
@@ -36,11 +37,6 @@ public class Pawn : BasePiece
         {
             return true; //stop moving and go to next stage
         }
-    }
-
-    public override bool MoveDone()
-    {
-        return false; // wait for next step
     }
 
     public override bool ShouldAttack()
@@ -69,5 +65,21 @@ public class Pawn : BasePiece
 
         if (attackTimer >= 0) return false; //do attack for attacktimer sec
         else return true;
+    }
+
+    public float duplicateTimer; //Duplicate cooldown
+    public int duplicateLimit = 3; //Duplicate limit
+    public override float HurtPlayerFor() //Extra code on top of Default Implementation
+    {
+        if (duplicateTimer <= 0 && duplicateLimit > 0)
+        {
+            duplicateTimer = 2;
+            duplicateLimit -= 1;
+            GameObject clone = GameObject.Instantiate(gameObject); //Duplicates when hurting player
+            clone.GetComponent<Pawn>().duplicateTimer = duplicateTimer;
+            clone.GetComponent<Pawn>().duplicateLimit = duplicateLimit;
+            clone.GetComponent<Pawn>().isDangerous = false;
+        }
+        return base.HurtPlayerFor();
     }
 }
