@@ -41,8 +41,7 @@ public class Pawn : BasePiece
 
     public override bool ShouldAttack()
     {
-
-        if (Mathf.Abs((GlobalVars.player.transform.position - transform.position).magnitude) <= 3) // if piece is more than 1 unit away
+        if (Mathf.Abs((GlobalVars.player.transform.position - transform.position).magnitude) <= 3) // if piece is more than 3 unit away
         {
             attackTimer = 1.5f;
             attackTarget = GlobalVars.player.transform.position;

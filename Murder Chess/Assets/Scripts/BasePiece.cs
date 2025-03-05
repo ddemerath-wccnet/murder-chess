@@ -152,8 +152,8 @@ public abstract class BasePiece : MonoBehaviour
         }
     }
 
-    /// <summary> Called once per frame durring attack state, no timer, so you must define when the attack ends by returning true </summary>
-    /// <returns> Return true to finish attack </returns>
+    /// <summary> Used to select the target to be passed into the move method </summary>
+    /// <returns> Return vector 3 target </returns>
     public abstract Vector3 SelectTarget();
 
     /// <summary> Called once a frame durring the movement state, defines GameObject movement using input params. </summary>
