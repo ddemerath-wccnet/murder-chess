@@ -228,6 +228,7 @@ MonoBehaviour:
   maxInbetweenPieceCooldown: 5
   InbetweenPieceCooldown: 0
   spawnLocation: {x: 0, y: 0, z: 0}
+  instantDone: 0
 --- !u!114 &123733388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +250,7 @@ MonoBehaviour:
   maxInbetweenPieceCooldown: 0.5
   InbetweenPieceCooldown: 0
   spawnLocation: {x: 0, y: 7, z: 0}
+  instantDone: 0
 --- !u!114 &123733389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +272,7 @@ MonoBehaviour:
   maxInbetweenPieceCooldown: 0.5
   InbetweenPieceCooldown: 0
   spawnLocation: {x: 7, y: 7, z: 0}
+  instantDone: 0
 --- !u!4 &123733390
 Transform:
   m_ObjectHideFlags: 0
