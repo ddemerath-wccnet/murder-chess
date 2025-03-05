@@ -152,7 +152,7 @@ MonoBehaviour:
   - {fileID: 123733386}
   waveInt: 0
   controllerState: 
-  maxInbetweenWaveCooldown: 3
+  maxInbetweenWaveCooldown: 3.1
   InbetweenWaveCooldown: 0
 --- !u!4 &16886535
 Transform:
