@@ -28,6 +28,8 @@ public class WavePart : MonoBehaviour
     {
         if (controllerState == "Spawning")
         {
+            if(pieceInt > pieces.Count){pieceInt = pieces.Count;}
+            if(pieceInt <= 0){pieceInt = 0;}
             GameObject.Instantiate(pieces[pieceInt], spawnLocation, new Quaternion());
             controllerState = "Cooldown";
         }
