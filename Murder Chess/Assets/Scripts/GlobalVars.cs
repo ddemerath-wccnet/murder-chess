@@ -26,6 +26,8 @@ public static class GlobalVars
     public static float multiplier_PlayerHealth = 1;
     public static float multiplier_PlayerSpeed = 1;
     public static float multiplier_PlayerDamage = 1;
+    public static float multiplier_PlayerMana = 1;
+    public static float multiplier_PlayerManaGain = 1;
 
     public static float multiplier_PieceHealth = 1;
     public static float multiplier_PieceSpeed = 1;
