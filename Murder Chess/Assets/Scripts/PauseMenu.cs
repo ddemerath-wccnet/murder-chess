@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    public GameObject pauseButton;
+
     public static bool isPaused;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,6 +38,7 @@ public class PauseMenu : MonoBehaviour
     public void pauseGame() 
     {
         pauseMenu.SetActive(true);
+        pauseButton.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -43,6 +46,7 @@ public class PauseMenu : MonoBehaviour
     public void resumeGame() 
     {
         pauseMenu.SetActive(false);
+        pauseButton.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
     }
