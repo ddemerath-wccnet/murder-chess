@@ -1587,10 +1587,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaveController
       objectReference: {fileID: 0}
-    - target: {fileID: 3343848369138429718, guid: 3e83d8e44c0a5b845a0aa6eb06bd6480, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1643,10 +1639,6 @@ PrefabInstance:
     - target: {fileID: 6629847500512903091, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692304426566259684, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
-      propertyPath: base_MaxPlayerMana
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8151595831999311075, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
       propertyPath: m_Name

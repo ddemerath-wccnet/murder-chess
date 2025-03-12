@@ -230,7 +230,7 @@ MonoBehaviour:
   base_PlayerHealth: 0
   base_PlayerSpeed: 2
   base_PlayerDamage: 2
-  base_MaxPlayerMana: 10
+  base_MaxPlayerMana: 100
   base_PlayerMana: 0
   maxIFrames: 1
   isDangerous: 0
