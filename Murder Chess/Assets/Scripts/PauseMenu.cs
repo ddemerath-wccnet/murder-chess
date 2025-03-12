@@ -49,7 +49,7 @@ public class PauseMenu : MonoBehaviour
 
     public void goToMainMenu()
     {
-        //return to main menu using SceneManager.LoadScene("MainMenu" / [sceneID])
+        SceneManager.LoadScene(0); // Loads scene 0 = main menu
     }
 
     public void exitGame()
