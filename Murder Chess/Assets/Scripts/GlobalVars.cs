@@ -1,3 +1,6 @@
+using System.Reflection;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static class GlobalVars
@@ -52,5 +55,33 @@ public static class GlobalVars
         multiplier_PieceSpeed = 1;
         multiplier_PieceDamage = 1;
         multiplier_PieceCycleTimer = 1;
+    }
+
+    /// <summary> 
+    /// Call to modify a variable of GlobalVars (multiplicatively). 
+    /// </summary>
+    /// <param name="variableName">The variable to modify.</param>
+    /// <param name="amountToAdd">
+    /// The amount to modify the variable by (multiplicatively). 
+    /// +1 is +100%, and -1 is -100% (cuts value in half).
+    /// </param>
+    /// <returns>Returns true if successful, false if failure.</returns>
+    public static bool ModifyVariable(string variableName, float amountToAdd)
+    {
+        Type type = typeof(GlobalVars);
+        FieldInfo fieldInfo = type.GetField(variableName, BindingFlags.Static | BindingFlags.Public);
+
+        if (fieldInfo != null && fieldInfo.FieldType == typeof(float))
+        {
+            float currentValue = (float)fieldInfo.GetValue(null);
+            float newValue;
+            if (amountToAdd >= 0) newValue = currentValue * (1 + amountToAdd);
+            else newValue = currentValue / (1 - amountToAdd);
+
+            fieldInfo.SetValue(null, newValue);
+            return true;
+        }
+
+        return false;
     }
 }
