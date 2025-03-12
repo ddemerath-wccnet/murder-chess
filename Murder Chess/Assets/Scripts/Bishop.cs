@@ -4,11 +4,11 @@ using UnityEngine;
 public class Bishop : BasePiece
 {
     private bool CanUpdateMove = true;
+    private Vector3 targetPos = new Vector3();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
         base.Start();
-        this.PieceSpeed *= 4;   //Increase Bishop movement speed over base speed.
     }
 
     // Update is called once per frame
@@ -22,24 +22,44 @@ public class Bishop : BasePiece
         //Add randomness to movetimer
         PieceCycleTimer += Random.Range(-0.85f, 0.85f);
 
+        targetPos = new Vector3();
+        Vector2 moveDir = GlobalVars.player.transform.position - transform.position;
+        Vector2 moveDirNorm = moveDir.normalized;
+        float moveAngle = Vector2.SignedAngle(moveDirNorm, Vector2.up);
+        
+        if (moveAngle < 0) moveAngle += 360;
+        if (moveAngle >= 0 && moveAngle < 90)
+        {
+            targetPos += Vector3.up + Vector3.right;
+        }
+        else if (moveAngle >= 90 && moveAngle < 180)
+        {
+            targetPos += Vector3.down + Vector3.right;
+        }
+        else if (moveAngle >= 180 && moveAngle < 270)
+        {
+            targetPos += Vector3.down + Vector3.left;
+        }
+        else if (moveAngle >= 270 && moveAngle < 360)
+        {
+            targetPos += Vector3.up + Vector3.left;
+        }
+        
         //select player as target
         return GlobalVars.player.transform.position;
     }
 
     public override bool Move(Vector2 target, Vector2 distance, Vector2 moveDir, float moveTime, float moveTimerNormalized)
     {
-        
         if (CanUpdateMove && Mathf.Abs(distance.magnitude) >= 3 && Mathf.Abs(distance.magnitude) < 7) // if piece is more than 1 unit away
         {
-            var rotation = Quaternion.AngleAxis((45f/2f), Vector3.forward);
-            Vector3 direction = rotation * (Vector3)moveDir;
-            transform.position += GlobalVars.DeltaTimePiece * PieceSpeed * direction;
+            transform.position += GlobalVars.DeltaTimePiece * PieceSpeed * targetPos;
             CanUpdateMove = false;
             //return false;  //continue moving
         }
         else if (!CanUpdateMove)
         {
-            transform.position += GlobalVars.DeltaTimePiece * PieceSpeed * (Vector3)moveDir;
+            transform.position += GlobalVars.DeltaTimePiece * PieceSpeed * targetPos;
             //return false;  //continue moving
         }
         else

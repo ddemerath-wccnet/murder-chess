@@ -107,7 +107,7 @@ MonoBehaviour:
   base_PieceHealth: 0
   base_PieceSpeed: 1
   base_PieceDamage: 0
-  base_MaxPieceCycleTimer: 5
+  base_MaxPieceCycleTimer: 0.5
   PieceCycleTimer: 0
   cycleState: 
   maxIFrames: 1
