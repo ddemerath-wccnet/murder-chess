@@ -29,9 +29,9 @@ public class Bishop : BasePiece
     public override bool Move(Vector2 target, Vector2 distance, Vector2 moveDir, float moveTime, float moveTimerNormalized)
     {
         
-        if (CanUpdateMove && Mathf.Abs(distance.magnitude) >= 3 && Mathf.Abs(distance.magnitude) < 8) // if piece is more than 1 unit away
+        if (CanUpdateMove && Mathf.Abs(distance.magnitude) >= 3 && Mathf.Abs(distance.magnitude) < 7) // if piece is more than 1 unit away
         {
-            var rotation = Quaternion.AngleAxis(45f, Vector3.forward);
+            var rotation = Quaternion.AngleAxis((45f/2f), Vector3.forward);
             Vector3 direction = rotation * (Vector3)moveDir;
             transform.position += GlobalVars.DeltaTimePiece * PieceSpeed * direction;
             CanUpdateMove = false;
