@@ -8,6 +8,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/BuyMenu.unity
+    guid: 6641ba6947b29aa42b827fdbbecece2d
+  - enabled: 1
+    path: Assets/Scenes/BuyItems.unity
+    guid: 6d4b4ebc35d8f884fb1b6fb44b737110
+  - enabled: 1
+    path: Assets/Scenes/BuyCards.unity
+    guid: 7d2bba34e744ef64e96dd46ceaeb4e5a
+  - enabled: 1
+    path: Assets/Scenes/SellItems.unity
+    guid: b8ccb2a3657fb3a40b78ae9105296c9a
+  - enabled: 1
+    path: Assets/Scenes/BuyRelics.unity
+    guid: 29ac35bac37164a4d94a5b3822900087
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
