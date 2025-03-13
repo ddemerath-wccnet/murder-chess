@@ -28,19 +28,21 @@ public class Rook : BasePiece
         currentDirection = directions[Random.Range(0, directions.Length)];
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
+        transform.Translate(-currentDirection * PieceSpeed * GlobalVars.DeltaTimePiece * 2);
         SetRandomDirection();
         if (collision.gameObject.CompareTag("Player"))
         {
             Player player = collision.gameObject.GetComponent<Player>();
             player.DamagePlayer(HurtPlayerFor());
         }
-        else if (collision.gameObject.tag != "Player")
+        else if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Obstacles")
         {
             Collider2D otherCollider = collision.gameObject.GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), otherCollider);
         }
+
     }
 
     public override Vector3 SelectTarget()
