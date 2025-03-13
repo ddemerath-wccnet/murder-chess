@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rook
       objectReference: {fileID: 0}
+    - target: {fileID: 3015847586779300829, guid: 190d0d74410cea24a9f3a7ff996e4cfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3404587521966561881, guid: 190d0d74410cea24a9f3a7ff996e4cfe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.67

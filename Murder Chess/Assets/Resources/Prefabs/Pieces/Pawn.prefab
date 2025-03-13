@@ -113,7 +113,7 @@ MonoBehaviour:
   maxIFrames: 1
   isDangerous: 0
   duplicateTimer: 0
-  duplicateLimit: 3
+  duplicateLimit: 1
 --- !u!60 &4905706586172696130
 PolygonCollider2D:
   m_ObjectHideFlags: 0
