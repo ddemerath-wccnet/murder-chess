@@ -106,14 +106,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   base_MaxPieceHealth: 10
   base_PieceHealth: 0
-  base_PieceSpeed: 1
-  base_PieceDamage: 0
-  base_MaxPieceCycleTimer: 5
+  base_PieceSpeed: 3
+  base_PieceDamage: 2
+  base_MaxPieceCycleTimer: 2
   PieceCycleTimer: 0
   cycleState: 
   maxIFrames: 1
   isDangerous: 0
-  shadow: {fileID: 2564518605837460989}
+  landingDustPrefab: {fileID: 3785006090952314852, guid: ba7280df254ca5b4d84b928ccd649300, type: 3}
 --- !u!50 &7423725625603101333
 Rigidbody2D:
   serializedVersion: 5

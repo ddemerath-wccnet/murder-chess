@@ -1,11 +1,12 @@
 using System.Collections;
 using UnityEngine;
-
+// Can get stuck in Move Done after jump
 public class Knight : BasePiece
 {
-    // private float moveCooldown = 0.5f; // Time before next move
-    // private float nextMoveTime = 0f;
-    // private bool isJumping = false; // Prevents overlapping movement
+    private Vector3 bestMove;
+    private bool isJumping = false;
+
+    [SerializeField] private ParticleSystem landingDustPrefab;
 
     private Vector2[] knightMoves = {
         new Vector2(2, 1), new Vector2(2, -1),
@@ -21,31 +22,20 @@ public class Knight : BasePiece
 
     protected override void Update()
     {
+        Debug.Log(cycleState);
         base.Update();
     }
 
     public override Vector3 SelectTarget()
     {
+
         // Add randomness to move timer (to avoid all pieces moving in sync)
         PieceCycleTimer += Random.Range(-0.25f, 0.25f);
 
-
         // Find the best L-shaped move
-        Vector3 bestMove = FindBestKnightMove();
+        bestMove = FindBestKnightMove();
 
-        // Compare bestMove's distance to the player
-        float distanceToPlayer = Vector3.Distance(bestMove, GlobalVars.player.transform.position);
-
-        // If the best move is within 1 unit of the player, perform a jump
-        // if (distanceToPlayer <= 1.0f)
-        // {
-        //     Debug.Log("Test");
-        //     StartCoroutine(JumpAnimation(bestMove));
-        //     return bestMove;
-        // }
-
-        // Otherwise, move normally
-        return bestMove;
+        return bestMove; // Otherwise, move normally
     }
 
     private Vector3 FindBestKnightMove()
@@ -66,96 +56,117 @@ public class Knight : BasePiece
             }
         }
 
-        return bestMove; // Return the best L-shaped move found
+        return bestMove;
     }
-    
+
     public override bool Move(Vector2 target, Vector2 distance, Vector2 moveDir, float moveTime, float moveTimerNormalized)
     {
-        if (Mathf.Abs(distance.magnitude) >= 1 && !canPerformJumpAttack()) // if piece is more than 1 unit away
+
+        if (Mathf.Abs(distance.magnitude) >= 1 && !CanPerformJumpAttack())
         {
             transform.position += GlobalVars.DeltaTimePiece * PieceSpeed * (Vector3)moveDir;
-            return false;  //continue moving
+            return false; // Continue moving
         }
-        else
-        {
-            return true; //stop moving and go to next stage
-        }
+
+        return true; // Stop moving and go to next stage
     }
 
     public override bool ShouldAttack()
     {
-        if (Mathf.Abs((GlobalVars.player.transform.position - transform.position).magnitude) <= 1) // If within attack range
+        float distanceToPlayer = Vector3.Distance(transform.position, GlobalVars.player.transform.position);
+        
+        if (distanceToPlayer <= 1)
         {
             attackTimer = 1.5f;
             attackTarget = GlobalVars.player.transform.position;
-            return true; // Attack
+            return true;
         }
-        else
+
+        if (CanPerformJumpAttack())
         {
-            return false;
+            return true;
         }
+
+        return false;
     }
 
     float attackTimer;
     Vector3 attackTarget;
     public override bool Attack(out bool isDangerous)
     {
-        attackTimer -= GlobalVars.DeltaTimePiece;
         isDangerous = true; // Piece can hurt the player while attacking
 
+        if(isJumping) return false;
+
+        if (!isJumping && CanPerformJumpAttack())
+        {
+            StartCoroutine(JumpAnimation(bestMove));
+            return true;
+        }
+
+        attackTimer -= GlobalVars.DeltaTimePiece;
         Vector2 moveDir = (attackTarget - transform.position).normalized;
         transform.position += (Vector3)moveDir * PieceSpeed * 2 * GlobalVars.DeltaTimePiece;
 
         return attackTimer < 0; // Attack lasts for attackTimer duration
     }
 
-    public override float HurtPlayerFor() // Extra code on top of Default Implementation
+    public override float HurtPlayerFor()
     {
         return base.HurtPlayerFor();
     }
 
-
-    private bool canPerformJumpAttack()
+    private bool CanPerformJumpAttack()
     {
-        // Vector3 bestMove = FindBestKnightMove();
+        if (isJumping) return false; // Prevent multiple jumps
 
-        // // Compare bestMove's distance to the player
-        // float distanceToPlayer = Vector3.Distance(bestMove, GlobalVars.player.transform.position);
+        bestMove = FindBestKnightMove();
+        float currentDistanceToPlayer = Vector3.Distance(transform.position, GlobalVars.player.transform.position);
+        float projectedDistanceToPlayer = Vector3.Distance(bestMove, GlobalVars.player.transform.position);
 
-        // return distanceToPlayer <= 1.0f;
-        return false;
+        // ✅ Prevents jumping if already close to the player
+        return projectedDistanceToPlayer <= 1.0f && currentDistanceToPlayer > 2.0f;
     }
-//     IEnumerator JumpAnimation(Vector3 targetPosition)
-// {
-//     isJumping = true; // Prevent movement during jump
-//     float jumpDuration = 1.4f; // Total time for the jump
-//     float peakHeight = 1.0f; // How high the jump reaches
-//     Vector3 startPosition = transform.position;
 
-//     float elapsedTime = 0f;
+    IEnumerator JumpAnimation(Vector3 targetPosition)
+    {
+        isJumping = true; // Prevent movement during jump
+        float jumpDuration = 0.6f; // Total time for the jump
+        float peakHeight = 1.0f; // How high the jump reaches
+        Vector3 startPosition = transform.position;
 
-//     while (elapsedTime < jumpDuration)
-//     {
-//         float t = elapsedTime / jumpDuration;
-        
-//         // Create an arc for the jump using Sin function
-//         float heightOffset = Mathf.Sin(t * Mathf.PI) * peakHeight;
+        float elapsedTime = 0f;
 
-//         // Smoothly move the knight toward the target position in an arc
-//         transform.position = Vector3.Lerp(startPosition, targetPosition, t) + new Vector3(0, heightOffset, 0);
+        while (elapsedTime < jumpDuration)
+        {
+            float t = elapsedTime / jumpDuration;
+            
+            // Create an arc for the jump using Sin function
+            float heightOffset = Mathf.Sin(t * Mathf.PI) * peakHeight;
 
-//         // Scale up at peak of jump, then back down
-//         transform.localScale = Vector3.Lerp(Vector3.one, Vector3.one * 1.3f, Mathf.Sin(t * Mathf.PI));
+            // Smoothly move the knight toward the target position in an arc
+            transform.position = Vector3.Lerp(startPosition, targetPosition, t) + new Vector3(0, heightOffset, 0);
 
-//         elapsedTime += Time.deltaTime;
-//         yield return null;
-//     }
+            // Scale up at peak of jump, then back down
+            transform.localScale = Vector3.Lerp(Vector3.one, Vector3.one * 1.3f, Mathf.Sin(t * Mathf.PI));
 
-//     // Ensure final position is exact
-//     transform.position = targetPosition;
-//     transform.localScale = Vector3.one; // Reset scale
-    
-//     isJumping = false; // Allow movement again
-// }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
 
+        transform.localScale = Vector3.one; // Reset scale
+
+        if (landingDustPrefab != null)
+        {
+            ParticleSystem dustInstance = Instantiate(landingDustPrefab, targetPosition - new Vector3(0,0.3f, 0), Quaternion.identity);
+            dustInstance.Play();
+            Destroy(dustInstance.gameObject, dustInstance.main.duration + dustInstance.main.startLifetime.constantMax);
+        }
+        else
+        {
+            Debug.LogWarning("Landing dust particle system not assigned.");
+        }
+
+        isJumping = false; // Allow movement again
+    }
 }
