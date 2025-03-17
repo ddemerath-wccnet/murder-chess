@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
     public KeyCode key_Ability4 = KeyCode.Alpha4;
     public KeyCode key_Ability5 = KeyCode.Alpha5;
 
+    public KeyCode key_Spell1 = KeyCode.Mouse0;
+    public KeyCode key_Spell2 = KeyCode.Mouse2;
+    public KeyCode key_Spell3 = KeyCode.Mouse1;
+
     [Header("Player Properties")]
     /* Player Properties
      * Private Base are their actual values, 
@@ -75,6 +79,11 @@ public class Player : MonoBehaviour
     public BaseAbility Ability4 = null;
     public BaseAbility Ability5 = null;
 
+    [Header("Spells")]
+    public BaseSpell Spell1 = null;
+    public BaseSpell Spell2 = null;
+    public BaseSpell Spell3 = null;
+
     private void Awake()
     {
         GlobalVars.ResetClass();
@@ -122,6 +131,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(key_Ability3) && Ability3 != null) Ability3.CallActivate();
         if (Input.GetKeyDown(key_Ability4) && Ability4 != null) Ability4.CallActivate();
         if (Input.GetKeyDown(key_Ability5) && Ability5 != null) Ability5.CallActivate();
+
+        // Spell Activation
+        if (Input.GetKeyDown(key_Spell1) && Spell1 != null) Spell1.CallActivate();
+        if (Input.GetKeyDown(key_Spell2) && Spell2 != null) Spell2.CallActivate();
+        if (Input.GetKeyDown(key_Spell3) && Spell3 != null) Spell3.CallActivate();
     }
 
     /// <summary> Damages Player for '<c>damage</c>' damage </summary>
@@ -151,7 +165,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void HitPiece(BasePiece collisionPiece, float playerDmgMulti = 1, float pieceDmgMulti = 1)
+    public void HitPiece(BasePiece collisionPiece, float playerDmgMulti = 1, float pieceDmgMulti = 1, float manaMulti = 1)
     {
         if (collisionPiece.isDangerous == false && this.isDangerous == false)
         {
@@ -178,7 +192,7 @@ public class Player : MonoBehaviour
         if (pieceDmgMulti > 0)
         {
             collisionPiece.DamagePiece(PlayerDamage * pieceDmgMulti);
-            PlayerMana = Mathf.Clamp(PlayerMana + (1 * GlobalVars.multiplier_PlayerManaGain) , 0, MaxPlayerMana);
+            PlayerMana = Mathf.Clamp(PlayerMana + (1 * GlobalVars.multiplier_PlayerManaGain * manaMulti) , 0, MaxPlayerMana);
         }
     }
 }

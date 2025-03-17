@@ -80,6 +80,38 @@ MonoBehaviour:
   base_AbilityCooldown: 0
   maxAbilityLengthTimer: 2
   abilityLengthTimer: 0
+--- !u!1 &7051465920863711169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949019597853508583}
+  m_Layer: 0
+  m_Name: Spells
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &949019597853508583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7051465920863711169}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8927816305131615040}
+  m_Father: {fileID: 6629847500512903091}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7676226878027852916
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +178,7 @@ Transform:
   m_Children:
   - {fileID: 6113216866439885998}
   - {fileID: 1485611861817101140}
+  - {fileID: 949019597853508583}
   - {fileID: 7637976952346494254}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -226,6 +259,9 @@ MonoBehaviour:
   key_Ability3: 51
   key_Ability4: 52
   key_Ability5: 53
+  key_Spell1: 323
+  key_Spell2: 325
+  key_Spell3: 324
   base_MaxPlayerHealth: 10
   base_PlayerHealth: 0
   base_PlayerSpeed: 2
@@ -239,6 +275,9 @@ MonoBehaviour:
   Ability3: {fileID: 0}
   Ability4: {fileID: 0}
   Ability5: {fileID: 0}
+  Spell1: {fileID: 4735252844095993301}
+  Spell2: {fileID: 0}
+  Spell3: {fileID: 0}
 --- !u!60 &8699822568585033028
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -333,6 +372,57 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!1 &8152298326706734432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8927816305131615040}
+  - component: {fileID: 4735252844095993301}
+  m_Layer: 0
+  m_Name: Rook Spell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8927816305131615040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152298326706734432}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 949019597853508583}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4735252844095993301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152298326706734432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707b6b38a060f8841845240edb73130b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  base_SpellCost: 10
+  rookPrefab: {fileID: 3015847586779300829, guid: 36bfe47de9697c14b8b3c1eb960e43f2, type: 3}
+  rook: {fileID: 0}
+  rookSpellObject: {fileID: 0}
+  travelDistance: 10
+  maxTravelTimer: 1
+  spellDamageMulti: 2
 --- !u!1001 &6201509919547662992
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class Knight : BasePiece
 
     protected override void Update()
     {
-        Debug.Log(cycleState);
+        //Debug.Log(cycleState);
         base.Update();
     }
 
