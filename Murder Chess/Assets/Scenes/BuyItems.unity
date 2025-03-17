@@ -1575,7 +1575,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1447915809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1470306401}
+        m_TargetAssemblyTypeName: ButtonClickHandler, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1447915809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1636,9 +1648,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1447915806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705de44b02c76bc4791e740681fccb70, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d9dee5fe8abd4a459582d7a86f0f255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadScene: BuySpells
 --- !u!1 &1456213426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,6 +1692,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 547.5505, y: 304.47623, z: -3.0723922}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1470306400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1470306402}
+  - component: {fileID: 1470306401}
+  m_Layer: 0
+  m_Name: UIManagerSpells
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1470306401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470306400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9dee5fe8abd4a459582d7a86f0f255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadScene: BuySpells
+--- !u!4 &1470306402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470306400}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.9726784, y: 3.7114308, z: 0.04925258}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2358,3 +2416,4 @@ SceneRoots:
   - {fileID: 786329863}
   - {fileID: 1456213428}
   - {fileID: 467868905}
+  - {fileID: 1470306402}
