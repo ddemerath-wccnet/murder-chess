@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 2706211063806023606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.14, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -165,10 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bab1af9df1f6ed408191e2cb2486b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPiece: 1
-  isPlayer: 0
   player: {fileID: 0}
-  piece: {fileID: 0}
   maxHealth: 0
   currentHealth: 0
   maxHealthBar: {fileID: 2706211063806023606}
