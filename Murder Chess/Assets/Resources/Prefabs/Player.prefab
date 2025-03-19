@@ -30,6 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4225059451271785604}
+  - {fileID: 7769267185763355177}
   m_Father: {fileID: 6629847500512903091}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1091452532911524889
@@ -79,6 +80,54 @@ MonoBehaviour:
   base_MaxAbilityCooldown: 5
   base_AbilityCooldown: 0
   maxAbilityLengthTimer: 2
+  abilityLengthTimer: 0
+--- !u!1 &2991636819716700127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7769267185763355177}
+  - component: {fileID: 1835519140005948611}
+  m_Layer: 0
+  m_Name: Sweep Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7769267185763355177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2991636819716700127}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1485611861817101140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835519140005948611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2991636819716700127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796047ea07a8f4247b610c6f23ae276d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  base_MaxAbilityCooldown: 10
+  base_AbilityCooldown: 0
+  maxAbilityLengthTimer: 0.5
   abilityLengthTimer: 0
 --- !u!1 &7051465920863711169
 GameObject:
@@ -271,7 +320,7 @@ MonoBehaviour:
   maxIFrames: 1
   isDangerous: 0
   Ability1: {fileID: 2342484748588657146}
-  Ability2: {fileID: 0}
+  Ability2: {fileID: 1835519140005948611}
   Ability3: {fileID: 0}
   Ability4: {fileID: 0}
   Ability5: {fileID: 0}
