@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RookSpellObject : MonoBehaviour
+public class SpellObject : MonoBehaviour
 {
     public float damageMulti;
     public List<BasePiece> collisionList = new List<BasePiece>();

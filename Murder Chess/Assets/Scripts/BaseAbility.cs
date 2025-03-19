@@ -29,17 +29,16 @@ public abstract class BaseAbility : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if (AbilityCooldown > 0) 
-        { 
-            AbilityCooldown = AbilityCooldown - GlobalVars.DeltaTimePlayer;
-        }
-
         if (startedAbility)
         {
             if (AbilityUpdate())
             {
                 startedAbility = false;
             }
+        }
+        else if (AbilityCooldown > 0)
+        {
+            AbilityCooldown = AbilityCooldown - GlobalVars.DeltaTimePlayer;
         }
     }
 
