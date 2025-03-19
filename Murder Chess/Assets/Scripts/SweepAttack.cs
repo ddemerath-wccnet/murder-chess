@@ -5,7 +5,6 @@ public class SweepAttack : BaseAbility
     public float maxAbilityLengthTimer = 0.5f;
     public float abilityLengthTimer;
     public GameObject attackArea;
-    public float damage;
     protected override void AbilityStart()
     {
         abilityLengthTimer = maxAbilityLengthTimer;

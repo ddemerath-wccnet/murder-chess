@@ -7,19 +7,19 @@ public class AttackArea : MonoBehaviour
 
     public float damageMulti;
 
-    public GameObject attackArea;
+    //public GameObject attackArea;
 
-    private float damage = 0f;
+    //private float damage = 0f;
 
-    public SweepAttack attackScript;
+    //public SweepAttack attackScript;
 
     private void start() {
 
-        attackScript = attackArea.GetComponent<SweepAttack>();
+        //attackScript = attackArea.GetComponent<SweepAttack>();
 
-        damage = attackScript.damage;
+        //damage = attackScript.damage;
 
-        damageMulti = damageMulti * damage;
+        //damageMulti = damageMulti * damage;
 
     }
 
