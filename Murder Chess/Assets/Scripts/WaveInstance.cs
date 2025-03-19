@@ -48,7 +48,11 @@ public class WaveInstance : MonoBehaviour
     }
     public bool IsDone()
     {
-        if (partInt == parts.Count) return true;
+        if (partInt == parts.Count)
+        {
+            controllerState = "Done";
+            return true;
+        } 
         else return false;
     }
 }

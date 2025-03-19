@@ -49,6 +49,20 @@ public class Player : MonoBehaviour
         get { return base_PlayerDamage * GlobalVars.multiplier_PlayerDamage; }
         set { base_PlayerDamage = value / GlobalVars.multiplier_PlayerDamage; }
     }
+    [SerializeField]
+    private float base_MaxPlayerMana = 10;
+    public float MaxPlayerMana
+    {   //Uses multipliers to correctly calculate var
+        get { return base_MaxPlayerMana * GlobalVars.multiplier_PlayerMana; }
+        set { base_MaxPlayerMana = value / GlobalVars.multiplier_PlayerMana; }
+    }
+    [SerializeField]
+    private float base_PlayerMana;
+    public float PlayerMana
+    {   //Uses multipliers to correctly calculate var
+        get { return base_PlayerMana * GlobalVars.multiplier_PlayerMana; }
+        set { base_PlayerMana = value / GlobalVars.multiplier_PlayerMana; }
+    }
 
     public float maxIFrames = 1;
     float iFrames = 0;
@@ -70,6 +84,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         base_PlayerHealth = base_MaxPlayerHealth;
+        base_PlayerMana = 0;
     }
 
     // Update is called once per frame
@@ -160,6 +175,10 @@ public class Player : MonoBehaviour
         }
 
         if (playerDmgMulti > 0) DamagePlayer(collisionPiece.HurtPlayerFor() * playerDmgMulti);
-        if (pieceDmgMulti > 0) collisionPiece.DamagePiece(PlayerDamage * pieceDmgMulti);
+        if (pieceDmgMulti > 0)
+        {
+            collisionPiece.DamagePiece(PlayerDamage * pieceDmgMulti);
+            PlayerMana = Mathf.Clamp(PlayerMana + (1 * GlobalVars.multiplier_PlayerManaGain) , 0, MaxPlayerMana);
+        }
     }
 }

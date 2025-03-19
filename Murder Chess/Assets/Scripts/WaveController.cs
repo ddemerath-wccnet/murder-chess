@@ -49,6 +49,8 @@ public class WaveController : MonoBehaviour
                 waveInt++;
                 controllerState = "Starting";
                 InbetweenWaveCooldown = maxInbetweenWaveCooldown;
+
+                if (waveInt >= waves.Count) controllerState = "Done";
             }
         }
     }
