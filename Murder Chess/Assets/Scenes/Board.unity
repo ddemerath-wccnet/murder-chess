@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rook
       objectReference: {fileID: 0}
+    - target: {fileID: 3015847586779300829, guid: 190d0d74410cea24a9f3a7ff996e4cfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3404587521966561881, guid: 190d0d74410cea24a9f3a7ff996e4cfe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.67
@@ -854,6 +858,7 @@ GameObject:
   - component: {fileID: 981799481}
   - component: {fileID: 981799480}
   - component: {fileID: 981799479}
+  - component: {fileID: 981799482}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -922,6 +927,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &981799482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981799478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef9121afac6c4d4c8f05ebcc5edc3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testAdd: 0
+  varName: multiplier_PlayerSpeed
+  varModifier: 1
+  tempTimer: 10
 --- !u!1 &1109939544
 GameObject:
   m_ObjectHideFlags: 0

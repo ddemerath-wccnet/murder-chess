@@ -100,7 +100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3015847586779300829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac49914d950dde48a33b243f5016dee, type: 3}
+  m_Script: {fileID: 11500000, guid: 01bab368a08c22f49ae9c18cb3a4f6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   base_MaxPieceHealth: 10
@@ -112,7 +112,7 @@ MonoBehaviour:
   cycleState: 
   maxIFrames: 1
   isDangerous: 0
-  changeDirectionTime: 15
+  changeDirectionTime: 0.5
   duplicateTimer: 0
   duplicateLimit: 3
 --- !u!50 &7423725625603101333
