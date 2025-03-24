@@ -200,6 +200,7 @@ MonoBehaviour:
   base_PieceDamage: 1
   base_MaxPieceCycleTimer: 5
   PieceCycleTimer: 0
+  base_PieceCoinValue: 100
   cycleState: 
   maxIFrames: 1
   isDangerous: 0

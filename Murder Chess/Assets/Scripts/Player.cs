@@ -68,6 +68,8 @@ public class Player : MonoBehaviour
         set { base_PlayerMana = value / GlobalVars.multiplier_PlayerMana; }
     }
 
+    public float Coins;
+
     public float maxIFrames = 1;
     float iFrames = 0;
     public bool isDangerous;
@@ -87,6 +89,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         GlobalVars.ResetClass();
+        CoinParticle.StartUp();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
