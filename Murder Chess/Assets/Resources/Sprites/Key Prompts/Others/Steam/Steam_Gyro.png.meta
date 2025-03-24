@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Steam_Gyro_0: 6226737562012917670
+      Steam_Gyro_1: -3885718232373232084
+      Steam_Gyro_2: -210732578126626396
+      Steam_Gyro_3: 323280326403349109
+      Steam_Gyro_4: 5041203995206346142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

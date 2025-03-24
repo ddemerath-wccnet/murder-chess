@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Directional_Arrow_Half_Circle_0: 1360838048307674008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

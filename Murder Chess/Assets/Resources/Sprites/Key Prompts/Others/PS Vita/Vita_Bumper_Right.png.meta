@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vita_Bumper_Right_0: 5671378557225908367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

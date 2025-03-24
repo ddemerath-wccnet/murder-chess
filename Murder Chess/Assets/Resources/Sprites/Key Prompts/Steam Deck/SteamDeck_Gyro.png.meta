@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SteamDeck_Gyro_0: 7495162228498795208
+      SteamDeck_Gyro_1: 387716578263869948
+      SteamDeck_Gyro_2: 1110734908088393821
+      SteamDeck_Gyro_3: 8853245401688068242
+      SteamDeck_Gyro_4: -1844208481453037559
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gesture_Half_Circle_0: -2930821141451114515
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PS5_Share_Alt_0: 7613591725589895696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

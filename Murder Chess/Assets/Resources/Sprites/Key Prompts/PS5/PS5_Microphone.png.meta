@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PS5_Microphone_0: -6553216970656178754
+      PS5_Microphone_1: -1513188610542642343
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

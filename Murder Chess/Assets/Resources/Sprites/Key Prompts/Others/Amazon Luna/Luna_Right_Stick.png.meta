@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Luna_Right_Stick_0: 5824598314990100422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

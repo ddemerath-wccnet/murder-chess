@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Steam_Tilt_Yaw_0: 8374768199874579677
+      Steam_Tilt_Yaw_1: -2690342648139372711
+      Steam_Tilt_Yaw_2: 3994155574381657027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

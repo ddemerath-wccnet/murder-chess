@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Positional_Prompts_Down_0: -6454426755767088227
+      Positional_Prompts_Down_1: 7510648225844376667
+      Positional_Prompts_Down_2: 2009038772067264692
+      Positional_Prompts_Down_3: 3286337844541130081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stadia_Right_Stick.png_0: -7614727928937072604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

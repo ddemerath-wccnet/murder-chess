@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      XboxSeriesX_Left_Stick_Click_0: -8764950724157162824
+      XboxSeriesX_Left_Stick_Click_1: 2442852034228633891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

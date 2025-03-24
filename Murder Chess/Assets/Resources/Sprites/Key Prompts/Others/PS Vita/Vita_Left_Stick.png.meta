@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vita_Left_Stick_0: 2224958156102185939
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Directional_Arrow_Diagonal_0: 8115606896795316929
+      Directional_Arrow_Diagonal_1: 6497276120171806456
+      Directional_Arrow_Diagonal_2: -4320272368843436573
+      Directional_Arrow_Diagonal_3: 976236417228051356
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

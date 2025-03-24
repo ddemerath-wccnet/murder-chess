@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Directional_Arrow_Full_Circle_0: 1386942662918917310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

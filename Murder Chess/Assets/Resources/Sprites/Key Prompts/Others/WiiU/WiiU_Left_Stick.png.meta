@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WiiU_Left_Stick_0: 5668926130641893627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

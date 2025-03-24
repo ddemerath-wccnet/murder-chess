@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PS3_Dpad_Left_0: -2005295555039687398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

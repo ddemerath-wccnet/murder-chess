@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Oculus_Trigger_Blank_0: -1049324716237537141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vive_Touch_Scroll_Left_0: 3687224975654870956
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

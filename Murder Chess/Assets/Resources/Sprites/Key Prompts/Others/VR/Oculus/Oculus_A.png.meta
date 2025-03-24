@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Oculus_A_0: -541634603609395265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

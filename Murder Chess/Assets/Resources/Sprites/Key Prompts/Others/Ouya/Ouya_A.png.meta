@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ouya_A_0: -6488512128388096833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

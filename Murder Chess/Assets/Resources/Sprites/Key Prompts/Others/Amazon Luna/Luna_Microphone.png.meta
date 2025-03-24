@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Luna_Microphone_0: 1167382195505672042
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

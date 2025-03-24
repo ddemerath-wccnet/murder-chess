@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PS3_Left_Stick_Click_0: 5760659088847672505
+      PS3_Left_Stick_Click_1: -1719156562726784126
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

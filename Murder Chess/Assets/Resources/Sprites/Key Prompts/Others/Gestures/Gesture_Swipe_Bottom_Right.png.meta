@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gesture_Swipe_Bottom_Right_0: 4519131563918770729
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -16,6 +16,11 @@ public class King : BasePiece
     private float attackRadius = 5f;
     [SerializeField]
     private float aoeDamage = 2f;
+    [SerializeField]
+    private float aoeRandMin;
+    [SerializeField]
+    private float aoeRandMax;
+    private float aoeCoolDownTimer;
 
 
 
@@ -25,11 +30,22 @@ public class King : BasePiece
         MaxPieceHealth += bossHealth;
         base.Start();
         moveDelayTimer = delayTime;
+        aoeCoolDownTimer = Random.Range(aoeRandMin, aoeRandMax);
+
     }
 
     // Update is called once per frame
     protected override void Update()
     {
+        if (aoeCoolDownTimer > 0)
+        {
+            aoeCoolDownTimer -= GlobalVars.DeltaTimePiece;
+        }
+        else
+        {
+            Aoe();
+            aoeCoolDownTimer = Random.Range(aoeRandMin, aoeRandMax);
+        }
 
         if (moveDelayTimer > 0)
         {
@@ -45,6 +61,8 @@ public class King : BasePiece
 
     protected void Aoe()
     {
+        // Animator animation = transform.Find("Aoe_Attack_Anim").GetComponent<Animator>();
+        // animation.SetTrigger("PlayAOEAnimation");
         Collider2D[] radiusColliders = Physics2D.OverlapCircleAll(transform.position, attackRadius);
 
         foreach (var radiusCollider in radiusColliders)
@@ -54,10 +72,13 @@ public class King : BasePiece
                 Player playerPiece = GlobalVars.player.GetComponent<Player>();
                 if (playerPiece != null)
                 {
+                    Animator animation = transform.Find("Aoe_Attack_Anim").GetComponent<Animator>();
+                    animation.SetTrigger("PlayAOEAnimation");
                     playerPiece.DamagePlayer(PieceDamage * aoeDamage);
                 }
             }
         }
+
     }
 
 
@@ -96,6 +117,12 @@ public class King : BasePiece
         {
             return false;
         }
+    }
+    //testing radius, occurence rate
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 
     float attackTimer;

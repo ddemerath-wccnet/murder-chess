@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gesture_Quarter_Circle_0: 8469310412446986862
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

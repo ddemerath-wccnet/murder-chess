@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PS5_Dpad_Up_0: 94205219415849012
+      PS5_Dpad_Up_1: 8236014403788710507
+      PS5_Dpad_Up_2: -2046260938786333952
+      PS5_Dpad_Up_3: 5529393313800927792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
