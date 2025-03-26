@@ -75,7 +75,7 @@ public class King : BasePiece
 
     }
 
-    public override Vector3 SelectTarget()
+    public override Vector3? SelectTarget()
     {
         //Add randomness to movetimer (so pieces dont sync up and look bad)
         PieceCycleTimer += Random.Range(0, 1f);
