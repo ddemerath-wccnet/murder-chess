@@ -37,7 +37,6 @@ public class DodgeAbility : BaseAbility
         if (abilityLengthTimer > 0)
         {
             abilityLengthTimer -= GlobalVars.DeltaTimePlayer;
-            // GlobalVars.player.GetComponent<Player>().isDangerous = true;
 
             player.transform.Translate(movementDirection * speed * Time.deltaTime);
 
@@ -45,7 +44,6 @@ public class DodgeAbility : BaseAbility
         }
         else
         {
-            // GlobalVars.player.GetComponent<Player>().isDangerous = false;
             movementDirection = Vector2.zero;
             return true;
         }
