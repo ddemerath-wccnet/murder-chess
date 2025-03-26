@@ -4,22 +4,8 @@ using UnityEngine;
 public class AttackArea : MonoBehaviour
 {
     public List<BasePiece> collisionList = new List<BasePiece>();
-
     public float damageMulti;
-
-    //public GameObject attackArea;
-
-    //private float damage = 0f;
-
-    //public SweepAttack attackScript;
-
     private void start() {
-
-        //attackScript = attackArea.GetComponent<SweepAttack>();
-
-        //damage = attackScript.damage;
-
-        //damageMulti = damageMulti * damage;
 
     }
 

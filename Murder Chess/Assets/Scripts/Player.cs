@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
     public float Coins;
 
     public float maxIFrames = 1;
-    float iFrames = 0;
+    public float iFrames = 0;
     public bool isDangerous;
 
     [Header("Abilities")]
