@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3404587521966561881}
   - component: {fileID: 7431020541619671837}
   - component: {fileID: 2069070060058442783}
-  - component: {fileID: 7029745065245672363}
+  - component: {fileID: 2780473316227075039}
   m_Layer: 0
   m_Name: Rook Spell
   m_TagString: Untagged
@@ -153,7 +153,7 @@ PolygonCollider2D:
       - {x: 0.3515625, y: -0.203125}
       - {x: 0.2265625, y: -0.09375}
   m_UseDelaunayMesh: 0
---- !u!114 &7029745065245672363
+--- !u!114 &2780473316227075039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,4 +165,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec99d4b933f8754e80351e324ea312c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damageMulti: 0
+  collisionList: []

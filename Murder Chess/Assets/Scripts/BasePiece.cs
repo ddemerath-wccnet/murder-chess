@@ -46,6 +46,14 @@ public abstract class BasePiece : MonoBehaviour
     [SerializeField]
     protected float PieceCycleTimer;
 
+    [SerializeField]
+    private float base_PieceCoinValue = 25;
+    public float PieceCoinValue
+    {   //Uses multipliers to correctly calculate var
+        get { return base_PieceCoinValue * GlobalVars.multiplier_PieceCoinValue; }
+        set { base_PieceCoinValue = value / GlobalVars.multiplier_PieceCoinValue; }
+    }
+
     public string cycleState = null;
 
     public float maxIFrames = 1;
@@ -209,5 +217,14 @@ public abstract class BasePiece : MonoBehaviour
     public virtual bool Death() //Default Implementation
     {
         return true;
+    }
+
+    /// <summary> Called once after death </summary>
+    public virtual void SelfDestruct() //Default Implementation
+    {
+        GameObject particleParent = GameObject.Find("ParticleParent");
+        if (particleParent != null) CoinParticle.SpawnParticles(PieceCoinValue, transform.position, 0.5f, particleParent.transform);
+        else CoinParticle.SpawnParticles(PieceCoinValue, transform.position);
+        GameObject.Destroy(gameObject);
     }
 }

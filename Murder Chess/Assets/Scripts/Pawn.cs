@@ -69,11 +69,11 @@ public class Pawn : BasePiece
     public int duplicateLimit = 3; //Duplicate limit
     public override float HurtPlayerFor() //Extra code on top of Default Implementation
     {
-        if (duplicateTimer <= 0 && duplicateLimit > 0)
+        if (duplicateTimer <= 0 && duplicateLimit > 0) 
         {
             duplicateTimer = 2;
             duplicateLimit -= 1;
-            GameObject clone = GameObject.Instantiate(gameObject); //Duplicates when hurting player
+            GameObject clone = GameObject.Instantiate(gameObject, transform.parent); //Duplicates when hurting player
             clone.GetComponent<Pawn>().duplicateTimer = duplicateTimer;
             clone.GetComponent<Pawn>().duplicateLimit = duplicateLimit;
             clone.GetComponent<Pawn>().isDangerous = false;

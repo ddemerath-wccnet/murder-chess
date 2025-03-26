@@ -4,7 +4,7 @@ public class RookSpell : BaseSpell
 {
     public GameObject rookPrefab;
     public GameObject rook;
-    public RookSpellObject rookSpellObject;
+    public SpellObject rookSpellObject;
     public float travelDistance = 5;
     public float maxTravelTimer = 2;
     float travelTimer;
@@ -16,7 +16,7 @@ public class RookSpell : BaseSpell
     {
         Debug.Log("spell start");
         rook = GameObject.Instantiate(rookPrefab, transform.position, transform. rotation);
-        rookSpellObject = rook.GetComponent<RookSpellObject>();
+        rookSpellObject = rook.GetComponent<SpellObject>();
         rookSpellObject.damageMulti = spellDamageMulti;
 
         travelTimer = maxTravelTimer;

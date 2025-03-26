@@ -1,4 +1,6 @@
 
+using System.Runtime.CompilerServices;
+using UnityEditor.Build;
 using UnityEngine;
 
 public class King : BasePiece
@@ -11,8 +13,15 @@ public class King : BasePiece
     private float delayTime;
     private float moveDelayTimer = 0f;
     [SerializeField]
-    private float bounceDistance;
-    Vector3 origPos;
+    private float attackRadius = 5f;
+    [SerializeField]
+    private float aoeDamage = 2f;
+    [SerializeField]
+    private float aoeRandMin;
+    [SerializeField]
+    private float aoeRandMax;
+    private float aoeCoolDownTimer;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,57 +30,54 @@ public class King : BasePiece
         MaxPieceHealth += bossHealth;
         base.Start();
         moveDelayTimer = delayTime;
+        aoeCoolDownTimer = Random.Range(aoeRandMin, aoeRandMax);
+
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-
+        if (aoeCoolDownTimer > 0)
+        {
+            aoeCoolDownTimer -= GlobalVars.DeltaTimePiece;
+        }
+        else
+        {
+            Aoe();
+            aoeCoolDownTimer = Random.Range(aoeRandMin, aoeRandMax);
+        }
 
         if (moveDelayTimer > 0)
         {
-            origPos = transform.position;
-            Vector3 directionFromPlayer = (transform.position - GlobalVars.player.transform.position).normalized;
-            distanceFromPlayer = Vector3.Distance(transform.position, GlobalVars.player.transform.position);
-            targetPos = transform.position + directionFromPlayer * bounceDistance;
             moveDelayTimer -= GlobalVars.DeltaTimePiece;
-            lerpPos = 0;
         }
         else
         {
-            bounceBack();
-            // if (duplicateTimer > 0) duplicateTimer -= GlobalVars.DeltaTimePiece;
             base.Update();
+
+
         }
     }
-    float lerpPos;
-    Vector3 targetPos;
-    float distanceFromPlayer;
-    public void bounceBack()
+
+    protected void Aoe()
     {
-        float lerpSpeed = 1f;
-        lerpPos += lerpSpeed * GlobalVars.DeltaTimePiece;
-        Vector3 directionFromPlayer = (transform.position - GlobalVars.player.transform.position).normalized;
+        // Animator animation = transform.Find("Aoe_Attack_Anim").GetComponent<Animator>();
+        // animation.SetTrigger("PlayAOEAnimation");
+        Collider2D[] radiusColliders = Physics2D.OverlapCircleAll(transform.position, attackRadius);
 
-        if (distanceFromPlayer < .1)
+        foreach (var radiusCollider in radiusColliders)
         {
-            // Vector3 targetPos = transform.position + directionFromPlayer * bounceDistance;
-            transform.position = Vector3.Lerp(origPos, targetPos, lerpPos);
-            // transform.position += directionFromPlayer * bounceDistance;
-
-            attackTimer = 0;
-            if (transform.position == targetPos)
+            if (radiusCollider.gameObject == GlobalVars.player)
             {
-                moveDelayTimer++;
+                Player playerPiece = GlobalVars.player.GetComponent<Player>();
+                if (playerPiece != null)
+                {
+                    Animator animation = transform.Find("Aoe_Attack_Anim").GetComponent<Animator>();
+                    animation.SetTrigger("PlayAOEAnimation");
+                    playerPiece.DamagePlayer(PieceDamage * aoeDamage);
+                }
             }
-
         }
-        else
-        {
-            distanceFromPlayer = Vector3.Distance(transform.position, GlobalVars.player.transform.position);
-
-        }
-
 
     }
 
@@ -110,6 +116,12 @@ public class King : BasePiece
         {
             return false;
         }
+    }
+    //testing radius, occurence rate
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 
     float attackTimer;
