@@ -1195,8 +1195,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1109939545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1924003303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1346,7 +1344,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8151595831999311075, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
   m_PrefabInstance: {fileID: 7285953506464315615}
   m_PrefabAsset: {fileID: 0}
->>>>>>> main
 --- !u!1 &2006698122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,13 +1764,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 1349024325581902982, guid: 3e83d8e44c0a5b845a0aa6eb06bd6480, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
->>>>>>> main
     - target: {fileID: 3029466276168057844, guid: 3e83d8e44c0a5b845a0aa6eb06bd6480, type: 3}
       propertyPath: m_Name
       value: WaveController
