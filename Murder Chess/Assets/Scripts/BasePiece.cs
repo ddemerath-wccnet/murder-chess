@@ -1,4 +1,3 @@
-using System.Data.Common;
 using UnityEngine;
 
 public abstract class BasePiece : MonoBehaviour
@@ -78,76 +77,75 @@ public abstract class BasePiece : MonoBehaviour
         if (PieceHealth <= 0)
         {
             cycleState = "Death";
+            if (Death()) SelfDestruct();
         }
-        switch (cycleState)
-        {
-            case "Select Target":
-            {
-                PieceCycleTimer = MaxPieceCycleTimer;
-                Vector2? nullable = SelectTarget();
-                if (nullable == null)
-                {
-                    break;
-                }
-                else
-                {
-                    target = nullable.Value;
-                }
-                if (target != null) cycleState = "Move";
-                break;
-            };
-            case "Move":
-            {
-                // Move
-                PieceCycleTimer -= GlobalVars.DeltaTimePiece;
-                Vector2 distance = target - (Vector2)transform.position;
-                Vector2 moveDir = distance.normalized;
-                float moveTimerNormalized = PieceCycleTimer / MaxPieceCycleTimer;
-                if (Move(target, distance, moveDir, PieceCycleTimer, moveTimerNormalized) || PieceCycleTimer <= 0)
-                {
-                    cycleState = "Move Done";
-                }
 
-                break;
-            };
-            case "Move Done":
-            {
-                // Move Done
-                PieceCycleTimer -= GlobalVars.DeltaTimePiece;
-                if (MoveDone() || PieceCycleTimer <= 0)
-                {
-                    cycleState = "Should Attack";
-                }
-                break;
-            };
-            case "Should Attack":
-            {
-                if (ShouldAttack())
-                {
-                    cycleState = "Attack";
-                }
-                else
-                {
-                    cycleState = "Select Target";
-                }
-                break;
-            };
-            case "Attack":
-            {
-                if (Attack(out isDangerous))
-                {
-                    cycleState = "Select Target";
-                    isDangerous = false;
-                }
-                break;
-            };
-            case "Death":
-            {
-                if (Death()) GameObject.Destroy(gameObject);
-                break;
-            };
+        if (cycleState == "Select Target")
+        {
+            PieceCycleTimer = MaxPieceCycleTimer;
+            target = SelectTarget();
+            if (target != null) cycleState = "Move";
         }
-        
+
+        if (cycleState == "Move")
+        {
+            // Move
+            Vector2 distance = target - (Vector2)transform.position;
+            Vector2 moveDir = distance.normalized;
+            float moveTimerNormalized = PieceCycleTimer / MaxPieceCycleTimer;
+            if (Move(target, distance, moveDir, PieceCycleTimer, moveTimerNormalized))
+            {
+                cycleState = "Move Done";
+            }
+
+            // End of Move
+            PieceCycleTimer -= GlobalVars.DeltaTimePiece;
+            if (PieceCycleTimer <= 0)
+            {
+                cycleState = "Should Attack";
+            }
+        }
+
+        if (cycleState == "Move Done")
+        {
+            // Move Done
+            if (MoveDone())
+            {
+                cycleState = "Should Attack";
+            }
+
+            // End of Move
+            PieceCycleTimer -= GlobalVars.DeltaTimePiece;
+            if (PieceCycleTimer <= 0)
+            {
+                cycleState = "Should Attack";
+            }
+        }
+
+        // Should I Attack? Logic
+        if (cycleState == "Should Attack")
+        {
+            if (ShouldAttack())
+            {
+                cycleState = "Attack";
+            }
+            else
+            {
+                cycleState = "Select Target";
+            }
+        }
+
+        // Attacking State
+        if (cycleState == "Attack")
+        {
+            if (Attack(out isDangerous))
+            {
+                cycleState = "Select Target";
+                isDangerous = false;
+            }
+        }
+
+
         if (isDangerous) // isDangerous Visualizer
         {
             GetComponent<SpriteRenderer>().color = Color.red;
@@ -164,7 +162,7 @@ public abstract class BasePiece : MonoBehaviour
 
     /// <summary> Used to select the target to be passed into the move method </summary>
     /// <returns> Return vector 3 target </returns>
-    public abstract Vector3? SelectTarget();
+    public abstract Vector3 SelectTarget();
 
     /// <summary> Called once a frame durring the movement state, defines GameObject movement using input params. </summary>
     /// <param name="target">The Location of the Target in space.</param>

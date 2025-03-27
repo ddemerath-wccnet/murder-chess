@@ -26,7 +26,7 @@ public class Knight : BasePiece
         base.Update();
     }
 
-    public override Vector3? SelectTarget()
+    public override Vector3 SelectTarget()
     {
 
         // Add randomness to move timer (to avoid all pieces moving in sync)
