@@ -83,7 +83,9 @@ public abstract class BasePiece : MonoBehaviour
         if (cycleState == "Select Target")
         {
             PieceCycleTimer = MaxPieceCycleTimer;
-            target = SelectTarget();
+            Vector2? nullable = SelectTarget();
+            if(nullable != null)
+                target = nullable.Value;
             if (target != null) cycleState = "Move";
         }
 
@@ -162,7 +164,7 @@ public abstract class BasePiece : MonoBehaviour
 
     /// <summary> Used to select the target to be passed into the move method </summary>
     /// <returns> Return vector 3 target </returns>
-    public abstract Vector3 SelectTarget();
+    public abstract Vector3? SelectTarget();
 
     /// <summary> Called once a frame durring the movement state, defines GameObject movement using input params. </summary>
     /// <param name="target">The Location of the Target in space.</param>

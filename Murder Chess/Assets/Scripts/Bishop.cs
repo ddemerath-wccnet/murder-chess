@@ -17,7 +17,7 @@ public class Bishop : BasePiece
         base.Update();
     }
 
-    public override Vector3 SelectTarget()
+    public override Vector3? SelectTarget()
     {
         //Add randomness to movetimer
         PieceCycleTimer += Random.Range(-0.85f, 0.85f);
