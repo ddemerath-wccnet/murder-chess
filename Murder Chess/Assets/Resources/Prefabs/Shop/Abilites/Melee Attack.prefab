@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5068975724155467660}
+  - component: {fileID: -2811290528010575349}
   - component: {fileID: 6663320602588148466}
   m_Layer: 0
   m_Name: Melee Attack
@@ -32,6 +33,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2811290528010575349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8349513132259874577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: -5874090436469129358, guid: 65cfc5017ba02d142b2a3d95a8ae4205, type: 3}
+  price: 50
+  weight: 1
+  description: Makes you dangerous for 2 secconds
 --- !u!114 &6663320602588148466
 MonoBehaviour:
   m_ObjectHideFlags: 0

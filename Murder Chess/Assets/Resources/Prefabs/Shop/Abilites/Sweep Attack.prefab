@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8283687271379638440}
   - component: {fileID: 26309210395917890}
+  - component: {fileID: -3498435747933291433}
   m_Layer: 0
   m_Name: Sweep Attack
   m_TagString: Untagged
@@ -50,6 +51,22 @@ MonoBehaviour:
   maxAbilityLengthTimer: 0.5
   abilityLengthTimer: 0
   attackArea: {fileID: 7698313981950714415}
+--- !u!114 &-3498435747933291433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503808408500659550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 1572594100201375430, guid: c452086e741f3bd4ebcf1d3783640eb3, type: 3}
+  price: 150
+  weight: 1
+  description: Area Attack
 --- !u!1 &5630531859197839591
 GameObject:
   m_ObjectHideFlags: 0

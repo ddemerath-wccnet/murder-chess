@@ -2,6 +2,8 @@ using System.Reflection;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public static class GlobalVars
 {
@@ -101,5 +103,57 @@ public static class GlobalVars
         }
 
         return false;
+    }
+
+    public static Dictionary<GameObject, bool> GetObjectsInScene(string sceneName, bool freeze)
+    {
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        Dictionary<GameObject, bool> objectsInScene = new Dictionary<GameObject, bool>();
+
+        if (scene.IsValid() && scene.isLoaded)
+        {
+            GameObject[] allObjects = GameObject.FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+
+            foreach (GameObject obj in allObjects)
+            {
+                if (obj.scene == scene) // Check if the object belongs to the scene
+                {
+                    objectsInScene.Add(obj, obj.activeSelf);
+                    if (freeze)
+                    {
+                        obj.SetActive(false);
+                    }
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Scene not found or not loaded: " + sceneName);
+        }
+
+        return objectsInScene;
+    }
+
+    public static void RestoreObjects(Dictionary<GameObject, bool> objects)
+    {
+        foreach (KeyValuePair<GameObject, bool> obj in objects)
+        {
+            try
+            {
+                if (obj.Value)
+                {
+                    obj.Key.SetActive(true);
+                }
+                else
+                {
+                    obj.Key.SetActive(false);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

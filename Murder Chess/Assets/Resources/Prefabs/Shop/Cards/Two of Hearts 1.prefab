@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3503808408500659550
+--- !u!1 &3210262496456605552
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8283687271379638440}
-  - component: {fileID: 7363622168653024786}
-  - component: {fileID: 7172663027379896118}
+  - component: {fileID: 5589304443711091139}
+  - component: {fileID: 2276887219344316802}
+  - component: {fileID: 8179701416835986470}
   m_Layer: 0
-  m_Name: Decoy Ability
+  m_Name: Two of Hearts 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8283687271379638440
+--- !u!4 &5589304443711091139
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3503808408500659550}
+  m_GameObject: {fileID: 3210262496456605552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,35 +33,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7363622168653024786
+--- !u!114 &2276887219344316802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3503808408500659550}
+  m_GameObject: {fileID: 3210262496456605552}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: -3535065811136526625, guid: e44e4c0f0ece4df4eb67dc06e33507a1, type: 3}
-  price: 175
+  image: {fileID: -7200518331742771061, guid: 332b98f91e1477443a4f4f3a1ec365fa, type: 3}
+  price: 100
   weight: 1
-  description: Adds a decoy that pieces will target
---- !u!114 &7172663027379896118
+  description: +25% Player Damage
+--- !u!114 &8179701416835986470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3503808408500659550}
+  m_GameObject: {fileID: 3210262496456605552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f73369739666e4aa841d18eb9f2865, type: 3}
+  m_Script: {fileID: 11500000, guid: a61453604b3b6da44980e9b7e25f88ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  base_MaxAbilityCooldown: 10
-  base_AbilityCooldown: 0
-  decoyLifetime: 3
-  decoyPrefab: {fileID: 277923218248125141, guid: c5e66666ca64da14dac9da539c366e25, type: 3}
+  active: 0
+  inHand: 0
+  varName: multiplier_PlayerDamage
+  base_VarModifier: 0.25
+  suit: Hearts
+  rank: 2
