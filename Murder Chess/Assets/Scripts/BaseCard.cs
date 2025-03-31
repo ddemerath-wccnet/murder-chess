@@ -25,13 +25,13 @@ public class BaseCard : MonoBehaviour
     private bool inHandSelf;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public virtual void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         //if (transform.parent.name == "Hand") inHand = true;
         //else inHand = false;

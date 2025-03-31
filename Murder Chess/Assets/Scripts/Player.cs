@@ -97,6 +97,9 @@ public class Player : MonoBehaviour
 
     public Vector3 moveDir = new Vector3();
 
+    public GameObject ChessBoard;
+    public bool onBlackSquare;
+
     private void Awake()
     {
         GlobalVars.ResetClass();
@@ -159,6 +162,14 @@ public class Player : MonoBehaviour
         {
             PlayerHealth = PlayerHealth + (PlayerRegen * GlobalVars.DeltaTimePlayer);
         }
+
+        // Check if on black square
+        Vector3 ChessBoardRelativePos = transform.position - ChessBoard.transform.position;
+        ChessBoardRelativePos = ChessBoardRelativePos / ChessBoard.transform.localScale.x;
+        int CBR_x = Mathf.FloorToInt(ChessBoardRelativePos.x);
+        int CBR_y = Mathf.FloorToInt(ChessBoardRelativePos.y);
+        if ((CBR_x + CBR_y) % 2 == 0) onBlackSquare = false;
+        else onBlackSquare = true;
     }
 
     /// <summary> Damages Player for '<c>damage</c>' damage </summary>
