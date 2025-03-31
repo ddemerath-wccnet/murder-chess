@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5063748674215711388}
   m_Layer: 0
   m_Name: Queen
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   base_PieceDamage: 0
   base_MaxPieceCycleTimer: 5
   PieceCycleTimer: 0
+  base_PieceCoinValue: 25
   cycleState: 
   maxIFrames: 1
   isDangerous: 0

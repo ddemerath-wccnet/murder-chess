@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8841706871572823563}
+  - component: {fileID: -412311241376706073}
   - component: {fileID: 2368215756886983574}
   - component: {fileID: 2790509835467622675}
   - component: {fileID: 8297890353440775461}
@@ -34,6 +35,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-412311241376706073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544676688809435721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: a372245adb47d8845be3344ef927218e, type: 3}
+  price: 300
+  rarity: 1
+  description: 'Shoots a beam of light, 50 mana. '
 --- !u!212 &2368215756886983574
 SpriteRenderer:
   m_ObjectHideFlags: 0
