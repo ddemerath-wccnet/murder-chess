@@ -14,7 +14,7 @@ public class AbilityButtonManager : MonoBehaviour
     {
         trackedAbility = ability;
 
-        // iconImage.sprite = ability.icon;
+        iconImage.sprite = ability.GetComponent<ShopItem>().image;
 
         gameObject.SetActive(trackedAbility != null);
     }
