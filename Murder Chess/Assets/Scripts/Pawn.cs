@@ -22,7 +22,7 @@ public class Pawn : BasePiece
         PieceCycleTimer += Random.Range(-0.25f, 0.25f);
 
         //select player as target
-        return GlobalVars.player.transform.position;
+        return GlobalVars.getTarget();
     }
 
     public override bool Move(Vector2 target, Vector2 distance, Vector2 moveDir, float moveTime, float moveTimerNormalized)
@@ -40,10 +40,10 @@ public class Pawn : BasePiece
 
     public override bool ShouldAttack()
     {
-        if (Mathf.Abs((GlobalVars.player.transform.position - transform.position).magnitude) <= 3) // if piece is more than 3 unit away
+        if (Mathf.Abs((GlobalVars.getTarget() - transform.position).magnitude) <= 3) // if piece is more than 3 unit away
         {
             attackTimer = 1.5f;
-            attackTarget = GlobalVars.player.transform.position;
+            attackTarget = GlobalVars.getTarget();
             return true;  //continue moving
         }
         else

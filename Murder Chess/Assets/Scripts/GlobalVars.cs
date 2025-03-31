@@ -49,6 +49,8 @@ public static class GlobalVars
     public static float multiplier_AbilityCooldown = 1; //More is better, x2 would be 'cooldown/2'
     public static float multiplier_SpellCost = 1; //More is better, x2 would be 'cooldown/2'
 
+    public static Vector3? decoyPosition = null;
+
     /// <summary> Sets all variables back to default. </summary>
     public static void ResetClass()
     {
@@ -157,5 +159,13 @@ public static class GlobalVars
                 throw;
             }
         }
+    }
+
+    public static Vector3 getTarget() {
+        if(decoyPosition == null) {
+            return GlobalVars.player.transform.position;
+        }
+        Debug.Log("Targeting Decoy" + decoyPosition.Value);
+        return decoyPosition.Value;
     }
 }

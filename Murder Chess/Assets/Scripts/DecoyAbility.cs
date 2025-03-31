@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DecoyAbility : BaseAbility
 {
-    [SerializeField] private float decoyLifetime = 3f;
+    [SerializeField] private float decoyLifetime = 30f;
     public GameObject decoyPrefab;
     private GameObject spawnedDecoy;
     private float decoyTimer;
@@ -10,7 +10,8 @@ public class DecoyAbility : BaseAbility
     protected override void AbilityStart()
     {
         
-        spawnedDecoy = Instantiate(decoyPrefab, transform.position, transform.rotation);
+        spawnedDecoy = Instantiate(decoyPrefab, GlobalVars.player.transform.position, GlobalVars.player.transform.rotation);
+        GlobalVars.decoyPosition = spawnedDecoy.transform.position;
         decoyTimer = decoyLifetime;
     }
 
@@ -20,6 +21,7 @@ public class DecoyAbility : BaseAbility
         
         if (decoyTimer <= 0)
         {
+            GlobalVars.decoyPosition = null;
             Destroy(spawnedDecoy);
             return true;
         }
