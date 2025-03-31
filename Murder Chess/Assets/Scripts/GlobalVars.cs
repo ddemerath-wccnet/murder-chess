@@ -30,6 +30,7 @@ public static class GlobalVars
     public static GameObject player;
     public static ModifierManager modifierManager;
     public static float multiplier_PlayerHealth = 1;
+    public static float multiplier_PlayerRegen = 1;
     public static float multiplier_PlayerSpeed = 1;
     public static float multiplier_PlayerDamage = 1;
     public static float multiplier_PlayerMana = 1;
@@ -58,6 +59,7 @@ public static class GlobalVars
         timeScale_Piece = 1;
 
         multiplier_PlayerHealth = 1;
+        multiplier_PlayerRegen = 1;
         multiplier_PlayerSpeed = 1;
         multiplier_PlayerDamage = 1;
         multiplier_PlayerMana = 1;

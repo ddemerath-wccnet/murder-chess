@@ -40,6 +40,13 @@ public class Player : MonoBehaviour
         set { base_PlayerHealth = value / GlobalVars.multiplier_PlayerHealth; }
     }
     [SerializeField]
+    private float base_PlayerRegen = 0.1f;
+    public float PlayerRegen
+    {   //Uses multipliers to correctly calculate var
+        get { return base_PlayerRegen * GlobalVars.multiplier_PlayerRegen; }
+        set { base_PlayerRegen = value / GlobalVars.multiplier_PlayerRegen; }
+    }
+    [SerializeField]
     private float base_PlayerSpeed = 1;
     public float PlayerSpeed
     {   //Uses multipliers to correctly calculate var
@@ -81,10 +88,14 @@ public class Player : MonoBehaviour
     public BaseAbility Ability4 = null;
     public BaseAbility Ability5 = null;
 
+    public BaseAbility AbilityMovement = null;
+
     [Header("Spells")]
     public BaseSpell Spell1 = null;
     public BaseSpell Spell2 = null;
     public BaseSpell Spell3 = null;
+
+    public Vector3 moveDir = new Vector3();
 
     private void Awake()
     {
@@ -105,11 +116,12 @@ public class Player : MonoBehaviour
         if (iFrames > 0) iFrames -= GlobalVars.DeltaTimePlayer;
 
         //Define move dir based on user input
-        Vector3 moveDir = new Vector3();
+        moveDir = new Vector3();
         if (Input.GetKey(key_Up)) moveDir += Vector3.up;
         if (Input.GetKey(key_Left)) moveDir += Vector3.left;
         if (Input.GetKey(key_Down)) moveDir += Vector3.down;
         if (Input.GetKey(key_Right)) moveDir += Vector3.right;
+        moveDir.Normalize();
 
         //Executes Movement
         transform.position += GlobalVars.DeltaTimePlayer * PlayerSpeed * moveDir;
@@ -135,10 +147,18 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(key_Ability4) && Ability4 != null) Ability4.CallActivate();
         if (Input.GetKeyDown(key_Ability5) && Ability5 != null) Ability5.CallActivate();
 
+        if (Input.GetKeyDown(key_Movement) && AbilityMovement != null) AbilityMovement.CallActivate();
+
         // Spell Activation
         if (Input.GetKeyDown(key_Spell1) && Spell1 != null) Spell1.CallActivate();
         if (Input.GetKeyDown(key_Spell2) && Spell2 != null) Spell2.CallActivate();
         if (Input.GetKeyDown(key_Spell3) && Spell3 != null) Spell3.CallActivate();
+
+        // Health Regen
+        if (GlobalVars.timeScale_Player > 0)
+        {
+            PlayerHealth = PlayerHealth + (PlayerRegen * GlobalVars.DeltaTimePlayer);
+        }
     }
 
     /// <summary> Damages Player for '<c>damage</c>' damage </summary>

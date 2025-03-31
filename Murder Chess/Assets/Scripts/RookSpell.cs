@@ -19,10 +19,12 @@ public class RookSpell : BaseSpell
         rookSpellObject = rook.GetComponent<SpellObject>();
         rookSpellObject.damageMulti = spellDamageMulti;
 
+        Vector3 movedir = GlobalVars.player.GetComponent<Player>().moveDir;
+        if (movedir.magnitude == 0) movedir = Vector3.right;
         travelTimer = maxTravelTimer;
         origPos = transform.position;
-        targetPos = transform.position + 
-            (Camera.main.ScreenToWorldPoint(Input.mousePosition) - origPos).normalized * travelDistance;
+        targetPos = transform.position +
+            movedir * travelDistance;
     }
 
     protected override bool SpellUpdate()

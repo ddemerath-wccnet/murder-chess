@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MeleeAttack : BaseAbility
 {
-    public float maxAbilityLengthTimer = 2;
+    public float maxAbilityLengthTimer = 10;
     public float abilityLengthTimer;
     protected override void AbilityStart()
     {

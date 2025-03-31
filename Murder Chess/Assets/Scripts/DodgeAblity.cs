@@ -11,22 +11,7 @@ public class DodgeAbility : BaseAbility
     {
         abilityLengthTimer = maxAbilityLengthTimer;
 
-        if(Input.GetKey(KeyCode.W)) 
-        {
-            movementDirection += Vector2.up;
-        }
-        if(Input.GetKey(KeyCode.A)) 
-        {
-            movementDirection += Vector2.left;
-        }
-        if(Input.GetKey(KeyCode.S)) 
-        {
-            movementDirection += Vector2.down;
-        }
-        if(Input.GetKey(KeyCode.D)) 
-        {
-            movementDirection += Vector2.right;
-        }
+        movementDirection = GlobalVars.player.GetComponent<Player>().moveDir;
         
         player.GetComponent<Player>().iFrames = 0.5f;
 

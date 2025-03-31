@@ -4,7 +4,7 @@ public class ShopItem : MonoBehaviour
 {
     public Sprite image;
     public float price;
-    public float weight = 1;
+    public int rarity = 1;
     [TextArea(10, 20)]
     public string description;
 

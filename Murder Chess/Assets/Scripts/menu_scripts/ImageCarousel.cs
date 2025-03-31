@@ -38,7 +38,6 @@ public class ImageCarousel : MonoBehaviour
             if (shopManager.AquireItem(items[currentIndex]))
             {
                 items.RemoveAt(currentIndex);
-                NextImage();
                 UpdateImage();
             }
         }
@@ -57,7 +56,7 @@ public class ImageCarousel : MonoBehaviour
         UpdateImage();
     }
 
-    void UpdateImage()
+    public void UpdateImage()
     {
         if (items.Count == 0)
         {
@@ -68,6 +67,8 @@ public class ImageCarousel : MonoBehaviour
             costText.text = "";
             return;
         }
+
+        currentIndex = (currentIndex + items.Count) % items.Count;
 
         displayImage.sprite = items[currentIndex].image;
         displayText.text = items[currentIndex].description;

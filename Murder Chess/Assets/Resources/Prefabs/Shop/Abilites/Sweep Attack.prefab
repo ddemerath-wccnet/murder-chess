@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   base_MaxAbilityCooldown: 10
   base_AbilityCooldown: 0
-  maxAbilityLengthTimer: 0.5
+  maxAbilityLengthTimer: 0.25
   abilityLengthTimer: 0
   attackArea: {fileID: 7698313981950714415}
 --- !u!114 &-3498435747933291433
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1572594100201375430, guid: c452086e741f3bd4ebcf1d3783640eb3, type: 3}
   price: 150
-  weight: 1
+  rarity: 1
   description: Area Attack
 --- !u!1 &5630531859197839591
 GameObject:
@@ -144,7 +144,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.48235294}
+  m_Color: {r: 0, g: 1, b: 1, a: 0.48235294}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
