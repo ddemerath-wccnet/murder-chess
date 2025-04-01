@@ -29,7 +29,7 @@ public class CelestialBeamSpell : BaseSpell
 
 
         // Transform cbsTransform = transform.Find("Celestial Beam Spell");
-        Animator animation = GameObject.Find("Celestial Beam Spell").GetComponent<Animator>();
+        Animator animation = GetComponent<Animator>();
         GameObject.Find("Celestial Beam Spell");
 
 
