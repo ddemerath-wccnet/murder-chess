@@ -23,7 +23,7 @@ public class Bishop : BasePiece
         PieceCycleTimer += Random.Range(-0.85f, 0.85f);
 
         targetPos = new Vector3();
-        Vector2 moveDir = GlobalVars.player.transform.position - transform.position;
+        Vector2 moveDir = GlobalVars.getTarget() - transform.position;
         Vector2 moveDirNorm = moveDir.normalized;
         float moveAngle = Vector2.SignedAngle(moveDirNorm, Vector2.up);
         
@@ -46,7 +46,7 @@ public class Bishop : BasePiece
         }
         
         //select player as target
-        return GlobalVars.player.transform.position;
+        return GlobalVars.getTarget();;
     }
 
     public override bool Move(Vector2 target, Vector2 distance, Vector2 moveDir, float moveTime, float moveTimerNormalized)
@@ -79,10 +79,10 @@ public class Bishop : BasePiece
     public override bool ShouldAttack()
     {
 
-        if (Mathf.Abs((GlobalVars.player.transform.position - transform.position).magnitude) <= 3) // if piece is more than 1 unit away
+        if (Mathf.Abs((GlobalVars.getTarget() - transform.position).magnitude) <= 3) // if piece is more than 1 unit away
         {
             attackTimer = 1.5f;
-            attackTarget = GlobalVars.player.transform.position;
+            attackTarget = GlobalVars.getTarget();
             return true;  //continue moving
         }
         else

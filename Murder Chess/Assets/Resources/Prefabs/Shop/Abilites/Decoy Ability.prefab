@@ -48,7 +48,7 @@ MonoBehaviour:
   image: {fileID: -3535065811136526625, guid: e44e4c0f0ece4df4eb67dc06e33507a1, type: 3}
   price: 175
   rarity: 1
-  description: Adds a decoy that pieces will target
+  description: Creates a decoy that enemy pieces will target (Excludes King and Queen)
 --- !u!114 &7172663027379896118
 MonoBehaviour:
   m_ObjectHideFlags: 0

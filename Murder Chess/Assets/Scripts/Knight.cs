@@ -40,7 +40,7 @@ public class Knight : BasePiece
 
     private Vector3 FindBestKnightMove()
     {
-        Vector3 playerPos = GlobalVars.player.transform.position;
+        Vector3 playerPos = GlobalVars.getTarget();;
         Vector3 bestMove = transform.position;
         float bestDistance = Vector3.Distance(transform.position, playerPos);
 
@@ -73,12 +73,12 @@ public class Knight : BasePiece
 
     public override bool ShouldAttack()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, GlobalVars.player.transform.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, GlobalVars.getTarget());
         
         if (distanceToPlayer <= 1)
         {
             attackTimer = 1.5f;
-            attackTarget = GlobalVars.player.transform.position;
+            attackTarget = GlobalVars.getTarget();;
             return true;
         }
 
@@ -121,8 +121,8 @@ public class Knight : BasePiece
         if (isJumping) return false; // Prevent multiple jumps
 
         bestMove = FindBestKnightMove();
-        float currentDistanceToPlayer = Vector3.Distance(transform.position, GlobalVars.player.transform.position);
-        float projectedDistanceToPlayer = Vector3.Distance(bestMove, GlobalVars.player.transform.position);
+        float currentDistanceToPlayer = Vector3.Distance(transform.position, GlobalVars.getTarget());
+        float projectedDistanceToPlayer = Vector3.Distance(bestMove, GlobalVars.getTarget());
 
         // ✅ Prevents jumping if already close to the player
         return projectedDistanceToPlayer <= 1.0f && currentDistanceToPlayer > 2.0f;
