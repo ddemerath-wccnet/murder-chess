@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(key_Spell3) && Spell3 != null) Spell3.CallActivate();
 
         // Health Regen
-        if (GlobalVars.timeScale_Player > 0)
+        if (GlobalVars.timeScale_Player > 0 && PlayerHealth < MaxPlayerHealth)
         {
             PlayerHealth = PlayerHealth + (PlayerRegen * GlobalVars.DeltaTimePlayer);
         }
