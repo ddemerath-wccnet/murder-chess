@@ -223,9 +223,9 @@ GameObject:
   - component: {fileID: 7293339752365243465}
   - component: {fileID: 437568556681087583}
   - component: {fileID: 6777674707570007044}
-  - component: {fileID: 4670003578357744014}
+  - component: {fileID: -935349159274712099}
   m_Layer: 5
-  m_Name: AbilityButton
+  m_Name: SpellButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4450211251023075546, guid: 000d7e6a52faacf4fbee2b6ee7e09529, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a372245adb47d8845be3344ef927218e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4670003578357744014
+--- !u!114 &-935349159274712099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -343,9 +343,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6273523373002261332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fe6452278cb6f4692667378fde7d90, type: 3}
+  m_Script: {fileID: 11500000, guid: feb48cfe87492ca438ebf158f11afe8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconImage: {fileID: 437568556681087583}
-  cooldownOverlay: {fileID: 2360850413162695337}
-  cooldownText: {fileID: 8807438676525452438}
