@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class SpellButtonManager : MonoBehaviour
 {
     [SerializeField] private Player player;                     
     [SerializeField] private Image iconImage;
-    [SerializeField] private Image cooldownOverlay;        
-    [SerializeField] private TextMeshProUGUI cooldownText;
+    [SerializeField] private Image cooldownOverlay;
 
     private BaseSpell trackedSpell;
 
@@ -27,6 +25,13 @@ public class SpellButtonManager : MonoBehaviour
         float cost = trackedSpell.SpellCost;
         float current = player.PlayerMana;
 
-        cooldownOverlay.fillAmount = current / cost;
+        if (cost <= 0)
+        {
+            cooldownOverlay.fillAmount = 1f;
+            return;
+        }
+
+        float fillAmount = Mathf.Clamp01(1 - (current / cost));
+        cooldownOverlay.fillAmount = fillAmount;
     }
 }
