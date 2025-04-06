@@ -2,15 +2,35 @@ using UnityEngine;
 
 public class SpellContainerManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Player player;
+    [SerializeField] private SpellButtonManager[] spellButtons;
+
+    private void Update()
     {
-        
+        for (int i = 0; i < spellButtons.Length; i++)
+        {
+            BaseSpell spell = GetSpellsByIndex(i);
+            if (spell != null)
+            {
+                spellButtons[i].gameObject.SetActive(true);
+                spellButtons[i].Bind(spell);
+            }
+            else
+            {
+                spellButtons[i].gameObject.SetActive(false);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private BaseSpell GetSpellsByIndex(int index)
     {
-        
+        switch (index)
+        {
+            case 0: return player.Spell1;
+            case 1: return player.Spell2;
+            case 2: return player.Spell3;
+            default: return null;
+        }
     }
 }
+
