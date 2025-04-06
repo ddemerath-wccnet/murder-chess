@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2276887219344316802}
   - component: {fileID: 7611153787129027939}
   m_Layer: 0
-  m_Name: Ace of Spades
+  m_Name: 7 of Spades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,12 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2653272433568069594, guid: 7da60ffec9f33e34dbc0bef793bf78fe, type: 3}
+  image: {fileID: 21300000, guid: f3854d06c1541f4479c531a3c50ce7b9, type: 3}
   price: 150
   rarity: 1
-  description: '+35% Player HP
+  description: '+35% Player Coin Gain
 
-    -15 % Player Coin Gain'
+    -15 % Player Damage'
 --- !u!114 &7611153787129027939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,9 +65,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   inHand: 0
-  varName: multiplier_PlayerHealth
+  varName: multiplier_PlayerCoinGain
   base_VarModifier: 0.35
   suit: Spades
   rank: 1
-  tradeOffVarName: multiplier_PlayerCoinGain
+  tradeOffVarName: multiplier_PlayerDamage
   base_tradeOffVarModifier: -0.15

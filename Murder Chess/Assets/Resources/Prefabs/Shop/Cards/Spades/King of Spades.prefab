@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5589304443711091139}
   - component: {fileID: 2276887219344316802}
-  - component: {fileID: -7001732625278022489}
+  - component: {fileID: 7611153787129027939}
   m_Layer: 0
-  m_Name: Ace of Clubs
+  m_Name: King of Spades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2653272433568069594, guid: 7da60ffec9f33e34dbc0bef793bf78fe, type: 3}
+  image: {fileID: 21300000, guid: 3abd48b124bd000458a0809d9e1048cf, type: 3}
   price: 150
   rarity: 1
-  description: '+40% Player HP on black squares
+  description: '+35% Spell Cost (More is better)
 
-    -10% Player HP on white squares'
---- !u!114 &-7001732625278022489
+    -15 % Player Speed'
+--- !u!114 &7611153787129027939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,13 +60,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3210262496456605552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc51dbad95f0c1a4b99fa5092274c766, type: 3}
+  m_Script: {fileID: 11500000, guid: 098446d13b2829a4a87ce5c9e7648bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
   inHand: 0
-  varName: multiplier_PlayerHealth
-  base_VarModifier: 0.4
-  suit: Clubs
+  varName: multiplier_SpellCost
+  base_VarModifier: 0.35
+  suit: Spades
   rank: 1
-  base_whiteSquareVarModifier: -0.1
+  tradeOffVarName: multiplier_PlayerSpeed
+  base_tradeOffVarModifier: -0.15

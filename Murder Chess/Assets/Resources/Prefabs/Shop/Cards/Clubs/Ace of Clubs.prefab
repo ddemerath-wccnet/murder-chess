@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5589304443711091139}
   - component: {fileID: 2276887219344316802}
-  - component: {fileID: 8179701416835986470}
+  - component: {fileID: -7001732625278022489}
   m_Layer: 0
-  m_Name: Two of Hearts 1
+  m_Name: Ace of Clubs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: -7200518331742771061, guid: 332b98f91e1477443a4f4f3a1ec365fa, type: 3}
-  price: 100
-  weight: 1
-  description: +25% Player Damage
---- !u!114 &8179701416835986470
+  image: {fileID: 21300000, guid: c1ca2426969f15d4b9b75593a6ad4442, type: 3}
+  price: 150
+  rarity: 1
+  description: '+40% Player HP on black squares
+
+    -10% Player HP on white squares'
+--- !u!114 &-7001732625278022489
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,12 +60,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3210262496456605552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a61453604b3b6da44980e9b7e25f88ee, type: 3}
+  m_Script: {fileID: 11500000, guid: cc51dbad95f0c1a4b99fa5092274c766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
   inHand: 0
-  varName: multiplier_PlayerDamage
-  base_VarModifier: 0.25
-  suit: Hearts
-  rank: 2
+  varName: multiplier_PlayerHealth
+  base_VarModifier: 0.4
+  suit: Clubs
+  rank: 1
+  base_whiteSquareVarModifier: -0.1
