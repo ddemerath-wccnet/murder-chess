@@ -1503,6 +1503,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 124593455}
+    - target: {fileID: 6690967038792954716, guid: 579fdcaddcd734749b1a783a50ddf3e5, type: 3}
+      propertyPath: cardHand
+      value: 
+      objectReference: {fileID: 2146979110}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1731,6 +1735,17 @@ Transform:
   - {fileID: 1382148922}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146979110 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1154028157245323683, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
+  m_PrefabInstance: {fileID: 7285953506464315615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9056ed478958b4787ad19aad26b33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2595652490184507188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1820,10 +1835,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4064158115078696940, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
-      propertyPath: myAbilites.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6629847500512903091, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1865,15 +1876,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6692304426566259684, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
-      propertyPath: Spell2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692304426566259684, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
-      propertyPath: Ability1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692304426566259684, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
-      propertyPath: Ability2
+      propertyPath: Spell1
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6692304426566259684, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
@@ -1885,8 +1888,7 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8152298326706734432, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
