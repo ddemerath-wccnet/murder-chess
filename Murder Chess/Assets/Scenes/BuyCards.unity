@@ -391,14 +391,8 @@ MonoBehaviour:
   leftImage: {fileID: 89299166}
   rightImage: {fileID: 961867437}
   displayText: {fileID: 2103468309}
-  images:
-  - {fileID: -7200518331742771061, guid: 332b98f91e1477443a4f4f3a1ec365fa, type: 3}
-  - {fileID: 597155331167543785, guid: 67e33868042396c43a1d187b81d89d5a, type: 3}
-  - {fileID: 2653272433568069594, guid: 7da60ffec9f33e34dbc0bef793bf78fe, type: 3}
-  imageDescriptions:
-  - '2 of Hearts: +25% player damage'
-  - '3 of hearts: +25% player speed'
-  - 'Ace of hearts: +25% player HP'
+  costText: {fileID: 0}
+  items: []
 --- !u!4 &277825777
 Transform:
   m_ObjectHideFlags: 0
