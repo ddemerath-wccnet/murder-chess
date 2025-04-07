@@ -189,6 +189,14 @@ public class Player : MonoBehaviour
                 new PoisonEffect(basePiece, 10);
             }
         }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            new IcyEffect(this, 10);
+            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            {
+                new IcyEffect(basePiece, 10);
+            }
+        }
         Debug.Log(activeEffects.Count);
     }
 
