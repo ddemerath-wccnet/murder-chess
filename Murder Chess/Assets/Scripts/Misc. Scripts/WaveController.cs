@@ -18,6 +18,7 @@ public class WaveController : MonoBehaviour
     public string controllerState = null;
     public float maxInbetweenWaveCooldown = 3;
     public float InbetweenWaveCooldown;
+    public Transform PieceParent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,6 +46,7 @@ public class WaveController : MonoBehaviour
         else if (controllerState == "Cooldown")
         {
             InbetweenWaveCooldown -= Time.deltaTime;
+            if (InbetweenWaveCooldown > 6 && PieceParent.childCount == 0) InbetweenWaveCooldown = 5;
             if (InbetweenWaveCooldown < 0)
             {
                 GameObject waveGameObject = waves[0].gameObject;
