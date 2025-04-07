@@ -10,13 +10,18 @@ public class PoisonEffect : BaseStatusEffect
 
     float poison = 0.5f;
 
-    public override void StartEffect_Player()
+    public override void StartEffect_Generic()
     {
         image = Resources.Load<Sprite>("Sprites/status_effects/poison_effect");
     }
+
+    public override void StartEffect_Player()
+    {
+
+    }
     public override void StartEffect_Piece() 
     {
-        image = Resources.Load<Sprite>("Sprites/status_effects/poison_effect");
+
     }
 
     public override void UpdateEffect_Player()

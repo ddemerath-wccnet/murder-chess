@@ -10,18 +10,21 @@ public class IcyEffect : BaseStatusEffect
 
     float multiplier = 0.5f;
 
-    public override void StartEffect_Player() //divide value by 2
+    public override void StartEffect_Generic()
     {
         image = Resources.Load<Sprite>("Sprites/status_effects/icy_effect");
+        if (level == 1) multiplier = 0.5f;
+        else if (level == 2) multiplier = 0.25f;
+    }
 
+    public override void StartEffect_Player() //divide value by 2
+    {
         float globalModifier = GlobalVars.multiplier_PlayerSpeed;
         float value = player.PlayerSpeed;
         player.PlayerSpeed = ((value / globalModifier) * multiplier) * globalModifier; //Set in a way that modifies the base value;
     }
     public override void StartEffect_Piece() //divide value by 2
     {
-        image = Resources.Load<Sprite>("Sprites/status_effects/icy_effect");
-
         float globalModifier = GlobalVars.multiplier_PieceSpeed;
         float value = piece.PieceSpeed;
         piece.PieceSpeed = ((value / globalModifier) * multiplier) * globalModifier; //Set in a way that modifies the base value;

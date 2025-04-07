@@ -34,7 +34,11 @@ public abstract class BaseStatusEffect
         this.level = level;
 
         //Debug.Log(this.GetType());
-        if (!CanStack && piece.activeEffects.Any(effect => effect.GetType() == this.GetType())) return; //check if can stack
+        if (!CanStack && piece.activeEffects.Any(effect => effect.GetType() == this.GetType())) //check if can stack
+        {
+            BaseStatusEffect oldEffect = piece.activeEffects.FirstOrDefault(effect => effect.GetType() == this.GetType());
+            oldEffect.state = "End";
+        }
         piece.activeEffects.Add(this);
     }
     public virtual void Run(bool isPlayer = false)
@@ -43,6 +47,7 @@ public abstract class BaseStatusEffect
         {
             if (state == "Start")
             {
+                StartEffect_Generic();
                 StartEffect_Player();
                 duration = maxDuration;
                 state = "Update";
@@ -63,6 +68,7 @@ public abstract class BaseStatusEffect
         {
             if (state == "Start")
             {
+                StartEffect_Generic();
                 StartEffect_Piece();
                 duration = maxDuration;
                 state = "Update";
@@ -80,6 +86,9 @@ public abstract class BaseStatusEffect
             }
         }
     }
+
+    /// <summary> Called once when starting effect </summary>
+    public virtual void StartEffect_Generic() { }
 
     /// <summary> Called once when starting effect for the player </summary>
     public abstract void StartEffect_Player();
