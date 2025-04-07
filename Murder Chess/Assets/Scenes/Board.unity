@@ -1857,7 +1857,7 @@ PrefabInstance:
       objectReference: {fileID: 2138599027}
     - target: {fileID: 2079820504085058813, guid: 3e83d8e44c0a5b845a0aa6eb06bd6480, type: 3}
       propertyPath: difficulty
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3029466276168057844, guid: 3e83d8e44c0a5b845a0aa6eb06bd6480, type: 3}
       propertyPath: m_Name
