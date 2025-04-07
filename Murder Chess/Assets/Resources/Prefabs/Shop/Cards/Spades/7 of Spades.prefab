@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: f3854d06c1541f4479c531a3c50ce7b9, type: 3}
-  price: 150
+  price: 100
   rarity: 1
   description: '+35% Player Coin Gain
 

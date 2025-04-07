@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 2fad53fc8324494479bdf39bdfd6506c, type: 3}
-  price: 125
+  price: 100
   rarity: 1
   description: -25% Piece Damage
 --- !u!114 &8179701416835986470

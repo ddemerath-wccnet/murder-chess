@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: a4095188f1fdd1d44bd9d48e11bcb320, type: 3}
-  price: 150
+  price: 100
   rarity: 1
   description: '-35% Piece Speed
 

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: bfb31b430cb4a5a48ab843886080fc7e, type: 3}
-  price: 125
+  price: 100
   rarity: 1
   description: +25% Piece Coin Value
 --- !u!114 &8179701416835986470

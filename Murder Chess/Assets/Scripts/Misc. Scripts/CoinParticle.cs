@@ -97,8 +97,10 @@ public class CoinParticle : MonoBehaviour
         // Track the number of times each value is used
         Dictionary<int, int> valueCounts = new Dictionary<int, int>();
 
-        while (total > 0)
+        int i = 0;
+        while (total > 0 && i <100)
         {
+            i++;
             foreach (int value in values.OrderByDescending(v => v))
             {
                 if (total >= value)

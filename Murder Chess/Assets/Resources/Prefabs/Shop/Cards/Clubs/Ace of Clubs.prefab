@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: c1ca2426969f15d4b9b75593a6ad4442, type: 3}
-  price: 150
+  price: 100
   rarity: 1
   description: '+40% Player HP on black squares
 

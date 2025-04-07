@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 597155331167543785, guid: 67e33868042396c43a1d187b81d89d5a, type: 3}
-  price: 125
-  weight: 1
+  price: 100
+  rarity: 1
   description: +25% Player Speed
 --- !u!114 &8179701416835986470
 MonoBehaviour:

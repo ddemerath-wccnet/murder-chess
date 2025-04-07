@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 1aa4f0c29b2969b4b844c06e088dcd38, type: 3}
-  price: 150
+  price: 100
   rarity: 1
   description: "+35% Player Speed \n+15 % Piece Health"
 --- !u!114 &7611153787129027939

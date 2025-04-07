@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 39fc2c6cf8924324eb102edc4ea55f42, type: 3}
-  price: 150
+  price: 100
   rarity: 1
   description: '+40% Piece Coin Value on black squares
 

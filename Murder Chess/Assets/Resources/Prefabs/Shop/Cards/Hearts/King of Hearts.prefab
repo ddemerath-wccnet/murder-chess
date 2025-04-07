@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 95264bbca78f92d479e353f1abf28bd7, type: 3}
-  price: 125
+  price: 100
   rarity: 1
   description: +25% Spell Cost (More is better)
 --- !u!114 &8179701416835986470

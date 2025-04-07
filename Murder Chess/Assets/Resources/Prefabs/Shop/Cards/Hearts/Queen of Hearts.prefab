@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: bc0ebad3011e80d4c89d991e3ec9b895, type: 3}
-  price: 125
+  price: 100
   rarity: 1
   description: +25% Ability Cool down (More is better)
 --- !u!114 &8179701416835986470

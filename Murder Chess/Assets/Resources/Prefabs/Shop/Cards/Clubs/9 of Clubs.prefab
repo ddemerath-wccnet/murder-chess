@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 3fdf1f0369b582b408c32896cb03b9ba, type: 3}
-  price: 150
+  price: 100
   rarity: 1
   description: '-40% Player Piece Speed on black squares
 

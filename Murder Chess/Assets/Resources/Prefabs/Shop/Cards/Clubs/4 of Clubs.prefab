@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 86048375c51ef9c43921ec854b7e4245, type: 3}
-  price: 150
+  price: 100
   rarity: 1
   description: '+40% Player Regen on black squares
 

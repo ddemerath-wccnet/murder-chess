@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 5fb435ba8f8bf0d4991e60baa62b7b15, type: 3}
-  price: 125
+  price: 100
   rarity: 1
   description: +25% Player Mana Gain
 --- !u!114 &8179701416835986470
