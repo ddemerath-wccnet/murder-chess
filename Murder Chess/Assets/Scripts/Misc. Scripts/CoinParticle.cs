@@ -98,9 +98,10 @@ public class CoinParticle : MonoBehaviour
         Dictionary<int, int> valueCounts = new Dictionary<int, int>();
 
         int i = 0;
-        while (total > 0 && i <100)
+        while (total > 0)
         {
             i++;
+            if (i > 100) Debug.LogWarning("breakout contingency activated - coin particle");
             foreach (int value in values.OrderByDescending(v => v))
             {
                 if (total >= value)

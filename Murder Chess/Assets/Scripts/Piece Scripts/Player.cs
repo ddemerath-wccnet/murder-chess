@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -100,6 +101,8 @@ public class Player : MonoBehaviour
     public GameObject ChessBoard;
     public bool onBlackSquare;
 
+    public List<BaseStatusEffect> activeEffects = new List<BaseStatusEffect>();
+
     private void Awake()
     {
         GlobalVars.ResetClass();
@@ -170,6 +173,23 @@ public class Player : MonoBehaviour
         int CBR_y = Mathf.FloorToInt(ChessBoardRelativePos.y);
         if ((CBR_x + CBR_y) % 2 == 0) onBlackSquare = false;
         else onBlackSquare = true;
+
+        // Status Effects
+        foreach (BaseStatusEffect baseStatusEffect in new List<BaseStatusEffect>(activeEffects))
+        {
+            baseStatusEffect.Run(true);
+        }
+
+        // Testing Effect
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            new PoisonEffect(this, 10);
+            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            {
+                new PoisonEffect(basePiece, 10);
+            }
+        }
+        Debug.Log(activeEffects.Count);
     }
 
     /// <summary> Damages Player for '<c>damage</c>' damage </summary>

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class BasePiece : MonoBehaviour
@@ -50,6 +51,8 @@ public abstract class BasePiece : MonoBehaviour
     public float maxIFrames = 1;
     float iFrames = 0;
     public bool isDangerous;
+
+    public List<BaseStatusEffect> activeEffects = new List<BaseStatusEffect>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -151,6 +154,12 @@ public abstract class BasePiece : MonoBehaviour
         if (iFrames > 0)
         {
             GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color - new Color(0, 0, 0, 0.5f);
+        }
+
+        // Status Effects
+        foreach (BaseStatusEffect baseStatusEffect in new List<BaseStatusEffect>(activeEffects))
+        {
+            baseStatusEffect.Run();
         }
     }
 
