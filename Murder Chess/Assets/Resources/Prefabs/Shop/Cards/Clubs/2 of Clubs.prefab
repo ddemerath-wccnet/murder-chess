@@ -69,5 +69,5 @@ MonoBehaviour:
   varName: multiplier_PlayerDamage
   base_VarModifier: 0.4
   suit: Clubs
-  rank: 1
+  rank: 2
   base_whiteSquareVarModifier: -0.1

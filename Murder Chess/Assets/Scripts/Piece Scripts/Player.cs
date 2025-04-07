@@ -222,7 +222,7 @@ public class Player : MonoBehaviour
             pieceDmgMulti *= 0.75f;
         }
 
-        if (playerDmgMulti > 0) DamagePlayer(collisionPiece.HurtPlayerFor() * playerDmgMulti);
+        if (playerDmgMulti > 0 && iFrames <= 0) DamagePlayer(collisionPiece.HurtPlayerFor() * playerDmgMulti);
         if (pieceDmgMulti > 0)
         {
             collisionPiece.DamagePiece(PlayerDamage * pieceDmgMulti);

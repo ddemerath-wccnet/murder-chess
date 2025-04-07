@@ -4,6 +4,7 @@ using System.Linq;
 
 public class ShopManager : MonoBehaviour
 {
+    public int restockCost = 1;
     public float luckCount;
     public StatVisualizer MPVisualizer;
     public ImageCarousel cardCarousel;
@@ -15,7 +16,8 @@ public class ShopManager : MonoBehaviour
     public Transform cardParent;
     public Transform spellParent;
     public Transform abilityParent;
-    int maxRarity = 0;
+    public int maxRarity = 0;
+    Player player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,10 +51,12 @@ public class ShopManager : MonoBehaviour
         }
 
         MPVisualizer.myScript = GlobalVars.player.GetComponent<Player>();
-        Player player = GlobalVars.player.GetComponent<Player>();
+        player = GlobalVars.player.GetComponent<Player>();
         cardParent = player.transform.Find("Cards").Find("CardHand");
         spellParent = player.transform.Find("Spells");
         abilityParent = player.transform.Find("Abilites");
+
+        DefaultRestock();
     }
 
     // Update is called once per frame
@@ -63,8 +67,11 @@ public class ShopManager : MonoBehaviour
 
     public void DefaultRestock()
     {
+        //if (restockCost > player.Coins) return;
+        player.Coins = player.Coins - restockCost;
+        restockCost *= 2;
         Debug.Log("DefaultRestock");
-        RestockShop(luckCount);
+        RestockShop(RollValue(luckCount));
     }
 
     public void RestockShop(float rollValue, int minItems = 3, int maxItems = 5)
@@ -74,6 +81,7 @@ public class ShopManager : MonoBehaviour
         RestockCarousel(rollValue, abilityItems, abilityCarousel, "Ability", minItems, maxItems);
     }
 
+    public float rarityScaler = 2;
     public void RestockCarousel(float rollValue, Dictionary<int, List<ShopItem>> myItemDictionary, ImageCarousel myCarousel, string debugName = "", int minItems = 3, int maxItems = 5)
     {
         int itemsToSpawn;
@@ -83,17 +91,14 @@ public class ShopManager : MonoBehaviour
         {
             ShopItem toAdd = null;
 
-            int rarityToSpawn = 1;
-            for (rarityToSpawn = 1; rarityToSpawn <= maxRarity; rarityToSpawn++)
-            {
-                if(Random.Range(0, rollValue) > 1) break;
-            }
+            int rarityToSpawn = RarityToSpawn(rollValue, rarityScaler, maxRarity);
 
             for (int fallbackRarity = rarityToSpawn; fallbackRarity >= 0 ; fallbackRarity--)
             {
                 if (myItemDictionary.ContainsKey(fallbackRarity) && myItemDictionary[fallbackRarity].Count > 0)
                 {
                     toAdd = myItemDictionary[fallbackRarity][Random.Range(0, myItemDictionary[fallbackRarity].Count)];
+                    break;
                 }
             }
 
@@ -105,6 +110,8 @@ public class ShopManager : MonoBehaviour
 
     public bool AquireItem(ShopItem item)
     {
+        luckCount++;
+
         //if (item.price > GlobalVars.player.GetComponent<Player>().Coins) return false;
         GlobalVars.player.GetComponent<Player>().Coins -= item.price;
 
@@ -131,7 +138,7 @@ public class ShopManager : MonoBehaviour
         return true;
     }
 
-    float k = 0.01f;
+    float k = 0.05f;
     float a = 10f;
     float b = 1f;
     float RollValue(float luck)
@@ -145,5 +152,18 @@ public class ShopManager : MonoBehaviour
             ));
 
         return output;
+    }
+
+    int RarityToSpawn(float rollValue, float rarityScaler, int maxRarity)
+    {
+        int rarityToSpawn = 1;
+        for (rarityToSpawn = 1; rarityToSpawn <= Mathf.Pow(rarityScaler, maxRarity); rarityToSpawn++)
+        {
+            float random = Random.Range(0, rollValue);
+            //Debug.Log(debugName + ": " + random + "/" + rollValue);
+            if (random > 1) break;
+        }
+        rarityToSpawn = Mathf.FloorToInt(Mathf.Clamp(Mathf.Log(rarityToSpawn, rarityScaler), 1.1f, int.MaxValue));
+        return rarityToSpawn;
     }
 }

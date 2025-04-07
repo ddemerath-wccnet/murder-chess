@@ -26,6 +26,10 @@ public class WavePart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pieceInt > pieces.Count + 2)
+        {
+            controllerState = "Done";
+        }
         if (controllerState == "Spawning")
         {
             if (pieceInt < pieces.Count && pieces.Count != 0)

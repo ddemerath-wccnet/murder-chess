@@ -69,5 +69,5 @@ MonoBehaviour:
   varName: multiplier_PlayerManaGain
   base_VarModifier: 0.4
   suit: Clubs
-  rank: 1
+  rank: 6
   base_whiteSquareVarModifier: -0.1

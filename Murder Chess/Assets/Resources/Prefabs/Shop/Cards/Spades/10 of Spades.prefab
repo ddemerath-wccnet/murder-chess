@@ -68,6 +68,6 @@ MonoBehaviour:
   varName: multiplier_PieceDamage
   base_VarModifier: -0.35
   suit: Spades
-  rank: 1
+  rank: 10
   tradeOffVarName: multiplier_PlayerHealth
   base_tradeOffVarModifier: -0.15

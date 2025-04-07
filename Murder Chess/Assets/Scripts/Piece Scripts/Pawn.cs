@@ -77,6 +77,7 @@ public class Pawn : BasePiece
             clone.GetComponent<Pawn>().duplicateTimer = duplicateTimer;
             clone.GetComponent<Pawn>().duplicateLimit = duplicateLimit;
             clone.GetComponent<Pawn>().isDangerous = false;
+            clone.GetComponent<WaveItem>().PieceCoinValue = 0;
         }
         return base.HurtPlayerFor();
     }

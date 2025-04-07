@@ -25,6 +25,7 @@ public class CardContainerManager : MonoBehaviour
         handCards = cardHand.handCards;
 
         int handCount = handCards.Count;
+        if (handCount == 0 ) return;
         float cardOffset = -((handCount / 2f) - 0.5f);
         for (int i = 0; i < 5; i++)
         {

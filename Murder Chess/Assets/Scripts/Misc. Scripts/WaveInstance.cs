@@ -8,6 +8,8 @@ public class WaveInstance : MonoBehaviour
     public string controllerState = null;
     public float maxInbetweenPartCooldown = 0;
     public float InbetweenPartCooldown;
+    public float estimatedWaveTime;
+    public Dictionary<Sprite, int> piecesVisualized = new Dictionary<Sprite, int>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

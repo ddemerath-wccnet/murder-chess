@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7351267985956625380}
+  - component: {fileID: -7962343100745427878}
   - component: {fileID: 6828842150201497267}
   - component: {fileID: -7337982626753688651}
   - component: {fileID: 3125696162643690928}
@@ -36,6 +37,26 @@ Transform:
   - {fileID: 4054770064998350281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7962343100745427878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014512843337586977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0234e14b4b7fc134095d4cd770b2ce7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 8573028413855361437, guid: ffba6aaa179f1c04a81a7d9e7b08c593, type: 3}
+  imageScale: 1
+  difficultyCost: 20
+  groupSize_MinToMax:
+    x: 1
+    y: 2
+  rarity: 1
+  base_PieceCoinValue: 30
 --- !u!212 &6828842150201497267
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,7 +130,6 @@ MonoBehaviour:
   base_PieceDamage: 0
   base_MaxPieceCycleTimer: 0.5
   PieceCycleTimer: 0
-  base_PieceCoinValue: 50
   cycleState: 
   maxIFrames: 1
   isDangerous: 0

@@ -68,6 +68,6 @@ MonoBehaviour:
   varName: multiplier_PlayerManaGain
   base_VarModifier: 0.35
   suit: Spades
-  rank: 1
+  rank: 6
   tradeOffVarName: multiplier_PieceCoinValue
   base_tradeOffVarModifier: -0.15

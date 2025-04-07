@@ -68,6 +68,6 @@ MonoBehaviour:
   varName: multiplier_PieceCoinValue
   base_VarModifier: 0.35
   suit: Spades
-  rank: 1
+  rank: 11
   tradeOffVarName: multiplier_AbilityCoolDown
   base_tradeOffVarModifier: -0.15

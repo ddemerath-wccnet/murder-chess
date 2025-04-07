@@ -68,6 +68,6 @@ MonoBehaviour:
   varName: multiplier_PlayerMana
   base_VarModifier: 0.35
   suit: Spades
-  rank: 1
+  rank: 5
   tradeOffVarName: multiplier_PieceSpeed
   base_tradeOffVarModifier: 0.15

@@ -32,11 +32,12 @@ public class WaveController : MonoBehaviour
         if (controllerState == "Starting")
         {
             controllerState = "Spawning";
-            waves[waveInt].StartWave();
+            waves[0].StartWave();
+            waveInt++;
         }
         else if (controllerState == "Spawning")
         {
-            if (waves[waveInt].IsDone())
+            if (waves[0].IsDone())
             {
                 controllerState = "Cooldown";
             }
@@ -46,11 +47,13 @@ public class WaveController : MonoBehaviour
             InbetweenWaveCooldown -= Time.deltaTime;
             if (InbetweenWaveCooldown < 0)
             {
-                waveInt++;
+                GameObject waveGameObject = waves[0].gameObject;
+                waves.RemoveAt(0);
+                GameObject.Destroy(waveGameObject);
                 controllerState = "Starting";
                 InbetweenWaveCooldown = maxInbetweenWaveCooldown;
 
-                if (waveInt >= waves.Count) controllerState = "Done";
+                if (waves.Count == 0) controllerState = "Done";
             }
         }
     }

@@ -68,6 +68,6 @@ MonoBehaviour:
   varName: multiplier_AbilityCoolDown
   base_VarModifier: 0.35
   suit: Spades
-  rank: 1
+  rank: 12
   tradeOffVarName: multiplier_PlayerManaGain
   base_tradeOffVarModifier: -0.15

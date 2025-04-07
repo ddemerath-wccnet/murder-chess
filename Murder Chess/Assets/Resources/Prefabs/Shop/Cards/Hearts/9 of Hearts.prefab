@@ -66,4 +66,4 @@ MonoBehaviour:
   varName: multiplier_PieceSpeed
   base_VarModifier: -0.25
   suit: Hearts
-  rank: 3
+  rank: 9

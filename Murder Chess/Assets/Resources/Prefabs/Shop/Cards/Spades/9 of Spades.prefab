@@ -68,6 +68,6 @@ MonoBehaviour:
   varName: multiplier_PieceSpeed
   base_VarModifier: -0.35
   suit: Spades
-  rank: 1
+  rank: 9
   tradeOffVarName: multiplier_SpellCost
   base_tradeOffVarModifier: -0.15
