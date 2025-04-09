@@ -197,6 +197,14 @@ public class Player : MonoBehaviour
                 new IcyEffect(basePiece, 10);
             }
         }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            new BurnEffect(this, 10);
+            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            {
+                new BurnEffect(basePiece, 10);
+            }
+        }
         Debug.Log(activeEffects.Count);
     }
 
