@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3147731751223373092}
   - component: {fileID: 4902202374725870542}
+  - component: {fileID: 7501947224913625605}
   m_Layer: 0
   m_Name: BombAbility
   m_TagString: Untagged
@@ -53,6 +54,22 @@ MonoBehaviour:
   explosionDuration: 0.5
   attackArea: {fileID: 8068851570265366325}
   bomb: {fileID: 7387264523360034312}
+--- !u!114 &7501947224913625605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188791876083934727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 5390227626497063583, guid: c180fbfd14145e941ab8e3f8a5e323df, type: 3}
+  price: 0
+  rarity: 1
+  description: Places a bomb that detonates after a short while.
 --- !u!1 &7387264523360034312
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,4 +360,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionList: []
-  damageMulti: 5
+  damageMulti: 2.5
+  doesItBurn: 1
+  burnDuration: 3

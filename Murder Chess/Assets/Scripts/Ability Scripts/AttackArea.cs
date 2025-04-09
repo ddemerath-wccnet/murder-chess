@@ -5,6 +5,8 @@ public class AttackArea : MonoBehaviour
 {
     public List<BasePiece> collisionList = new List<BasePiece>();
     public float damageMulti;
+    public bool doesItBurn;
+    public float burnDuration;
     private void start() {
 
     }
@@ -18,6 +20,11 @@ public class AttackArea : MonoBehaviour
             {
                 collisionList.Add(basePiece);
                 GlobalVars.player.GetComponent<Player>().HitPiece(basePiece, 0, damageMulti, 1f);
+                if(doesItBurn) {
+
+                    new BurnEffect(basePiece, burnDuration);
+
+                }
             }
         }
     }

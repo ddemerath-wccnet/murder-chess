@@ -277,6 +277,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &228660508 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 949019597853508583, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
+  m_PrefabInstance: {fileID: 7285953506464315615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &361096978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1255,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1912709115473613565, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
   m_PrefabInstance: {fileID: 7285953506464315615}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1753054310
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 228660508}
+    m_Modifications:
+    - target: {fileID: 1264413511722599087, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_Name
+      value: Wild Magic Spell
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802765523325079331, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      propertyPath: description
+      value: Casts a random spell. Costs 20 mana.
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2384706712848052762, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1264413511722599087, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1980136905}
+  m_SourcePrefab: {fileID: 100100000, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
 --- !u!1 &1793164913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,6 +1627,35 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8283687271379638440, guid: 01f000ef3fa3ec743a38c423f284dac8, type: 3}
   m_PrefabInstance: {fileID: 567483718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1980136904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1264413511722599087, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+  m_PrefabInstance: {fileID: 1753054310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1980136905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980136904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2519fcb17ebffd8418668f308cdd591c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  base_SpellCost: 10
+  spells:
+  - {fileID: 3015847586779300829, guid: 36bfe47de9697c14b8b3c1eb960e43f2, type: 3}
+  - {fileID: 2976104534707395823, guid: 9cb9562dc9f3dbb4389a04d6911a4327, type: 3}
+  numberOfSpells: 2
+  spellTimer: 10
+  instanceSpellTimer: 0
+--- !u!4 &1980136907 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
+  m_PrefabInstance: {fileID: 1753054310}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2006698122
 GameObject:
@@ -1925,6 +2024,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6692304426566259684, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
+      propertyPath: Spell1
+      value: 
+      objectReference: {fileID: 1980136905}
+    - target: {fileID: 6692304426566259684, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
       propertyPath: ChessBoard
       value: 
       objectReference: {fileID: 2138599027}
@@ -1938,6 +2041,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1485611861817101140, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1968729093}
+    - targetCorrespondingSourceObject: {fileID: 949019597853508583, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1980136907}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
 --- !u!1660057539 &9223372036854775807
