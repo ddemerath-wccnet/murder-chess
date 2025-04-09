@@ -12,7 +12,7 @@ public class BurnEffect : BaseStatusEffect
 
     public override void StartEffect_Generic()
     {
-        image = Resources.Load<Sprite>("Sprites/status_effects/poison_effect");
+        image = Resources.Load<Sprite>("Sprites/status_effects/burn_effect");
     }
 
     public override void StartEffect_Player()
