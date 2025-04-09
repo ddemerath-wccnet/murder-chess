@@ -124,7 +124,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6692304426566259684, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
   m_PrefabInstance: {fileID: 7285953506464315615}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 859384431}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cc65e907cdbafa47bedcf78f18a41b8, type: 3}
@@ -277,6 +277,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &184903433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184903434}
+  - component: {fileID: 184903435}
+  m_Layer: 0
+  m_Name: Get Out Of Jail Free Card
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &184903434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184903433}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.9736276, y: 3.0425763, z: -0.05668558}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 471183007}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184903435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184903433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c1845383fb59b4ca33396c4b41390b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  base_MaxAbilityCooldown: 180
+  base_AbilityCooldown: 0
+  maxAbilityLengthTimer: 3
+  abilityLengthTimer: 0
+  player: {fileID: 859384431}
+  speed: 5
+  regen: 2
+  damage: -1
 --- !u!4 &228660508 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 949019597853508583, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
@@ -814,6 +866,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &859384431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8151595831999311075, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
+  m_PrefabInstance: {fileID: 7285953506464315615}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &881724990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,6 +2077,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1485611861817101140, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1968729093}
+    - targetCorrespondingSourceObject: {fileID: 1485611861817101140, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 184903434}
     - targetCorrespondingSourceObject: {fileID: 949019597853508583, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1966710612230785257}
