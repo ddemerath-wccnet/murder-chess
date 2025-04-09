@@ -1255,71 +1255,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1912709115473613565, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
   m_PrefabInstance: {fileID: 7285953506464315615}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1753054310
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 228660508}
-    m_Modifications:
-    - target: {fileID: 1264413511722599087, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_Name
-      value: Wild Magic Spell
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802765523325079331, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      propertyPath: description
-      value: Casts a random spell. Costs 20 mana.
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2384706712848052762, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1264413511722599087, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1980136905}
-  m_SourcePrefab: {fileID: 100100000, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
 --- !u!1 &1793164913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,35 +1563,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8283687271379638440, guid: 01f000ef3fa3ec743a38c423f284dac8, type: 3}
   m_PrefabInstance: {fileID: 567483718}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1980136904 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1264413511722599087, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-  m_PrefabInstance: {fileID: 1753054310}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1980136905
+--- !u!114 &1980136905 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3895669227871927962, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+  m_PrefabInstance: {fileID: 2154943812630865596}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980136904}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2519fcb17ebffd8418668f308cdd591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  base_SpellCost: 10
-  spells:
-  - {fileID: 3015847586779300829, guid: 36bfe47de9697c14b8b3c1eb960e43f2, type: 3}
-  - {fileID: 2976104534707395823, guid: 9cb9562dc9f3dbb4389a04d6911a4327, type: 3}
-  numberOfSpells: 2
-  spellTimer: 10
-  instanceSpellTimer: 0
---- !u!4 &1980136907 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1966710612641494159, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
-  m_PrefabInstance: {fileID: 1753054310}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2006698122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +1819,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9056ed478958b4787ad19aad26b33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1966710612230785257 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+  m_PrefabInstance: {fileID: 2154943812630865596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2154943812630865596
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 228660508}
+    m_Modifications:
+    - target: {fileID: 3414562387465308153, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_Name
+      value: Wild Magic Spell
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534007547759723729, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ceac1bed98cae94d9177e70db3de737, type: 3}
 --- !u!1001 &2595652490184507188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2043,7 +2022,7 @@ PrefabInstance:
       addedObject: {fileID: 1968729093}
     - targetCorrespondingSourceObject: {fileID: 949019597853508583, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1980136907}
+      addedObject: {fileID: 1966710612230785257}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b813f408942bbd54fb6cc25d91c6538d, type: 3}
 --- !u!1660057539 &9223372036854775807
