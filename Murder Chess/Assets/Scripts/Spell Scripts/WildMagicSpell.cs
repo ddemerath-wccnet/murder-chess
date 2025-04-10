@@ -1,23 +1,33 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class WildMagicSpell : BaseSpell
 {
-    public List<GameObject> spells = new List<GameObject>();
-    public int numberOfSpells;
+    public List<BaseSpell> spells = new List<BaseSpell>();
     public float spellTimer;
     public float instanceSpellTimer;
-    private GameObject spellCalled;
+    private int numberOfSpells;
+    private BaseSpell spellCalled;
     private Vector3 playerPosition;
+
+    void Start() {
+
+        BaseSpell[] spellItemsTemp = Resources.LoadAll<BaseSpell>("Prefabs/Shop/Spells");
+        spells = spellItemsTemp.ToList();
+        numberOfSpells = spells.Count();
+
+    }
 
     protected override void SpellStart()
     {
         Debug.Log("spell start");
-        instanceSpellTimer = spellTimer;
         playerPosition = GlobalVars.player.transform.position;
-        spellCalled = Instantiate(spells[Random.Range(0 , numberOfSpells)], playerPosition, transform.rotation, transform);
-        BaseSpell baseSpellScript = spellCalled.GetComponent<BaseSpell>();
-
+        spellCalled = Instantiate(spells[Random.Range(0 , (numberOfSpells))], playerPosition, transform.rotation, transform);
+        //BaseSpell baseSpellScript = spellCalled.GetComponent<BaseSpell>();
+        spellCalled.SpellCost = 0;
+        spellCalled.CallActivate();
+        instanceSpellTimer = spellTimer;
         //baseSpellScript.SpellStart();
     }
 
@@ -27,7 +37,7 @@ public class WildMagicSpell : BaseSpell
 
         if (instanceSpellTimer < 0)
         {
-            GameObject.Destroy(spellCalled);
+            GameObject.Destroy(spellCalled.gameObject);
 
             return true;
         }

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1656408700875300942, guid: 88b7755152409ff4e80f74c66cb95e5f, type: 3}
+  image: {fileID: -3448466328585167191, guid: fa9f1fe5a0c6ac74b9c92669a85f7bc9, type: 3}
   price: 200
   rarity: 1
   description: Casts a random spell. Costs 20 mana.
@@ -61,10 +61,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2519fcb17ebffd8418668f308cdd591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  base_SpellCost: 10
+  base_SpellCost: 20
   spells:
   - {fileID: 1264413511722599087, guid: 5b0f3a07da24f0f4d90c85cc1fecac26, type: 3}
   - {fileID: 2976104534707395823, guid: 9cb9562dc9f3dbb4389a04d6911a4327, type: 3}
-  numberOfSpells: 2
   spellTimer: 10
   instanceSpellTimer: 0

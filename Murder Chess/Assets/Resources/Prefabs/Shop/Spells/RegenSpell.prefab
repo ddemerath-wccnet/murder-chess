@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8852077950707347106}
   - component: {fileID: 3426477750090245350}
+  - component: {fileID: 1630868345225218941}
   m_Layer: 0
   m_Name: RegenSpell
   m_TagString: Untagged
@@ -46,3 +47,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   base_SpellCost: 15
   spellTimer: 5
+--- !u!114 &1630868345225218941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976104534707395823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 1247506196632125511, guid: b29e468c1e339fc4bbd34fe82371b16d, type: 3}
+  price: 0
+  rarity: 1
+  description: Grants a small amount of health regen for 5 seconds. Costs 15 mana.
