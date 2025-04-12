@@ -10,35 +10,41 @@ public class MagicShield : BaseSpell
     protected override void SpellStart()
     {
         spellTimer = 8f;
-        Debug.Log("Spell started. Initial spellTimer: " + spellTimer);
         new ModifierEntry("multiplier_PieceDamage", -99, 8);
-        shieldSprite = GetComponent<SpriteRenderer>();
-        Color color = shieldSprite.color;
-        color.a = .75f;
-        shieldSprite.color = color;
-        shieldSprite.enabled = true;
 
+        shieldSprite = GetComponentInChildren<SpriteRenderer>();
 
+        if (shieldSprite == null)
+        {
+            Debug.LogError("Sheild sprite not found");
+        }
+        else
+        {
+            Debug.Log("sheild sprite found ");
+            Color color = shieldSprite.color;
+            color.a = .75f;
+            shieldSprite.color = color;
+            shieldSprite.enabled = true;
+        }
     }
+
 
     protected override bool SpellUpdate()
     {
-        float previousTimer = spellTimer;
-
         spellTimer -= GlobalVars.DeltaTimePlayer;
-        Debug.Log("spellTimer difference: " + (previousTimer - spellTimer));
-        Debug.Log("spellTimer is: " + spellTimer);
+        Debug.Log("spelltimer = " + spellTimer);
+
         if (spellTimer <= 0)
         {
-
-            Debug.Log("spellTimer is: " + spellTimer);
-            //shieldSprite = GetComponent<SpriteRenderer>();
             Color color = shieldSprite.color;
-            color.a = 0;
+            color.a = 0f;
             shieldSprite.color = color;
+
             shieldSprite.enabled = false;
+
+            return true;
         }
 
-        return true;
+        return false;
     }
 }
