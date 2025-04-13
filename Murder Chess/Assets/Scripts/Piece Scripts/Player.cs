@@ -219,6 +219,7 @@ public class Player : MonoBehaviour
         {
             PlayerHealth = Mathf.Clamp(PlayerHealth - damage, -0.01f, float.MaxValue);
             iFrames = maxIFrames;
+            CameraEffects.ScreenShake(0.25f, damage * 0.1f, 0.1f);
         }
     }
 

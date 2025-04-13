@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BurnEffect : BaseStatusEffect
 {
-    public override bool CanStack => true;
+    public override bool CanStack => false;
 
     public BurnEffect(Player player, float duration, int level = 1) : base(player, duration, level){}
 

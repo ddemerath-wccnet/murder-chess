@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class BasePiece : MonoBehaviour
@@ -53,12 +54,14 @@ public abstract class BasePiece : MonoBehaviour
     public bool isDangerous;
 
     public List<BaseStatusEffect> activeEffects = new List<BaseStatusEffect>();
+    List<ElementalPiece> elements = new List<ElementalPiece>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
         base_PieceHealth = base_MaxPieceHealth;
         cycleState = "Select Target";
+        elements = GetComponents<ElementalPiece>().ToList<ElementalPiece>();
     }
 
     // Update is called once per frame
@@ -210,6 +213,10 @@ public abstract class BasePiece : MonoBehaviour
     /// <returns> Return amount of damage to do </returns>
     public virtual float HurtPlayerFor() //Default Implementation
     {
+        foreach (ElementalPiece element in elements)
+        {
+            element.EffectPlayer();
+        }
         return PieceDamage;
     }
 
