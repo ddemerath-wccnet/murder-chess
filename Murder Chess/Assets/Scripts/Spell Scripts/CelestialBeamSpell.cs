@@ -54,6 +54,12 @@ public class CelestialBeamSpell : BaseSpell
             }
         }
     }
+    private void OnDrawGizmosSelected()
+    {
+        Vector2 spellFront = (Vector2)transform.parent.position + spellOffset;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(spellFront, new Vector3(spellLength, spellWidth, 0));
+    }
 
     // Update is called once per frame
     protected override bool SpellUpdate()
