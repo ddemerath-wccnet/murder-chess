@@ -51,6 +51,8 @@ public static class GlobalVars
 
     public static Vector3? decoyPosition = null;
 
+    public static int timeOfLastHit;
+
     /// <summary> Sets all variables back to default. </summary>
     public static void ResetClass()
     {
