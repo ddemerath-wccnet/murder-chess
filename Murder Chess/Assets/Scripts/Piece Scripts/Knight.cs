@@ -4,9 +4,9 @@ using UnityEngine;
 public class Knight : BasePiece
 {
     private Vector3 bestMove;
-    private bool isJumping = false;
+    protected bool isJumping = false;
 
-    [SerializeField] private ParticleSystem landingDustPrefab;
+    [SerializeField] protected ParticleSystem landingDustPrefab;
 
     private Vector2[] knightMoves = {
         new Vector2(2, 1), new Vector2(2, -1),
@@ -128,7 +128,7 @@ public class Knight : BasePiece
         return projectedDistanceToPlayer <= 1.0f && currentDistanceToPlayer > 2.0f;
     }
 
-    IEnumerator JumpAnimation(Vector3 targetPosition)
+    protected virtual IEnumerator JumpAnimation(Vector3 targetPosition)
     {
         isJumping = true; // Prevent movement during jump
         float jumpDuration = 0.6f; // Total time for the jump
