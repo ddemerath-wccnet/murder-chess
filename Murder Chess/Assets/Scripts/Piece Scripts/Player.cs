@@ -205,6 +205,14 @@ public class Player : MonoBehaviour
                 new BurnEffect(basePiece, 10);
             }
         }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            new StunnedEffect(this, 10);
+            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            {
+                new StunnedEffect(basePiece, 10);
+            }
+        }
         Debug.Log(activeEffects.Count);
     }
 
