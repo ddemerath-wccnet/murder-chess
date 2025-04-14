@@ -18,7 +18,7 @@ public abstract class BaseAbility : MonoBehaviour
         set { base_AbilityCooldown = value * GlobalVars.multiplier_AbilityCooldown; }
     }
 
-    bool startedAbility;
+    public bool startedAbility;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -43,7 +43,7 @@ public abstract class BaseAbility : MonoBehaviour
     }
 
     /// <summary> Called from Player when a key is pressed
-    public bool CallActivate()
+    public virtual bool CallActivate()
     {
         if (AbilityCooldown <= 0)
         {
