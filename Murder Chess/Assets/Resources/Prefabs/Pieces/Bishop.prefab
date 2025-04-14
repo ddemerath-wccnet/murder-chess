@@ -127,7 +127,7 @@ MonoBehaviour:
   base_MaxPieceHealth: 10
   base_PieceHealth: 0
   base_PieceSpeed: 4
-  base_PieceDamage: 0
+  base_PieceDamage: 1
   base_MaxPieceCycleTimer: 0.5
   PieceCycleTimer: 0
   cycleState: 
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

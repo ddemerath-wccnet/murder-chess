@@ -6,6 +6,7 @@ public class JacksAbility : BaseAbility
     public GameObject jackPrefab;
     public int2 amountToSpawn_MinToMax;
     float spread = 5;
+    public AudioSource sound;
 
     protected override void AbilityStart()
     {
@@ -18,6 +19,7 @@ public class JacksAbility : BaseAbility
             jackBody.linearVelocityX = UnityEngine.Random.Range(-spread, spread);
             jackBody.linearVelocityY = UnityEngine.Random.Range(-spread, spread);
         }
+        sound.Play();
     }
 
     protected override bool AbilityUpdate()

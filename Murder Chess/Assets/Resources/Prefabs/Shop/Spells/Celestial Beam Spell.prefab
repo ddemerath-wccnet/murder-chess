@@ -141,7 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   base_SpellCost: 50
-  spellWidth: 2
-  spellLength: 4
+  spellWidth: 8
+  spellLength: 2
   spellOffset: {x: 0, y: 4}
+  boxOffset: {x: 0, y: 4}
   aoeDamage: 10

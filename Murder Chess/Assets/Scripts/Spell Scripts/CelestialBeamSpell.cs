@@ -12,6 +12,8 @@ public class CelestialBeamSpell : BaseSpell
     [SerializeField]
     private Vector2 spellOffset = new Vector2(4f, 0);
     [SerializeField]
+    private Vector2 boxOffset = new Vector2(4f, 0);
+    [SerializeField]
     private float aoeDamage = 10f;
 
 
@@ -23,6 +25,8 @@ public class CelestialBeamSpell : BaseSpell
         Debug.Log("SpellStart called");
         Vector2 spellFront = (Vector2)transform.parent.position + spellOffset;
         transform.position = spellFront;
+
+        Vector2 boxFront = (Vector2)transform.parent.position + boxOffset;
 
 
 
@@ -43,7 +47,7 @@ public class CelestialBeamSpell : BaseSpell
 
 
 
-        Collider2D[] areaColliders = Physics2D.OverlapBoxAll(spellFront, new Vector2(spellLength, spellWidth), 0f);
+        Collider2D[] areaColliders = Physics2D.OverlapBoxAll(boxFront, new Vector2(spellLength, spellWidth), 0f);
         foreach (var areaCollider in areaColliders)
         {
             if (areaCollider.gameObject.CompareTag("Enemy"))

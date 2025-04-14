@@ -56,7 +56,7 @@ MonoBehaviour:
   groupSize_MinToMax:
     x: 1
     y: 2
-  rarity: 2
+  rarity: 3
   base_PieceCoinValue: 50
 --- !u!114 &-4807010683104880147
 MonoBehaviour:
@@ -150,7 +150,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

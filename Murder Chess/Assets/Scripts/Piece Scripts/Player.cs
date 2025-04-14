@@ -219,10 +219,10 @@ public class Player : MonoBehaviour
         {
             PlayerHealth = Mathf.Clamp(PlayerHealth - damage, -0.01f, float.MaxValue);
             iFrames = maxIFrames;
-            if (damage >= 0.25f)
+            if (damage >= 0.001f)
             {
-                GlobalVars.timeOfLastHit = Mathf.FloorToInt(Time.time);
-                CameraEffects.ScreenShake(0.25f, damage * 0.1f, 0.1f);
+                CameraEffects.ScreenShake(0.25f, Mathf.Clamp(damage, 0.75f, 100f) * 0.1f, 0.1f);
+                if (damage >= 0.1f) GlobalVars.timeOfLastHit = Mathf.FloorToInt(Time.time);
             }
         }
     }
