@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: difficultyCost
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6088134570026935694, guid: 31cbb1a9371fb78408ea5e74c3a328d6, type: 3}
+      propertyPath: base_PieceCoinValue
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 7431020541619671837, guid: 31cbb1a9371fb78408ea5e74c3a328d6, type: 3}
       propertyPath: m_Sprite
       value: 

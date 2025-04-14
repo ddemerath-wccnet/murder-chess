@@ -103,6 +103,10 @@ PrefabInstance:
       propertyPath: difficultyCost
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: -7962343100745427878, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
+      propertyPath: base_PieceCoinValue
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: -7337982626753688651, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       propertyPath: base_PieceDamage
       value: 1
