@@ -12,6 +12,7 @@ public abstract class BaseStatusEffect
     public float duration;
     public int level;
     public virtual bool CanStack => false;
+    public virtual bool CanOverride => true;
 
     public BaseStatusEffect(Player player, float duration, int level = 1)
     {
@@ -22,10 +23,17 @@ public abstract class BaseStatusEffect
         //Debug.Log(this.GetType());
         if (!CanStack && player.activeEffects.Any(effect => effect.GetType() == this.GetType())) //check if can stack
         {
-            BaseStatusEffect oldEffect = player.activeEffects.FirstOrDefault(effect => effect.GetType() == this.GetType());
-            oldEffect.state = "End";
+            if (CanOverride)
+            {
+                BaseStatusEffect oldEffect = player.activeEffects.FirstOrDefault(effect => effect.GetType() == this.GetType());
+                oldEffect.state = "End";
+                player.activeEffects.Add(this);
+            }
         }
-        player.activeEffects.Add(this);
+        else
+        {
+            player.activeEffects.Add(this);
+        }
     }
     public BaseStatusEffect(BasePiece piece, float duration, int level = 1)
     {
@@ -36,10 +44,17 @@ public abstract class BaseStatusEffect
         //Debug.Log(this.GetType());
         if (!CanStack && piece.activeEffects.Any(effect => effect.GetType() == this.GetType())) //check if can stack
         {
-            BaseStatusEffect oldEffect = piece.activeEffects.FirstOrDefault(effect => effect.GetType() == this.GetType());
-            oldEffect.state = "End";
+            if (CanOverride)
+            {
+                BaseStatusEffect oldEffect = piece.activeEffects.FirstOrDefault(effect => effect.GetType() == this.GetType());
+                oldEffect.state = "End";
+                piece.activeEffects.Add(this);
+            }
         }
-        piece.activeEffects.Add(this);
+        else
+        {
+            piece.activeEffects.Add(this);
+        }
     }
     public virtual void Run(bool isPlayer = false)
     {

@@ -27,6 +27,7 @@ public class AbilityButtonManager : MonoBehaviour
         float current = trackedAbility.AbilityCooldown;
 
         cooldownOverlay.fillAmount = current / max;
+        if (GlobalVars.bricked) cooldownOverlay.fillAmount = 1;
         cooldownText.text = current > 0 ? Mathf.CeilToInt(current).ToString() : "";
     }
 }

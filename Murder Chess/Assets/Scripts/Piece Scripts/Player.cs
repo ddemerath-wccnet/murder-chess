@@ -213,6 +213,14 @@ public class Player : MonoBehaviour
                 new StunnedEffect(basePiece, 10);
             }
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            new BrickedEffect(this, 10);
+            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            {
+                new BrickedEffect(basePiece, 10);
+            }
+        }
         Debug.Log(activeEffects.Count);
     }
 

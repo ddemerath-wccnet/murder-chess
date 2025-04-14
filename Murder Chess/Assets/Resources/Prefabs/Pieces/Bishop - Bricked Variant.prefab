@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1156914537171407222
+--- !u!1001 &7348913084791133248
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -7962343100745427878, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       propertyPath: image
       value: 
-      objectReference: {fileID: 21300000, guid: b6627359b7b9f2649bfad2071784a5a1, type: 3}
+      objectReference: {fileID: 21300000, guid: ca8e17ad466e18340b39b22bd0113a0f, type: 3}
     - target: {fileID: -7962343100745427878, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       propertyPath: rarity
       value: 2
@@ -30,12 +30,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014512843337586977, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       propertyPath: m_Name
-      value: Bishop - Stun Variant
+      value: Bishop - Bricked Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6828842150201497267, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b6627359b7b9f2649bfad2071784a5a1, type: 3}
+      objectReference: {fileID: 21300000, guid: ca8e17ad466e18340b39b22bd0113a0f, type: 3}
     - target: {fileID: 7351267985956625380, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -82,26 +82,26 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6014512843337586977, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       insertIndex: 4
-      addedObject: {fileID: 3938730489160560572}
+      addedObject: {fileID: 1375674595128903354}
   m_SourcePrefab: {fileID: 100100000, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
---- !u!1 &4862190178229225559 stripped
+--- !u!1 &3930307749788470625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6014512843337586977, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
-  m_PrefabInstance: {fileID: 1156914537171407222}
+  m_PrefabInstance: {fileID: 7348913084791133248}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3938730489160560572
+--- !u!114 &1375674595128903354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4862190178229225559}
+  m_GameObject: {fileID: 3930307749788470625}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 414075df47814ca4eb0e89fc5cbbec86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusEffect: StunnedEffect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  statusEffect: BrickedEffect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   duration: 5
   level: 1

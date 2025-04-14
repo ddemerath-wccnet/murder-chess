@@ -56,6 +56,8 @@ public abstract class BasePiece : MonoBehaviour
     public List<BaseStatusEffect> activeEffects = new List<BaseStatusEffect>();
     List<ElementalPiece> elements = new List<ElementalPiece>();
 
+    public bool bricked;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
@@ -125,7 +127,7 @@ public abstract class BasePiece : MonoBehaviour
         // Should I Attack? Logic
         if (cycleState == "Should Attack")
         {
-            if (ShouldAttack())
+            if (ShouldAttack() && !bricked)
             {
                 cycleState = "Attack";
             }

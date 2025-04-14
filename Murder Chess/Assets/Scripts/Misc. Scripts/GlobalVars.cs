@@ -53,6 +53,8 @@ public static class GlobalVars
 
     public static int timeOfLastHit;
 
+    public static bool bricked = false;
+
     /// <summary> Sets all variables back to default. </summary>
     public static void ResetClass()
     {

@@ -40,12 +40,16 @@ public abstract class BaseAbility : MonoBehaviour
         {
             AbilityCooldown = AbilityCooldown - GlobalVars.DeltaTimePlayer;
         }
+        else if (GlobalVars.bricked)
+        {
+            base_AbilityCooldown = 1;
+        }
     }
 
     /// <summary> Called from Player when a key is pressed
     public virtual bool CallActivate()
     {
-        if (AbilityCooldown <= 0)
+        if (AbilityCooldown <= 0 && !GlobalVars.bricked)
         {
             base_AbilityCooldown = base_MaxAbilityCooldown;
             startedAbility = true;
