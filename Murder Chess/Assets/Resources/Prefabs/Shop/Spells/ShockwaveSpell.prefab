@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8424896647444390646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3873486056421592270}
+  - component: {fileID: 2179972755528960583}
+  - component: {fileID: 8048691600267134233}
+  m_Layer: 0
+  m_Name: ShockwaveSpell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3873486056421592270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424896647444390646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.76980937, y: -1.5559058, z: -8.2213125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2179972755528960583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424896647444390646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f03c0cf8ebe1974782238ba4a46892b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  base_SpellCost: 10
+  shockwavePrefab: {fileID: 5036320656727810140, guid: 13583cc71b128374195f972a92e64b4e, type: 3}
+  shockwaveLifetime: 0.5
+--- !u!114 &8048691600267134233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424896647444390646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: -836092874633851596, guid: 8cd5c34a7051b5046883eedd3e304ab9, type: 3}
+  price: 20
+  rarity: 1
+  description: Creates a shockwave that pushes enemies away.
