@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414075df47814ca4eb0e89fc5cbbec86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusEffect: PoisonEffect, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
+  statusEffect: PoisonEffect
   duration: 3
   level: 1

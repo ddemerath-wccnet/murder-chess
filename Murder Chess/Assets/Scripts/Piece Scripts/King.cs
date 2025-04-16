@@ -1,6 +1,6 @@
 
-using System.Runtime.CompilerServices;
-using UnityEditor.Build;
+//using System.Runtime.CompilerServices;
+//using UnityEditor.Build;
 using UnityEngine;
 
 public class King : BasePiece

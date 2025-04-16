@@ -116,9 +116,20 @@ public class Player : MonoBehaviour
         base_PlayerMana = 0;
     }
 
+    public float deathTimer = 5;
+
     // Update is called once per frame
     void Update()
     {
+        if (PlayerHealth <= 0)
+        {
+            deathTimer -= GlobalVars.DeltaTimePlayer;
+            if (deathTimer < 0)
+            {
+                Application.Quit();
+            }
+        }
+
         if (iFrames > 0) iFrames -= GlobalVars.DeltaTimePlayer;
 
         //Define move dir based on user input
@@ -180,45 +191,48 @@ public class Player : MonoBehaviour
             baseStatusEffect.Run(true);
         }
 
-        // Testing Effect
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            new PoisonEffect(this, 10);
-            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            // Testing Effect
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                new PoisonEffect(basePiece, 10);
+                new PoisonEffect(this, 10);
+                foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+                {
+                    new PoisonEffect(basePiece, 10);
+                }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            new IcyEffect(this, 10);
-            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            if (Input.GetKeyDown(KeyCode.G))
             {
-                new IcyEffect(basePiece, 10);
+                new IcyEffect(this, 10);
+                foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+                {
+                    new IcyEffect(basePiece, 10);
+                }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            new BurnEffect(this, 10);
-            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            if (Input.GetKeyDown(KeyCode.H))
             {
-                new BurnEffect(basePiece, 10);
+                new BurnEffect(this, 10);
+                foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+                {
+                    new BurnEffect(basePiece, 10);
+                }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            new StunnedEffect(this, 10);
-            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                new StunnedEffect(basePiece, 10);
+                new StunnedEffect(this, 10);
+                foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+                {
+                    new StunnedEffect(basePiece, 10);
+                }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            new BrickedEffect(this, 10);
-            foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+            if (Input.GetKeyDown(KeyCode.K))
             {
-                new BrickedEffect(basePiece, 10);
+                new BrickedEffect(this, 10);
+                foreach (BasePiece basePiece in FindObjectsByType<BasePiece>(FindObjectsSortMode.None))
+                {
+                    new BrickedEffect(basePiece, 10);
+                }
             }
         }
         Debug.Log(activeEffects.Count);
@@ -233,7 +247,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            PlayerHealth = Mathf.Clamp(PlayerHealth - damage, -0.01f, float.MaxValue);
+            PlayerHealth = (PlayerHealth - damage); //Mathf.Clamp(, -10f, float.MaxValue);
             iFrames = maxIFrames;
             if (damage >= 0.001f)
             {

@@ -53,5 +53,9 @@ public class HealthBar : MonoBehaviour
 
         maxHealthBar.transform.localScale = new Vector3(maxHealth * SpriteSizeMulti, 1, 1);
         currentHealthBar.transform.localScale = new Vector3(currentHealth / maxHealth, 1, 1);
+        if (currentHealth < 0)
+        {
+            currentHealthBar.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
 }

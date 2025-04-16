@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.WSA;
+//using UnityEngine.WSA;
 
 public abstract class BaseSpell : MonoBehaviour
 {
@@ -35,7 +35,7 @@ public abstract class BaseSpell : MonoBehaviour
     public bool CallActivate()
     {
         Debug.Log("CallActivate");
-        if (//GlobalVars.player.GetComponent<Player>().PlayerMana >= SpellCost && 
+        if (GlobalVars.player.GetComponent<Player>().PlayerMana >= SpellCost && 
             startedSpell == false && !GlobalVars.bricked)
         {
             GlobalVars.player.GetComponent<Player>().PlayerMana = GlobalVars.player.GetComponent<Player>().PlayerMana - SpellCost;
