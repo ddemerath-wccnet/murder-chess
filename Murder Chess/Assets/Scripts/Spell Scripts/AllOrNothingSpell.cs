@@ -11,7 +11,6 @@ public class AllOrNothingSpell : BaseSpell
     protected override void SpellStart()
     {
         Debug.Log("spell start");
-        // GlobalVars.player.GetComponent<Player>().PlayerRegen += 0.5f;
         new ModifierEntry("multiplier_PlayerDamage", playerDamageModifier, 10);
         new ModifierEntry("multiplier_PieceDamage", pieceDamageModifier, 10);
         instanceSpellTimer = spellTimer;
