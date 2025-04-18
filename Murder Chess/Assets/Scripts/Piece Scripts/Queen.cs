@@ -58,10 +58,15 @@ public class Queen : BasePiece
     {
         return Vector2.Distance(transform.position, target) <= closeRange;
     }
-//Check whether the player is in range and recheck targets if player is not friendly.
+    //Check whether the player is in range and recheck targets if player is not friendly.
     private bool isPlayerInRange()
     {
         return Vector2.Distance(transform.position, GlobalVars.player.transform.position) <= range;
+    }
+    //Check where the player is in close range
+    private bool isPlayerInCloseRange()
+    {
+        return Vector2.Distance(transform.position, GlobalVars.player.transform.position) <= closeRange;
     }
 
     public override Vector3? SelectTarget()
@@ -112,32 +117,36 @@ public class Queen : BasePiece
 
     public override bool Move(Vector2 target, Vector2 distance, Vector2 moveDir, float moveTime, float moveTimerNormalized)
     {
-        //If player is in range then recalculate the target.
-        if (isPlayerInRange())
-        { 
-            target = Vector2.Lerp(GlobalVars.player.transform.position, transform.position, 0.15f);
+        //this logic should be moved to the selectTarget function.
+        //If player is in range, but not in close range, then recalculate the target.
+        if (isPlayerInRange() && !isPlayerInCloseRange())
+        {
+            float followDistance = 0.15f;  //A value used in the LERP function to determine how far behind the player
+                                           //the piece should follow. Must be a value between 0 and 1.
+            target = Vector2.Lerp(GlobalVars.player.transform.position, transform.position, followDistance);
         }
-
+        //Define the speed of the piece for easy manipulation and pass-through.
+        float speed = PieceSpeed;
         //if inRange(target), canUpdateMove=true, make queen move quickly into closeRange.
         if (inRange(target))
         {
+            //Move the enemy towards the player.
+            
+            //Multiply the speed by the inverse square of the distance between the queen and target to make her slow down.
+            speed = PieceSpeed * Mathf.Pow((initialFollowDistance/distance.magnitude), 2f);
+            //Don't let speed drop far below player's speed (should not be hard coded like this; fix later by replacing the #f's below).
+            //if (speed < 0.75f) speed = 0.75f;
+            //Similarly, don't let the speed rise above the PieceSpeed value.
+            if(speed > PieceSpeed) speed = PieceSpeed;
             canUpdateMove = true;
             if (!inCloseRange(target))
             {
                 //Increase queenStrikeTimer each frame
                 queenStrikeTimer += Time.deltaTime;
-                //Move the enemy towards the player. Add: Make queen speed decrease using exponential decay.
-                float speed = PieceSpeed;
                 if (initialFollowDistance == -1f)
                 {
                     initialFollowDistance = distance.magnitude;
                 }
-                //Multiply the speed by the inverse square of the distance between the queen and target to make her slow down.
-                speed = PieceSpeed * Mathf.Pow((initialFollowDistance/distance.magnitude), 2f);
-                //Don't let speed drop far below player's speed (should not be hard coded like this; fix later by replacing the 1's below).
-                if (speed < 0.75f) speed = 0.75f;
-                //Similarly, don't let the speed rise above the PieceSpeed value.
-                if(speed > PieceSpeed) speed = PieceSpeed;
                 transform.position = Vector2.MoveTowards(transform.position,
                     target,
                     speed * Time.deltaTime);
@@ -149,7 +158,7 @@ public class Queen : BasePiece
                 initialFollowDistance = -1;
                 //Allow Queen to quickly reset to continue following the King and/or immediately start the attack state.
                 PieceCycleTimer = 0;
-                //While in closeRange, increase the queenStrikeTimer by the deltaTime * 5.
+                //While in closeRange, increase the queenStrikeTimer by the deltaTime * x.
                 queenStrikeTimer += Time.deltaTime * 2;
                 if (queenStrikeTimer >= maxQueenStrikeTimer)
                 {
@@ -159,6 +168,9 @@ public class Queen : BasePiece
                 else
                 {
                     //If queenStrikeCount is greater than 0, continue with the move function.
+                    transform.position = Vector2.MoveTowards(transform.position,
+                        target,
+                        speed * Time.deltaTime);
                     return false;
                 }
 
@@ -166,7 +178,13 @@ public class Queen : BasePiece
         }
         else    //else if the target is not inRange
         {
-            //Replace this when the above implementation is working.
+            //set canUpdateMove to false and start the piece on a movement towards the random target it was given.
+            canUpdateMove = false;
+            //Reduce piece speed to make the movement more stalker-like
+            speed /= 2;
+            transform.position = Vector2.MoveTowards(transform.position,
+                target,
+                speed * Time.deltaTime);
             return false;
         }
     }
@@ -180,7 +198,7 @@ public class Queen : BasePiece
             Vector2 dirVector = GlobalVars.player.transform.position - transform.position;
             Vector2 distVector = dirVector.normalized * queenStrikeDistance;
             Vector2 strikePos = (Vector2)transform.position + distVector;
-            //Tiemr for Queen Strike. The attack continues for as long as the movement needs to plus a half second.
+            //Timer for Queen Strike. The attack continues for as long as the movement needs to plus a half second.
             attackTimer = distVector.magnitude / PieceSpeed + 0.5f;
             attackTarget = (Vector3)strikePos;
             return true;
@@ -222,7 +240,23 @@ public class Queen : BasePiece
             return true;
         }
     }
-    
+    //When the queen collides with a wall, cause her to stop immediately and return to the select target state.
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacles")
+        {
+            GetComponent<Rigidbody2D>().linearVelocity = 8  * Vector2.Reflect(collision.contacts[0].normal, collision.contacts[0].normal);
+            //Make piece wait after reset.
+            shouldWait = true;
+            //Make piece recalc target during reset.
+            cycleState = "Select Target";
+            //make piece take as long as possible to continue after reset and wait.
+            PieceCycleTimer = MaxPieceCycleTimer;
+            //make the piece not dangerous, just in case it is.
+            isDangerous = false;
+        }
+    }
+
     public override float HurtPlayerFor() //Extra code on top of Default Implementation
     {
         return base.HurtPlayerFor();
