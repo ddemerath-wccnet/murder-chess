@@ -245,7 +245,7 @@ public class Queen : BasePiece
     {
         if (collision.gameObject.tag == "Obstacles")
         {
-            GetComponent<Rigidbody2D>().linearVelocity = Vector2.Reflect(collision.contacts[0].normal, collision.contacts[0].normal);
+            GetComponent<Rigidbody2D>().linearVelocity = 8  * Vector2.Reflect(collision.contacts[0].normal, collision.contacts[0].normal);
             //Make piece wait after reset.
             shouldWait = true;
             //Make piece recalc target during reset.
