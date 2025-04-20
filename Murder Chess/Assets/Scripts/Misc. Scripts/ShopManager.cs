@@ -112,7 +112,7 @@ public class ShopManager : MonoBehaviour
     {
         luckCount++;
 
-        if (item.price > GlobalVars.player.GetComponent<Player>().Coins) return false;
+        if (item.price > GlobalVars.player.GetComponent<Player>().Coins && !GlobalVars.devMode) return false;
         GlobalVars.player.GetComponent<Player>().Coins -= item.price;
 
         BaseCard card;

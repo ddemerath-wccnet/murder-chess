@@ -191,7 +191,7 @@ public class Player : MonoBehaviour
             baseStatusEffect.Run(true);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (GlobalVars.devMode)
         {
             // Testing Effect
             if (Input.GetKeyDown(KeyCode.F))
