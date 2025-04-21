@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 5585408185356778678, guid: 9511183a8b6ef004b8d83947bf008672, type: 3}
+  image: {fileID: 21300000, guid: 699b27cbc128ed34ebd9b4e0fac646aa, type: 3}
   price: 300
   rarity: 1
   description: Makes player giant, multiplying many stats by 2 for 10 sec
@@ -64,4 +64,3 @@ MonoBehaviour:
   base_SpellCost: 100
   spellTimerMax: 10
   spellTimer: 0
-  multiplier: 2
