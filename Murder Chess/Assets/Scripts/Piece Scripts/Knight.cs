@@ -5,6 +5,7 @@ public class Knight : BasePiece
 {
     private Vector3 bestMove;
     protected bool isJumping = false;
+    public AudioSource sound;
 
     [SerializeField] protected ParticleSystem landingDustPrefab;
 
@@ -40,7 +41,7 @@ public class Knight : BasePiece
 
     private Vector3 FindBestKnightMove()
     {
-        Vector3 playerPos = GlobalVars.getTarget();;
+        Vector3 playerPos = GlobalVars.getTarget(); ;
         Vector3 bestMove = transform.position;
         float bestDistance = Vector3.Distance(transform.position, playerPos);
 
@@ -74,11 +75,11 @@ public class Knight : BasePiece
     public override bool ShouldAttack()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, GlobalVars.getTarget());
-        
+
         if (distanceToPlayer <= 1)
         {
             attackTimer = 1.5f;
-            attackTarget = GlobalVars.getTarget();;
+            attackTarget = GlobalVars.getTarget(); ;
             return true;
         }
 
@@ -96,11 +97,12 @@ public class Knight : BasePiece
     {
         isDangerous = true; // Piece can hurt the player while attacking
 
-        if(isJumping) return false;
+        if (isJumping) return false;
 
         if (!isJumping && CanPerformJumpAttack())
         {
             StartCoroutine(JumpAnimation(bestMove));
+            sound.Play();
             return true;
         }
 
@@ -140,7 +142,7 @@ public class Knight : BasePiece
         while (elapsedTime < jumpDuration)
         {
             float t = elapsedTime / jumpDuration;
-            
+
             // Create an arc for the jump using Sin function
             float heightOffset = Mathf.Sin(t * Mathf.PI) * peakHeight;
 
@@ -158,7 +160,7 @@ public class Knight : BasePiece
 
         if (landingDustPrefab != null)
         {
-            ParticleSystem dustInstance = Instantiate(landingDustPrefab, targetPosition - new Vector3(0,0.3f, 0), Quaternion.identity);
+            ParticleSystem dustInstance = Instantiate(landingDustPrefab, targetPosition - new Vector3(0, 0.3f, 0), Quaternion.identity);
             dustInstance.Play();
             Destroy(dustInstance.gameObject, dustInstance.main.duration + dustInstance.main.startLifetime.constantMax);
         }

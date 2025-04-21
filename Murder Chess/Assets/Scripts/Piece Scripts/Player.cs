@@ -102,6 +102,8 @@ public class Player : MonoBehaviour
     public bool onBlackSquare;
 
     public List<BaseStatusEffect> activeEffects = new List<BaseStatusEffect>();
+    public AudioSource sound;
+    public AudioSource hitPieceSound;
 
     private void Awake()
     {
@@ -144,7 +146,7 @@ public class Player : MonoBehaviour
         transform.position += GlobalVars.DeltaTimePlayer * PlayerSpeed * moveDir;
 
         // Visualizer
-        if (isDangerous) 
+        if (isDangerous)
         {
             GetComponent<SpriteRenderer>().color = Color.red;
         }
@@ -253,6 +255,7 @@ public class Player : MonoBehaviour
             {
                 CameraEffects.ScreenShake(0.25f, Mathf.Clamp(damage, 0.75f, 100f) * 0.1f, 0.1f);
                 if (damage >= 0.1f) GlobalVars.timeOfLastHit = Mathf.FloorToInt(Time.time);
+                sound.Play();
             }
         }
     }
@@ -297,7 +300,8 @@ public class Player : MonoBehaviour
         if (pieceDmgMulti > 0)
         {
             collisionPiece.DamagePiece(PlayerDamage * pieceDmgMulti);
-            PlayerMana = Mathf.Clamp(PlayerMana + (1 * GlobalVars.multiplier_PlayerManaGain * manaMulti) , 0, MaxPlayerMana);
+            PlayerMana = Mathf.Clamp(PlayerMana + (1 * GlobalVars.multiplier_PlayerManaGain * manaMulti), 0, MaxPlayerMana);
         }
+        hitPieceSound.Play();
     }
 }

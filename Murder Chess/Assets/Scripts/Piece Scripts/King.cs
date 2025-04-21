@@ -21,6 +21,7 @@ public class King : BasePiece
     [SerializeField]
     private float aoeRandMax;
     private float aoeCoolDownTimer;
+    public AudioSource sound;
 
 
 
@@ -74,11 +75,19 @@ public class King : BasePiece
                 {
                     Animator animation = transform.Find("Aoe_Attack_Anim").GetComponent<Animator>();
                     animation.SetTrigger("PlayAOEAnimation");
+                    PlayAOESound();
                     playerPiece.DamagePlayer(PieceDamage * aoeDamage);
+
                 }
             }
         }
 
+
+    }
+
+    public void PlayAOESound()
+    {
+        sound.Play();
     }
 
 
