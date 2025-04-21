@@ -147,6 +147,7 @@ MonoBehaviour:
   spellOffset: {x: 0, y: 4}
   boxOffset: {x: 0, y: 4}
   aoeDamage: 10
+  sound: {fileID: -1761768250888233422}
 --- !u!82 &-1761768250888233422
 AudioSource:
   m_ObjectHideFlags: 0

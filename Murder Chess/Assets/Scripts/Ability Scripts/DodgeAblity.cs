@@ -7,13 +7,16 @@ public class DodgeAbility : BaseAbility
     public Vector2 movementDirection;
     public GameObject player;
     public float speed;
+    public AudioSource sound;
     protected override void AbilityStart()
     {
         abilityLengthTimer = maxAbilityLengthTimer;
 
         movementDirection = GlobalVars.player.GetComponent<Player>().moveDir;
-        
+
         player.GetComponent<Player>().iFrames = 0.5f;
+
+        sound.Play();
 
     }
 

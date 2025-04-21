@@ -69,7 +69,7 @@ MonoBehaviour:
   travelDistance: 10
   maxTravelTimer: 1
   spellDamageMulti: 2
-  sound: {fileID: 0}
+  sound: {fileID: 6383179567129992818}
 --- !u!82 &6383179567129992818
 AudioSource:
   m_ObjectHideFlags: 0
