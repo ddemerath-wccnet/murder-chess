@@ -108,8 +108,9 @@ public class ShopManager : MonoBehaviour
         myCarousel.UpdateImage();
     }
 
-    public bool AquireItem(ShopItem item)
+    public bool AquireItem(ShopItem item, int slot)
     {
+        slot--;
         luckCount++;
 
         if (item.price > GlobalVars.player.GetComponent<Player>().Coins && !GlobalVars.devMode) return false;
@@ -121,18 +122,24 @@ public class ShopManager : MonoBehaviour
         if (item.TryGetComponent<BaseCard>(out card))
         {
             GameObject myItem = GameObject.Instantiate(card, cardParent).gameObject;
-            myItem.transform.SetSiblingIndex(0);
+            Transform oldItem = cardParent.GetChild(slot);
+            oldItem.SetSiblingIndex(myItem.transform.GetSiblingIndex());
+            myItem.transform.SetSiblingIndex(slot);
             myItem.GetComponent<BaseCard>().active = true;
         }
         if (item.TryGetComponent<BaseSpell>(out spell))
         {
             GameObject myItem = GameObject.Instantiate(spell, spellParent).gameObject;
-            myItem.transform.SetSiblingIndex(0);
+            Transform oldItem = spellParent.GetChild(slot);
+            oldItem.SetSiblingIndex(myItem.transform.GetSiblingIndex());
+            myItem.transform.SetSiblingIndex(slot);
         }
         if (item.TryGetComponent<BaseAbility>(out ability))
         {
             GameObject myItem = GameObject.Instantiate(ability, abilityParent).gameObject;
-            myItem.transform.SetSiblingIndex(0);
+            Transform oldItem = abilityParent.GetChild(slot);
+            oldItem.SetSiblingIndex(myItem.transform.GetSiblingIndex());
+            myItem.transform.SetSiblingIndex(slot);
         }
 
         return true;

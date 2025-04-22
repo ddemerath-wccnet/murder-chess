@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e3d86c8e799ee4db38f75563145d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  spellButtons: []
 --- !u!1 &3963308116152601087
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +289,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2874742865369329763, guid: 6ba22aeab3fcfd04da86814d3751d6b2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5259733778668853094, guid: dd2794d2c98f7454c8b901741da70f39, type: 3}
     - target: {fileID: 6273523373002261332, guid: 6ba22aeab3fcfd04da86814d3751d6b2, type: 3}
       propertyPath: m_Name
       value: SpellButton2
@@ -389,6 +395,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2874742865369329763, guid: 6ba22aeab3fcfd04da86814d3751d6b2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 364962840345947878, guid: 16fce9e552ab0bc458063698670861df, type: 3}
     - target: {fileID: 6273523373002261332, guid: 6ba22aeab3fcfd04da86814d3751d6b2, type: 3}
       propertyPath: m_Name
       value: SpellButton3

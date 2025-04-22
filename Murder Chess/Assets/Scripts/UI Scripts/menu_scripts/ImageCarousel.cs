@@ -16,6 +16,8 @@ public class ImageCarousel : MonoBehaviour
     public List<ShopItem> items;
     private int currentIndex = 0;
 
+    public SlotSelector slotSelector;
+
     void Start()
     {
         UpdateImage();
@@ -35,11 +37,18 @@ public class ImageCarousel : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (shopManager.AquireItem(items[currentIndex]))
-            {
-                items.RemoveAt(currentIndex);
-                UpdateImage();
-            }
+            slotSelector.gameObject.SetActive(true);
+            slotSelector.UpdateImages();
+        }
+    }
+
+    public void GetItem(int slot)
+    {
+        slotSelector.gameObject.SetActive(false);
+        if (shopManager.AquireItem(items[currentIndex], slot))
+        {
+            items.RemoveAt(currentIndex);
+            UpdateImage();
         }
     }
 
