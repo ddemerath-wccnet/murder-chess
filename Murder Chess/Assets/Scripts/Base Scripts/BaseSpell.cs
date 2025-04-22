@@ -35,7 +35,7 @@ public abstract class BaseSpell : MonoBehaviour
     public bool CallActivate()
     {
         Debug.Log("CallActivate");
-        if (GlobalVars.player.GetComponent<Player>().PlayerMana >= SpellCost && 
+        if ((GlobalVars.player.GetComponent<Player>().PlayerMana >= SpellCost || GlobalVars.devMode) && 
             startedSpell == false && !GlobalVars.bricked)
         {
             GlobalVars.player.GetComponent<Player>().PlayerMana = GlobalVars.player.GetComponent<Player>().PlayerMana - SpellCost;

@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: f78c5b0235c0e5242b6a2a2dcef0c72d, type: 3}
+  image: {fileID: 21300000, guid: d01ff7fca175e264087f13b43d997a36, type: 3}
   price: 0
   rarity: 1
   description: Rolls with advantage to determine your fate. 30 second cooldown.

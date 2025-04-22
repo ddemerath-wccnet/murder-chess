@@ -6,13 +6,15 @@ public class DecoyAbility : BaseAbility
     public GameObject decoyPrefab;
     private GameObject spawnedDecoy;
     private float decoyTimer;
+    public AudioSource sound;
 
     protected override void AbilityStart()
     {
-        
+        sound.Play();
         spawnedDecoy = Instantiate(decoyPrefab, GlobalVars.player.transform.position, GlobalVars.player.transform.rotation);
         GlobalVars.decoyPosition = spawnedDecoy.transform.position;
         decoyTimer = decoyLifetime;
+        
     }
 
     protected override bool AbilityUpdate()

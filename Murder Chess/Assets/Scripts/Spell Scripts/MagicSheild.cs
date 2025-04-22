@@ -5,6 +5,7 @@ public class MagicShield : BaseSpell
 {
     private SpriteRenderer shieldSprite;
     private float spellTimer;
+    public AudioSource sound;
 
 
     protected override void SpellStart()
@@ -26,6 +27,7 @@ public class MagicShield : BaseSpell
             shieldSprite.color = color;
             shieldSprite.enabled = true;
         }
+        sound.Play();
     }
 
 

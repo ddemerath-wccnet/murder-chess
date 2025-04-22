@@ -5,9 +5,11 @@ public class KnightLevel2 : Knight
 {
     [SerializeField] private float stunRadius = 1.5f;
     [SerializeField] private float stunDuration = 1f;
+    public AudioSource soundLvl2;
 
     protected override IEnumerator JumpAnimation(Vector3 targetPosition)
     {
+        soundLvl2.Play();
         isJumping = true;
         float jumpDuration = 0.6f;
         float peakHeight = 1.0f;

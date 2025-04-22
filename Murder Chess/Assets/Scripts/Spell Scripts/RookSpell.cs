@@ -9,13 +9,14 @@ public class RookSpell : BaseSpell
     public float maxTravelTimer = 2;
     float travelTimer;
     public float spellDamageMulti = 1;
+    public AudioSource sound;
     Vector3 origPos;
     Vector3 targetPos;
 
     protected override void SpellStart()
     {
         Debug.Log("spell start");
-        rook = GameObject.Instantiate(rookPrefab, transform.position, transform. rotation);
+        rook = GameObject.Instantiate(rookPrefab, transform.position, transform.rotation);
         rookSpellObject = rook.GetComponent<SpellObject>();
         rookSpellObject.damageMulti = spellDamageMulti;
 
@@ -25,12 +26,14 @@ public class RookSpell : BaseSpell
         origPos = transform.position;
         targetPos = transform.position +
             movedir * travelDistance;
+
+        sound.Play();
     }
 
     protected override bool SpellUpdate()
     {
         travelTimer -= GlobalVars.DeltaTimePiece;
-        float lerpPos = 1-(travelTimer / maxTravelTimer);
+        float lerpPos = 1 - (travelTimer / maxTravelTimer);
         rook.transform.position = Vector3.Lerp(origPos, targetPos, lerpPos);
 
         if (travelTimer < 0)

@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 17cbae754c0deed468c30f44cf8e7820, type: 3}
+  image: {fileID: 21300000, guid: 4db0bca1669f7424ba2eecf42db23530, type: 3}
   price: 200
-  weight: 1
+  rarity: 1
   description: x10 mana for 5 secconds
 --- !u!114 &4017364987353513383
 MonoBehaviour:
@@ -63,3 +63,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   base_MaxAbilityCooldown: 30
   base_AbilityCooldown: 0
+  startedAbility: 0

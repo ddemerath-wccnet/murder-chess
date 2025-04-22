@@ -55,6 +55,8 @@ public static class GlobalVars
 
     public static bool bricked = false;
 
+    public static bool devMode = false;
+
     /// <summary> Sets all variables back to default. </summary>
     public static void ResetClass()
     {

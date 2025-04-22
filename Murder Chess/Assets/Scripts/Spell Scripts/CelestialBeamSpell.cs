@@ -15,6 +15,7 @@ public class CelestialBeamSpell : BaseSpell
     private Vector2 boxOffset = new Vector2(4f, 0);
     [SerializeField]
     private float aoeDamage = 10f;
+    public AudioSource sound;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,6 +58,7 @@ public class CelestialBeamSpell : BaseSpell
                 basePiece.DamagePiece(basePiece.PieceDamage * aoeDamage);
             }
         }
+        sound.Play();
     }
     private void OnDrawGizmosSelected()
     {

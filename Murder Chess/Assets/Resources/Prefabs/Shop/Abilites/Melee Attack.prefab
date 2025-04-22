@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: -5874090436469129358, guid: 65cfc5017ba02d142b2a3d95a8ae4205, type: 3}
+  image: {fileID: 21300000, guid: be4375eac2922074fb8d3996e19e09ec, type: 3}
   price: 50
   rarity: 1
   description: Makes you dangerous for 10 secconds
@@ -63,5 +63,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   base_MaxAbilityCooldown: 15
   base_AbilityCooldown: 0
+  startedAbility: 0
   maxAbilityLengthTimer: 10
   abilityLengthTimer: 0

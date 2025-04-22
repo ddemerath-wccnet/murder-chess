@@ -10,6 +10,8 @@ public class BombAbility : BaseAbility
     private float bombTimer;
     private float instanceBombTimer;
     private Vector3 playerPosition;
+    public AudioSource sound;
+    private bool hasPlayedSound = false;
     protected override void AbilityStart()
     {
         abilityLengthTimer = maxAbilityLengthTimer;
@@ -18,24 +20,31 @@ public class BombAbility : BaseAbility
         playerPosition = GlobalVars.player.transform.position;
         bomb.transform.position = playerPosition;
         attackArea.transform.position = playerPosition;
+
     }
 
     protected override bool AbilityUpdate()
-    { 
+    {
         bomb.transform.position = playerPosition;
         attackArea.transform.position = playerPosition;
 
         if (abilityLengthTimer > 0)
         {
-            if(instanceBombTimer > 0)
+            if (instanceBombTimer > 0)
             {
                 instanceBombTimer -= GlobalVars.DeltaTimePlayer;
                 bomb.SetActive(true);
             }
-            else 
+            else
             {
                 bomb.SetActive(false);
                 attackArea.SetActive(true);
+
+                if (!hasPlayedSound)
+                {
+                    sound.Play();
+                    hasPlayedSound = true;
+                }
             }
 
             abilityLengthTimer -= GlobalVars.DeltaTimePlayer;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3147731751223373092}
   - component: {fileID: 4902202374725870542}
   - component: {fileID: 7501947224913625605}
+  - component: {fileID: -3303618175443277644}
   m_Layer: 0
   m_Name: BombAbility
   m_TagString: Untagged
@@ -49,11 +50,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   base_MaxAbilityCooldown: 20
   base_AbilityCooldown: 0
+  startedAbility: 0
   maxAbilityLengthTimer: 3.5
   abilityLengthTimer: 0
   explosionDuration: 0.5
   attackArea: {fileID: 8068851570265366325}
   bomb: {fileID: 7387264523360034312}
+  sound: {fileID: -3303618175443277644}
 --- !u!114 &7501947224913625605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,11 +69,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 5390227626497063583, guid: c180fbfd14145e941ab8e3f8a5e323df, type: 3}
+  image: {fileID: 21300000, guid: 42f52059613710d448f6f1d5d0cbb0c0, type: 3}
   price: 0
   rarity: 1
   description: Places a bomb that detonates after a short while, doing damage to
     anything caught in the blast.
+--- !u!82 &-3303618175443277644
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188791876083934727}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 52ab52dc3423ff646933c08ea1ebb83b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 52ab52dc3423ff646933c08ea1ebb83b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7387264523360034312
 GameObject:
   m_ObjectHideFlags: 0

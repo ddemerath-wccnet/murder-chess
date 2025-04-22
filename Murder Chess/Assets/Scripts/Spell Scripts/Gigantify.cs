@@ -4,6 +4,7 @@ public class Gigantify : BaseSpell
 {
     public float spellTimerMax = 10f;
     public float spellTimer;
+    public AudioSource sound;
 
     protected override void SpellStart()
     {
@@ -13,6 +14,7 @@ public class Gigantify : BaseSpell
         new ModifierEntry("multiplier_PlayerSpeed", 3, spellTimerMax);
         new ModifierEntry("multiplier_PlayerDamage", 3, spellTimerMax);
         GlobalVars.player.transform.localScale *= 2;
+        sound.Play();
     }
 
 
@@ -23,7 +25,7 @@ public class Gigantify : BaseSpell
 
         if (spellTimer <= 0)
         {
-            GlobalVars.player.transform.localScale *= 1/2f;
+            GlobalVars.player.transform.localScale *= 1 / 2f;
             return true;
         }
         return false;
