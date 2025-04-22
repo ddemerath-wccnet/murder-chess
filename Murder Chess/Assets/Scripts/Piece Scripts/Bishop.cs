@@ -15,6 +15,7 @@ public class Bishop : BasePiece
     protected override void Update()
     {
         base.Update();
+        SpecialCooldown();
     }
 
     public override Vector3? SelectTarget()
@@ -46,7 +47,7 @@ public class Bishop : BasePiece
         }
         
         //select player as target
-        return GlobalVars.getTarget();;
+        return GlobalVars.getTarget();
     }
 
     public override bool Move(Vector2 target, Vector2 distance, Vector2 moveDir, float moveTime, float moveTimerNormalized)
@@ -106,4 +107,6 @@ public class Bishop : BasePiece
             return true;
         }
     }
-}
+
+    protected virtual void SpecialCooldown() {}
+};

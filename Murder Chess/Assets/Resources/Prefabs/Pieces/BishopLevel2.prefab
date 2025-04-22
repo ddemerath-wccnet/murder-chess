@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 7351267985956625380}
   - component: {fileID: -7962343100745427878}
   - component: {fileID: 6828842150201497267}
-  - component: {fileID: -7337982626753688651}
+  - component: {fileID: 2774117477522853518}
   - component: {fileID: 3125696162643690928}
   - component: {fileID: 7776688155948542226}
   m_Layer: 0
-  m_Name: Bishop
+  m_Name: BishopLevel2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7337982626753688651
+--- !u!114 &2774117477522853518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6014512843337586977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f7b71d68a3854446b5f6f6b017d6dac, type: 3}
+  m_Script: {fileID: 11500000, guid: 1187f40613f1e4d0e8ad6e26b59598c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   base_MaxPieceHealth: 10
@@ -131,7 +131,7 @@ MonoBehaviour:
   base_MaxPieceCycleTimer: 0.5
   PieceCycleTimer: 0
   cycleState: 
-  maxIFrames: 1
+  maxIFrames: 2
   isDangerous: 0
   bricked: 0
 --- !u!50 &3125696162643690928
@@ -292,7 +292,7 @@ PrefabInstance:
     - target: {fileID: 4199895802923850715, guid: 9c4aa55cb81c6c744a92221c21fc544c, type: 3}
       propertyPath: piece
       value: 
-      objectReference: {fileID: -7337982626753688651}
+      objectReference: {fileID: 2774117477522853518}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
