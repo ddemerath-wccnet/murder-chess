@@ -70,10 +70,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 42f52059613710d448f6f1d5d0cbb0c0, type: 3}
-  price: 0
-  rarity: 1
+  price: 300
+  rarity: 2
   description: Places a bomb that detonates after a short while, doing damage to
-    anything caught in the blast.
+    anything caught in the blast. 20 second cooldown.
 --- !u!82 &-3303618175443277644
 AudioSource:
   m_ObjectHideFlags: 0

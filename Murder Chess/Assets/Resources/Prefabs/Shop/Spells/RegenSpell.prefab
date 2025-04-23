@@ -60,6 +60,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 61a5a7d0ac3433e41966374847b53aff, type: 3}
-  price: 0
+  price: 150
   rarity: 1
   description: Grants a small amount of health regen for 5 seconds. Costs 15 mana.

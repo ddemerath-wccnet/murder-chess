@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   base_MaxAbilityCooldown: 180
   base_AbilityCooldown: 0
+  startedAbility: 0
   maxAbilityLengthTimer: 3
   abilityLengthTimer: 0
   player: {fileID: 0}
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 8730051543575504212, guid: f9e3981a634d60e418f86385dfaa6ae3, type: 3}
-  price: 0
-  rarity: 1
+  price: 500
+  rarity: 2
   description: Grants invincibility, movement speed, and healing, at the cost of
     reduced damage. 3 minute cooldown.

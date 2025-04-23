@@ -127,12 +127,13 @@ MonoBehaviour:
   base_MaxPieceHealth: 10
   base_PieceHealth: 0
   base_PieceSpeed: 1
-  base_PieceDamage: 0
+  base_PieceDamage: 3
   base_MaxPieceCycleTimer: 5
   PieceCycleTimer: 0
   cycleState: 
   maxIFrames: 1
   isDangerous: 0
+  bricked: 0
   changeDirectionTime: 0.5
   duplicateTimer: 0
   duplicateLimit: 3

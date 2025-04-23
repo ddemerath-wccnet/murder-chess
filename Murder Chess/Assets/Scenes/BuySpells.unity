@@ -391,14 +391,9 @@ MonoBehaviour:
   leftImage: {fileID: 89299166}
   rightImage: {fileID: 961867437}
   displayText: {fileID: 2103468309}
-  images:
-  - {fileID: 21300000, guid: a372245adb47d8845be3344ef927218e, type: 3}
-  - {fileID: 21300000, guid: 17cbae754c0deed468c30f44cf8e7820, type: 3}
-  - {fileID: 21300000, guid: b1756650303c51a43be422cdb622f201, type: 3}
-  imageDescriptions:
-  - 'Celestial Beam: Powerful beam'
-  - 'Protect: Short use invulnerability'
-  - 'Pause: Stops enemy pieces briefly '
+  costText: {fileID: 0}
+  items: []
+  slotSelector: {fileID: 0}
 --- !u!4 &277825777
 Transform:
   m_ObjectHideFlags: 0
@@ -1275,8 +1270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42.519, y: -189}
-  m_SizeDelta: {x: 255.0237, y: 69.2764}
+  m_AnchoredPosition: {x: 0, y: -200}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
