@@ -49,6 +49,7 @@ public class ImageCarousel : MonoBehaviour
         {
             items.RemoveAt(currentIndex);
             UpdateImage();
+            slotSelector.UpdateImage(slot, items[currentIndex].image);
         }
     }
 

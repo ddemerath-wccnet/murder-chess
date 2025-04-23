@@ -75,4 +75,13 @@ public class SlotSelector : MonoBehaviour
             slot5.image.sprite = cardHand.handCards[4].GetComponent<ShopItem>().image;
         }
     }
+
+    public void UpdateImage(int slot, Sprite image)
+    {
+        if (slot == 1) slot1.image.sprite = image;
+        if (slot == 2) slot2.image.sprite = image;
+        if (slot == 3) slot3.image.sprite = image;
+        if (slot == 4) slot4.image.sprite = image;
+        if (slot == 5) slot5.image.sprite = image;
+    }
 }
