@@ -122,23 +122,32 @@ public class ShopManager : MonoBehaviour
         if (item.TryGetComponent<BaseCard>(out card))
         {
             GameObject myItem = GameObject.Instantiate(card, cardParent).gameObject;
-            Transform oldItem = cardParent.GetChild(slot);
-            oldItem.SetSiblingIndex(myItem.transform.GetSiblingIndex());
+            if (cardParent.childCount > slot)
+            {
+                Transform oldItem = cardParent.GetChild(slot);
+                oldItem.SetSiblingIndex(myItem.transform.GetSiblingIndex());
+            }
             myItem.transform.SetSiblingIndex(slot);
             myItem.GetComponent<BaseCard>().active = true;
         }
         if (item.TryGetComponent<BaseSpell>(out spell))
         {
             GameObject myItem = GameObject.Instantiate(spell, spellParent).gameObject;
-            Transform oldItem = spellParent.GetChild(slot);
-            oldItem.SetSiblingIndex(myItem.transform.GetSiblingIndex());
+            if (spellParent.childCount > slot)
+            {
+                Transform oldItem = spellParent.GetChild(slot);
+                oldItem.SetSiblingIndex(myItem.transform.GetSiblingIndex());
+            }
             myItem.transform.SetSiblingIndex(slot);
         }
         if (item.TryGetComponent<BaseAbility>(out ability))
         {
             GameObject myItem = GameObject.Instantiate(ability, abilityParent).gameObject;
-            Transform oldItem = abilityParent.GetChild(slot);
-            oldItem.SetSiblingIndex(myItem.transform.GetSiblingIndex());
+            if (abilityParent.childCount > slot)
+            {
+                Transform oldItem = abilityParent.GetChild(slot);
+                oldItem.SetSiblingIndex(myItem.transform.GetSiblingIndex());
+            }
             myItem.transform.SetSiblingIndex(slot);
         }
 

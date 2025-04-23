@@ -13,11 +13,14 @@ public class SlotSelector : MonoBehaviour
     public Button slot4;
     public Button slot5;
     public Button slot6;
+    public CardHand cardHand;
+    public Player player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        cardHand = GameObject.FindFirstObjectByType<CardHand>(FindObjectsInactive.Include);
+        player = GameObject.FindFirstObjectByType<Player>(FindObjectsInactive.Include);
     }
 
     // Update is called once per frame
@@ -50,7 +53,6 @@ public class SlotSelector : MonoBehaviour
 
     public void UpdateImages()
     {
-        Player player = GlobalVars.player.GetComponent<Player>();
         if (isSpell)
         {
             slot1.image.sprite = player.Spell1.GetComponent<ShopItem>().image;
@@ -67,7 +69,6 @@ public class SlotSelector : MonoBehaviour
         }
         else if (isCard)
         {
-            CardHand cardHand = GameObject.FindFirstObjectByType<CardHand>();
             slot1.image.sprite = cardHand.handCards[0].GetComponent<ShopItem>().image;
             slot2.image.sprite = cardHand.handCards[1].GetComponent<ShopItem>().image;
             slot3.image.sprite = cardHand.handCards[2].GetComponent<ShopItem>().image;
