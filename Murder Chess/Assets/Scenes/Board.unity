@@ -6785,7 +6785,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 982569196731d1448b87e72e8e9a3a2a, type: 3}
   m_Resource: {fileID: 8300000, guid: 982569196731d1448b87e72e8e9a3a2a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6882,7 +6882,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 08d95757c5588894fac039b5ca69c7b4, type: 3}
   m_Resource: {fileID: 8300000, guid: 08d95757c5588894fac039b5ca69c7b4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7906,6 +7906,10 @@ PrefabInstance:
       propertyPath: cardHand
       value: 
       objectReference: {fileID: 2146979110}
+    - target: {fileID: 8554590180928953157, guid: 579fdcaddcd734749b1a783a50ddf3e5, type: 3}
+      propertyPath: devModeOnStart
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
