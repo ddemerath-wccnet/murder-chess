@@ -102,5 +102,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusEffect: BrickedEffect
-  duration: 5
+  duration: 1
   level: 1
