@@ -222,6 +222,7 @@ MonoBehaviour:
   cycleState: 
   maxIFrames: 1
   isDangerous: 0
+  bricked: 0
   regen: 0.1
   duplicateTimer: 0
   duplicateLimit: 1

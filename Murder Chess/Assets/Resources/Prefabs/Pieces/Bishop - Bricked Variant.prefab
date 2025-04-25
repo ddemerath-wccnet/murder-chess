@@ -18,11 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7962343100745427878, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       propertyPath: difficultyCost
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -7962343100745427878, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       propertyPath: base_PieceCoinValue
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: -7962343100745427878, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
+      propertyPath: groupSize_MinToMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7337982626753688651, guid: fe09c053ae4f2487ab0811a1eafb3a46, type: 3}
       propertyPath: base_PieceDamage

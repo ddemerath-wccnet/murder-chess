@@ -53,8 +53,8 @@ MonoBehaviour:
   imageScale: 1
   difficultyCost: 10
   groupSize_MinToMax:
-    x: 3
-    y: 5
+    x: 2
+    y: 4
   rarity: 1
   base_PieceCoinValue: 20
 --- !u!212 &7431020541619671837
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b4996d571baf54eab446b139f81106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  base_MaxPieceHealth: 5
+  base_MaxPieceHealth: 4
   base_PieceHealth: 0
   base_PieceSpeed: 1.5
   base_PieceDamage: 1
@@ -133,6 +133,7 @@ MonoBehaviour:
   cycleState: 
   maxIFrames: 1
   isDangerous: 0
+  bricked: 0
   duplicateTimer: 0
   duplicateLimit: 1
 --- !u!60 &4905706586172696130
