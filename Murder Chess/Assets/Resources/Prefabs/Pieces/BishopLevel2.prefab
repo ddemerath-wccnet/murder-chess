@@ -56,7 +56,7 @@ MonoBehaviour:
     x: 1
     y: 2
   rarity: 1
-  base_PieceCoinValue: 30
+  base_PieceCoinValue: 60
 --- !u!212 &6828842150201497267
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   maxIFrames: 2
   isDangerous: 0
   bricked: 0
+  abilityPrefab: {fileID: 5824658101389984717, guid: bbf157eb2b4a14281a58c1bf4a742c17, type: 3}
 --- !u!50 &3125696162643690928
 Rigidbody2D:
   serializedVersion: 5

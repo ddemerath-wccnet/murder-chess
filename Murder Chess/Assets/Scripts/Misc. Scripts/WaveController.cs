@@ -30,6 +30,7 @@ public class WaveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //UPDATE: Change this if/else block to a switch statement.
         if (controllerState == "Starting")
         {
             controllerState = "Spawning";

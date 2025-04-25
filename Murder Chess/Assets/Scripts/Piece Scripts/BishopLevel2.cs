@@ -9,14 +9,13 @@ public class BishopLevel2 : Bishop
     //The specialCooldown is the current amount time the Bishop must wait in between using the special ability.
     private float specialCooldown;
     //Ability Prefab object for the x-shaped walls that the Bishop can create
+    [SerializeField]
     private GameObject abilityPrefab;
     
     
     protected override void Start()
     {
         base.Start();
-        //Define the ability prefab
-        abilityPrefab = Resources.Load<GameObject>("Prefabs/xwall");
         PieceHealth = MaxPieceHealth;
         specialCooldown = maxSpecialCooldown;
     }
