@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: -836092874633851596, guid: 8cd5c34a7051b5046883eedd3e304ab9, type: 3}
+  image: {fileID: 21300000, guid: f3c6dd84780637049870b26f81c2e6fa, type: 3}
   price: 20
   rarity: 1
   description: Creates a shockwave that pushes enemies away.

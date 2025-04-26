@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5883284c231f44693de889bfd13991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 7958309316330078253, guid: 37652f5dda1f5be478939aa5780ff9d4, type: 3}
+  image: {fileID: 21300000, guid: 3dd3e46f15e6b2a4e9bdef51a265e0fc, type: 3}
   price: 175
   rarity: 1
   description: Creates a decoy that enemy pieces will target (Excludes King and Queen)
