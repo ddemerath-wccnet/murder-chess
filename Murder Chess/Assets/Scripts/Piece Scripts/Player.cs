@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -67,14 +66,14 @@ public class Player : MonoBehaviour
     private float base_MaxPlayerMana = 10;
     public float MaxPlayerMana
     {   //Uses multipliers to correctly calculate var
-        get { return Mathf.RoundToInt(base_MaxPlayerMana * GlobalVars.multiplier_PlayerMana); }
+        get { return base_MaxPlayerMana * GlobalVars.multiplier_PlayerMana; }
         set { base_MaxPlayerMana = value / GlobalVars.multiplier_PlayerMana; }
     }
     [SerializeField]
     private float base_PlayerMana;
     public float PlayerMana
     {   //Uses multipliers to correctly calculate var
-        get { return Mathf.RoundToInt(base_PlayerMana * GlobalVars.multiplier_PlayerMana); }
+        get { return base_PlayerMana * GlobalVars.multiplier_PlayerMana; }
         set { base_PlayerMana = value / GlobalVars.multiplier_PlayerMana; }
     }
 
@@ -239,9 +238,6 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        
-        Coins = Mathf.Round(Coins);
-
         Debug.Log(activeEffects.Count);
     }
 
