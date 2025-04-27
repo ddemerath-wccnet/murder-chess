@@ -9,6 +9,8 @@ public class StatVisualizer : MonoBehaviour
     public string variableName;
     public TMP_Text text;
 
+    public int decimalPlaces = -1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,6 +51,23 @@ public class StatVisualizer : MonoBehaviour
                     text.text = "Variable not found!";
                 }
             }
+        }
+
+        if (decimalPlaces >= 0)
+        {
+            float textValue = float.Parse(text.text);
+            for (int i = 1; i <= decimalPlaces; i++)
+            {
+                textValue *= 10;
+            }
+
+            textValue = Mathf.FloorToInt(textValue);
+            for (int i = 1; i <= decimalPlaces; i++)
+            {
+                textValue *= 0.1f;
+            }
+
+            text.text = textValue.ToString();
         }
     }
 }

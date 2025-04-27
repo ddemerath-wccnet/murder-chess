@@ -152,6 +152,7 @@ MonoBehaviour:
   myScript: {fileID: 0}
   variableName: waveInt
   text: {fileID: 9019724096960881435}
+  decimalPlaces: -1
 --- !u!1 &158220067928414844
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +730,7 @@ MonoBehaviour:
   myScript: {fileID: 0}
   variableName: MaxPlayerMana
   text: {fileID: 6664408751776613128}
+  decimalPlaces: 2
 --- !u!1 &2977668997646940788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,6 +1096,7 @@ MonoBehaviour:
   myScript: {fileID: 0}
   variableName: PlayerMana
   text: {fileID: 3449671602738562006}
+  decimalPlaces: 2
 --- !u!1 &4500404118123334466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1538,7 @@ MonoBehaviour:
   myScript: {fileID: 0}
   variableName: Coins
   text: {fileID: 4983341271347061144}
+  decimalPlaces: 2
 --- !u!1 &6626577355773835339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,6 +2127,7 @@ MonoBehaviour:
   myScript: {fileID: 6690967038792954716}
   variableName: deckSize
   text: {fileID: 2045996251588167419}
+  decimalPlaces: -1
 --- !u!1 &7761686235494614548
 GameObject:
   m_ObjectHideFlags: 0
