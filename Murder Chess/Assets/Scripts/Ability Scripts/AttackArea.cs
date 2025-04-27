@@ -10,6 +10,7 @@ public class AttackArea : MonoBehaviour
     public float burnDuration = 0f;
     public bool bleeds = false;
     public float bleedDuration = 0f;
+    public bool allowRepeats = false;
     private void start() {
 
     }
@@ -22,7 +23,7 @@ public class AttackArea : MonoBehaviour
         Player player;
         if (collision.TryGetComponent<BasePiece>(out basePiece))
         {
-            if (!collisionList.Contains(basePiece))
+            if (allowRepeats || !collisionList.Contains(basePiece))
             {
                 collisionList.Add(basePiece);
                 GlobalVars.player.GetComponent<Player>().HitPiece(basePiece, 0, damageMulti, 1f);

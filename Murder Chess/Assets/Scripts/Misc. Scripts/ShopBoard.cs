@@ -17,9 +17,9 @@ public class ShopBoard : MonoBehaviour
     void Update()
     {
         timeSinceLastSwitch += Time.unscaledDeltaTime;
-        if (Input.GetKeyDown(KeyCode.Escape) && timeSinceLastSwitch > 1)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ThawBoardScene();
+            ExitBoardScene();
         }
     }
 
@@ -38,5 +38,13 @@ public class ShopBoard : MonoBehaviour
         timeSinceLastSwitch = 0;
         GlobalVars.RestoreObjects(boardScene);
         FindFirstObjectByType<BoardShop>().FreezeShopScene();
+    }
+
+    public void ExitBoardScene()
+    {
+        if (timeSinceLastSwitch > 1)
+        {
+            ThawBoardScene();
+        }
     }
 }

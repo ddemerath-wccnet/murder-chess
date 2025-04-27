@@ -12,6 +12,7 @@ public class RookSpell : BaseSpell
     public AudioSource sound;
     Vector3 origPos;
     Vector3 targetPos;
+    public Vector3 movedir = Vector3.right;
 
     protected override void SpellStart()
     {
@@ -19,11 +20,9 @@ public class RookSpell : BaseSpell
         rook = GameObject.Instantiate(rookPrefab, transform.position, transform.rotation);
         rookSpellObject = rook.GetComponent<SpellObject>();
         rookSpellObject.damageMulti = spellDamageMulti;
-
-        Vector3 movedir = GlobalVars.player.GetComponent<Player>().moveDir;
-        if (movedir.magnitude == 0) movedir = Vector3.right;
         travelTimer = maxTravelTimer;
         origPos = transform.position;
+        if (movedir.magnitude == 0) movedir = Vector3.right;
         targetPos = transform.position +
             movedir * travelDistance;
 
@@ -42,5 +41,11 @@ public class RookSpell : BaseSpell
             return true;
         }
         else return false;
+    }
+
+    protected override void Update()
+    {
+        if (GlobalVars.player.GetComponent<Player>().moveDir.magnitude != 0) movedir = GlobalVars.player.GetComponent<Player>().moveDir;
+        base.Update();
     }
 }

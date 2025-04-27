@@ -71,10 +71,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbbd76fb5fd478d4081ef7290e1beaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  base_MaxPieceHealth: 20
+  base_MaxPieceHealth: 12
   base_PieceHealth: 0
   base_PieceSpeed: 4
-  base_PieceDamage: 0
+  base_PieceDamage: 3
   base_MaxPieceCycleTimer: 2
   PieceCycleTimer: 0
   cycleState: 
