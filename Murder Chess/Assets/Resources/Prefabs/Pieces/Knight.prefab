@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01164abc5d0570849b3acea4251ca493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  base_MaxPieceHealth: 10
+  base_MaxPieceHealth: 6
   base_PieceHealth: 0
   base_PieceSpeed: 3
   base_PieceDamage: 2
