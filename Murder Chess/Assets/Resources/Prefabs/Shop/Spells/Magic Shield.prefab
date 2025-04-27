@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a59d8aecffa834abc778fb2037a79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  base_SpellCost: 0
+  base_SpellCost: 35
   sound: {fileID: -4004342390768366484}
 --- !u!212 &7992458842091000239
 SpriteRenderer:
