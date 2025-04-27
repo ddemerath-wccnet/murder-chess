@@ -50,11 +50,11 @@ public abstract class BasePiece : MonoBehaviour
     public string cycleState = null;
 
     public float maxIFrames = 1;
-    float iFrames = 0;
+    public float iFrames = 0;
     public bool isDangerous;
 
     public List<BaseStatusEffect> activeEffects = new List<BaseStatusEffect>();
-    List<ElementalPiece> elements = new List<ElementalPiece>();
+    public List<ElementalPiece> elements = new List<ElementalPiece>();
 
     public bool bricked;
 

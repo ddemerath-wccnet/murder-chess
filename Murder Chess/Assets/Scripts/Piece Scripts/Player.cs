@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -126,9 +127,9 @@ public class Player : MonoBehaviour
         if (PlayerHealth <= 0)
         {
             deathTimer -= GlobalVars.DeltaTimePlayer;
-            if (deathTimer < 0)
+            if (deathTimer < 0 && !GlobalVars.devMode)
             {
-                Application.Quit();
+                SceneManager.LoadScene(8);
             }
         }
 
@@ -265,6 +266,10 @@ public class Player : MonoBehaviour
      */
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision == null) return; // Just safety
+        Collider2D ourCollider = GetComponent<Collider2D>();
+        if (!(ourCollider != null && collision.IsTouching(ourCollider))) return;
+
         BasePiece collisionPiece;
 
         if (collision.TryGetComponent<BasePiece>(out collisionPiece))

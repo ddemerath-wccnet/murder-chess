@@ -12,6 +12,12 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene(6); // Loads scene 6 = Board scene
 
     }
+    public void playTutorial()
+    {
+
+        SceneManager.LoadScene(7); // Loads scene 6 = Board scene
+
+    }
 
     public void exitGame() {
 

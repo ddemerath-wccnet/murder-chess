@@ -87,6 +87,15 @@ public static class GlobalVars
         multiplier_SpellCost = 1;
     }
 
+    public static void FullyResetClass()
+    {
+        decoyPosition = null;
+        timeOfLastHit = 0;
+        bricked = false;
+        devMode = false;
+        ResetClass();
+    }
+
     /// <summary> 
     /// Call to modify a variable of GlobalVars (multiplicatively). 
     /// </summary>

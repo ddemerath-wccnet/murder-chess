@@ -49,7 +49,7 @@ public abstract class BaseAbility : MonoBehaviour
     /// <summary> Called from Player when a key is pressed
     public virtual bool CallActivate()
     {
-        if (AbilityCooldown <= 0 && !GlobalVars.bricked)
+        if ((AbilityCooldown <= 0 && !GlobalVars.bricked) || GlobalVars.devMode)
         {
             base_AbilityCooldown = base_MaxAbilityCooldown;
             startedAbility = true;

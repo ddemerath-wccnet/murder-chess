@@ -249,12 +249,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionList: []
-  damageMulti: 0
+  damageMulti: 1
   selfDamage: 0
   burns: 0
   burnDuration: 0
   bleeds: 0
   bleedDuration: 0
+  allowRepeats: 1
 --- !u!58 &2562109544830172569
 CircleCollider2D:
   m_ObjectHideFlags: 0
