@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 60febdc6c778e3a46ba176b3f0c9cbda
+guid: 8c7a5779099ec3146b849f5b69b1ee6f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7943444759094373461
-    second: backDropV2-Sheet_0
+      213: -7711727434091926504
+    second: backDropSliced001_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: backDropV2-Sheet_0
+      name: backDropSliced001_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32768
+        width: 4096
         height: 2304
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55c22c61ce8cc3e60800000000000000
-      internalID: 7943444759094373461
+      spriteID: 81ce056d1c07af490800000000000000
+      internalID: -7711727434091926504
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      backDropV2-Sheet_0: 7943444759094373461
+      backDropSliced001_0: -7711727434091926504
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
