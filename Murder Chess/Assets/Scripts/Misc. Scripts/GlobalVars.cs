@@ -57,6 +57,8 @@ public static class GlobalVars
 
     public static bool devMode = false;
 
+    public static int lastWave;
+
     /// <summary> Sets all variables back to default. </summary>
     public static void ResetClass()
     {
@@ -93,6 +95,7 @@ public static class GlobalVars
         timeOfLastHit = 0;
         bricked = false;
         devMode = false;
+        lastWave = 0;
         ResetClass();
     }
 

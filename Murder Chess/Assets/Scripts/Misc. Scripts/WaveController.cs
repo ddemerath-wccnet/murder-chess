@@ -36,6 +36,7 @@ public class WaveController : MonoBehaviour
             controllerState = "Spawning";
             waves[0].StartWave();
             waveInt++;
+            GlobalVars.lastWave = waveInt;
         }
         else if (controllerState == "Spawning")
         {

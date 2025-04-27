@@ -23,4 +23,10 @@ public class MenuButtons : MonoBehaviour
 
         Application.Quit(); // pretty sure this doesn't work in editor
 
-    }}
+    }
+    public void gotoMenu()
+    {
+        GlobalVars.FullyResetClass();
+        SceneManager.LoadScene(0); // Loads scene 6 = Board scene
+    }
+}
