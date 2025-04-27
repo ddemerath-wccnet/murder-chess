@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   base_MaxPieceHealth: 3
   base_PieceHealth: 0
-  base_PieceSpeed: 4
+  base_PieceSpeed: 3
   base_PieceDamage: 1
   base_MaxPieceCycleTimer: 0.5
   PieceCycleTimer: 0
