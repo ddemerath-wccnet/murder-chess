@@ -57,5 +57,9 @@ public class HealthBar : MonoBehaviour
         {
             currentHealthBar.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
         }
+        else
+        {
+            currentHealthBar.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.green;
+        }
     }
 }

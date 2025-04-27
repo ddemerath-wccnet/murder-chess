@@ -37,6 +37,7 @@ public class WaveController : MonoBehaviour
             waves[0].StartWave();
             waveInt++;
             GlobalVars.lastWave = waveInt;
+            new ModifierEntry("multiplier_PlayerCoinGain", -0.025f);
         }
         else if (controllerState == "Spawning")
         {
