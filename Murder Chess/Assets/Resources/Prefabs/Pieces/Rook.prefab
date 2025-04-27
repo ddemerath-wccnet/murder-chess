@@ -124,15 +124,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bab368a08c22f49ae9c18cb3a4f6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  base_MaxPieceHealth: 10
+  base_MaxPieceHealth: 6
   base_PieceHealth: 0
   base_PieceSpeed: 3
-  base_PieceDamage: 4
+  base_PieceDamage: 2
   base_MaxPieceCycleTimer: 5
   PieceCycleTimer: 0
   cycleState: 
   maxIFrames: 1
+  iFrames: 0
   isDangerous: 0
+  elements: []
   bricked: 0
   changeDirectionTime: 0.5
   duplicateTimer: 0

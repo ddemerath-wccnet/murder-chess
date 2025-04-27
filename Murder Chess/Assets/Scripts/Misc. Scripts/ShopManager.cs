@@ -4,7 +4,7 @@ using System.Linq;
 
 public class ShopManager : MonoBehaviour
 {
-    public int restockCost = 1;
+    public int restockCost = 100;
     public float luckCount;
     public StatVisualizer MPVisualizer;
     public ImageCarousel cardCarousel;
@@ -56,7 +56,7 @@ public class ShopManager : MonoBehaviour
         spellParent = player.transform.Find("Spells");
         abilityParent = player.transform.Find("Abilites");
 
-        DefaultRestock();
+        DefaultRestock(true);
     }
 
     // Update is called once per frame
@@ -65,11 +65,11 @@ public class ShopManager : MonoBehaviour
         //Debug.Log(RollValue(luckCount));
     }
 
-    public void DefaultRestock()
+    public void DefaultRestock(bool noCost = false)
     {
-        //if (restockCost > player.Coins) return;
-        player.Coins = player.Coins - restockCost;
-        restockCost *= 2;
+        if (restockCost > player.Coins && !GlobalVars.devMode) return;
+        if (!noCost) player.Coins = player.Coins - restockCost;
+        //restockCost *= 2;
         Debug.Log("DefaultRestock");
         RestockShop(RollValue(luckCount));
     }

@@ -217,6 +217,7 @@ public abstract class BasePiece : MonoBehaviour
     {
         foreach (ElementalPiece element in elements)
         {
+            if (GlobalVars.player.GetComponent<Player>().iFrames <= 0)
             element.EffectPlayer();
         }
         return PieceDamage;

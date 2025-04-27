@@ -35,7 +35,7 @@ public class Rook : BasePiece
         if (collision.gameObject.CompareTag("Player"))
         {
             Player player = collision.gameObject.GetComponent<Player>();
-            player.DamagePlayer(HurtPlayerFor());
+            //player.DamagePlayer(HurtPlayerFor());
         }
         else if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Obstacles")
         {

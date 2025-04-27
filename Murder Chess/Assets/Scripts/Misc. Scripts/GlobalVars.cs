@@ -34,8 +34,8 @@ public static class GlobalVars
     public static float multiplier_PlayerSpeed = 1;
     public static float multiplier_PlayerDamage = 1;
     public static float multiplier_PlayerMana = 1;
-    public static float multiplier_PlayerManaGain = 1;
-    public static float multiplier_PlayerCoinGain = 1;
+    public static float multiplier_PlayerManaGain = 2;
+    public static float multiplier_PlayerCoinGain = 2;
 
     public static float multiplier_CardHandMultiplier = 1;
     public static float multiplier_CardDeckMultiplier = 0.5f;
@@ -73,8 +73,8 @@ public static class GlobalVars
         multiplier_PlayerSpeed = 1;
         multiplier_PlayerDamage = 1;
         multiplier_PlayerMana = 1;
-        multiplier_PlayerManaGain = 1;
-        multiplier_PlayerCoinGain = 1;
+        multiplier_PlayerManaGain = 2;
+        multiplier_PlayerCoinGain = 2;
 
         multiplier_CardHandMultiplier = 1;
         multiplier_CardDeckMultiplier = 0.5f;

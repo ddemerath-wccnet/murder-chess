@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85312697647f95e40bbb514f3a345303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restockCost: 1
+  restockCost: 100
   luckCount: 1
   MPVisualizer: {fileID: 1863325960}
   cardCarousel: {fileID: 1119385483}
