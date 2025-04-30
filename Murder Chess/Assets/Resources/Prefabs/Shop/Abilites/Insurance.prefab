@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: d69aa3757f9e78644b7fea3f83f81221, type: 3}
-  price: 1000
+  price: 400
   rarity: 1
   description: Activates on death, revives you with half max hp.
 --- !u!114 &4752210813043737516

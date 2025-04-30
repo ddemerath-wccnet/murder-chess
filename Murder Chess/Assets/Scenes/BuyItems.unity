@@ -4922,6 +4922,7 @@ MonoBehaviour:
   myScript: {fileID: 47666124}
   variableName: restockCost
   text: {fileID: 965354288}
+  decimalPlaces: -1
 --- !u!114 &965354288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6864,14 +6865,14 @@ MonoBehaviour:
       - m_Target: {fileID: 47666124}
         m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
         m_MethodName: DefaultRestock
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1387291321
 MonoBehaviour:
@@ -8931,6 +8932,7 @@ MonoBehaviour:
   myScript: {fileID: 0}
   variableName: Coins
   text: {fileID: 1863325961}
+  decimalPlaces: -1
 --- !u!114 &1863325961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13611,6 +13613,7 @@ MonoBehaviour:
   myScript: {fileID: 0}
   variableName: deckSize
   text: {fileID: 1771803288797507412}
+  decimalPlaces: -1
 --- !u!114 &7833545481977420807
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 699b27cbc128ed34ebd9b4e0fac646aa, type: 3}
   price: 300
-  rarity: 1
+  rarity: 2
   description: Makes player giant, multiplying many stats by 2 for 10 sec
 --- !u!114 &930185381524436224
 MonoBehaviour:
